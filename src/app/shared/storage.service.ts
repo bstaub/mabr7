@@ -6,8 +6,10 @@ import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask 
 })
 export class StorageService {
 
-  ref: AngularFireStorageReference;
-  task: AngularFireUploadTask;
+  // ref: AngularFireStorageReference;
+  // task: AngularFireUploadTask;
+  ref;
+  task;
 
   constructor(private afStorage: AngularFireStorage) {
 

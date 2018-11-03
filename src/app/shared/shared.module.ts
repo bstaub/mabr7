@@ -12,12 +12,16 @@ import { environment } from '../../environments/environment';
 import { ArraySortPipe } from './shared/array-sort.pipe';
 import { ArraySortDescPipe } from './shared/array-sort-desc.pipe';
 import { CheckStatusPipe } from './shared/check-status.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { BackButtonDirective } from './directive/back-button.directive';
+import { NgPrimeModule } from './ng-prime.module';
 
 @NgModule({
   declarations: [
     ArraySortPipe,
     ArraySortDescPipe,
     CheckStatusPipe,
+    BackButtonDirective,
   ],
   imports: [
     CommonModule,
@@ -30,13 +34,16 @@ import { CheckStatusPipe } from './shared/check-status.pipe';
   ],
   exports: [
     CommonModule,
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
     NgbModule,
+    NgPrimeModule,
     ArraySortPipe,
     ArraySortDescPipe,
     CheckStatusPipe,
+    BackButtonDirective,
+    NgxPaginationModule,
   ]
 })
 export class SharedModule {

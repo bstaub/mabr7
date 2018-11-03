@@ -9,6 +9,8 @@ import { UserService } from '../user/shared/user.service';
 import { StorageService } from '../shared/storage.service';
 import { ProductCategoryService } from '../product/product-category.service';
 import { AuthService } from '../user/shared/auth.service';
+import { SettingsService } from '../shared/settings.service';
+import { AlertifyService } from '../shared/alertify.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { AuthService } from '../user/shared/auth.service';
     ProductService,
     ProductCategoryService,
     StorageService,
+    SettingsService,
+    AlertifyService,
     {provide: LocationStrategy, useClass: PathLocationStrategy}
   ],
 })

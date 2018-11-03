@@ -1,4 +1,3 @@
-/*
 export const environment = {
   production: true,
   firebase: {
@@ -10,5 +9,3 @@ export const environment = {
     messagingSenderId: '983183286327'
   }
 };
-*/
-
