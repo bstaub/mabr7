@@ -13,8 +13,8 @@ import { OrderFlyoutService } from '../../core/shared/order-flyout.service';
 
 
 @Component({
-  selector: 'app-checkout-shipmentdata',
-  templateUrl: './checkout-shipmentdata.component.html',
+  selector: 'app-checkout-shipment',
+  templateUrl: './checkout-shipment.component.html',
   styles: [``]
 })
 export class CheckoutShipmentComponent implements OnInit, OnDestroy {
