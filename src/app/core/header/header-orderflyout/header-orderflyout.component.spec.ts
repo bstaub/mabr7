@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeaderFlyoutComponent } from './header-flyout.component';
+import { HeaderOrderflyoutComponent } from './header-orderflyout.component';
 
-describe('HeaderFlyoutComponent', () => {
-  let component: HeaderFlyoutComponent;
-  let fixture: ComponentFixture<HeaderFlyoutComponent>;
+describe('HeaderOrderflyoutComponent', () => {
+  let component: HeaderOrderflyoutComponent;
+  let fixture: ComponentFixture<HeaderOrderflyoutComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderFlyoutComponent ]
+      declarations: [ HeaderOrderflyoutComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderFlyoutComponent);
+    fixture = TestBed.createComponent(HeaderOrderflyoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

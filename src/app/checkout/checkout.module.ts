@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
 import { CheckoutCustomerdataComponent } from './checkout-customerdata/checkout-customerdata.component';
 import { CheckoutLoginComponent } from './checkout-login/checkout-login.component';
 import { CheckoutOverviewComponent } from './checkout-overview/checkout-overview.component';
@@ -11,7 +11,7 @@ import { CheckoutComponent } from './checkout.component';
 @NgModule({
   declarations: [CheckoutCustomerdataComponent, CheckoutLoginComponent, CheckoutOverviewComponent, CheckoutPaymentComponent, CheckoutShipmentComponent, CheckoutThxComponent, CheckoutComponent],
   imports: [
-    CommonModule
+    SharedModule
   ]
 })
 export class CheckoutModule { }

@@ -1,3 +1,19 @@
-<p>
-  checkout-login works!
-</p>
+<div class="container">
+
+
+  <h1>1.) Neu hier? </h1>
+  <a [routerLink]="['/user-login-register-slide']" [queryParams]="{orderstep: '1', register: '1'}">
+    <p>Hier können Sie sich registrieren...</p>
+  </a>
+  <br>
+  <br>
+  <h1>2.) Sie haben bereits ein Konto?</h1>
+  <a [routerLink]="['/user-login-register-slide']" [queryParams]="{orderstep: '1', login: '1'}">
+    <p>Hier können Sie sich einloggen...</p>
+  </a>
+  <br>
+  <br>
+  <h1>3.) Bestellen ohne Registrierung</h1>
+  <a [routerLink]="['../checkout/customerdata']">ohne Konto bestellen</a>
+
+</div>

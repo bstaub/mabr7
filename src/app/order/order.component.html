@@ -1,3 +1,119 @@
-<p>
-  order works!
-</p>
+<!--<app-page-title title="Bestellung" [children]="[{title: 'Bestellung'}]"></app-page-title>-->
+<div class="container">
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Warenkorb</h1>
+
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>Artikel</th>
+            <th>Menge</th>
+            <th class="text text-right">Preis CHF</th>
+            <th class="text text-right">Rabatt %</th>
+            <th class="text text-right">Total CHF</th>
+            <th ></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let product of productPerOrderLocalStorage | arraySort: 'name' | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
+            <td>
+              <figure class="media">
+                <div>
+                  <img src="{{product.image}}" alt="{{product.description}}" class="img-thumbnail" width="100px">
+                </div>
+                <figcaption class="media-body">
+                  <h6 class="title text-truncate">{{product.name}}</h6>
+                </figcaption>
+
+
+              </figure>
+
+            </td>
+            <td class="orderinput">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary" type="button" (click)="onDecreaseQty(product)">-</button>
+                </div>
+                <input type="text" class="form-control text-center" [(ngModel)]="product.qty"
+                       (blur)="onChangeQty(product)">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" (click)="onIncreaseQty(product)">+</button>
+                </div>
+              </div>
+            </td>
+
+
+            <td data-title="Preis CHF" class="text text-right">{{product.price  | number : '1.2-2'}}</td>
+            <td data-title="Rabatt %" class="text text-right"><p *ngIf="product.discountFactor != 1">{{(1- product.discountFactor) *100 | number : '1.0'}}</p></td>
+            <td data-title="Total CHF" class="text text-right">{{product.price * product.qty * product.discountFactor | number : '1.2-2'}}</td>
+            <td align="rigth">
+
+              <button class="btn btn-sm btn-danger" (click)="onDeletItem(product.productId)">
+                <!-- <fa name="trash"></fa> -->
+              </button>
+            </td>
+          </tr>
+          </tbody>
+          <tfoot>
+
+          <tr>
+            <td class="no-responsive">Gesammttotal CHF</td>
+            <td class="no-responsive"></td>
+            <td class="no-responsive"></td>
+            <td class="no-responsive"></td>
+            <td data-title="Gesammtsumme CHF" class="text-right">{{order?.totalValue | number : '1.2-2'}}</td>
+            <td class="no-responsive"></td>
+          </tr>
+
+
+          </tfoot>
+
+        </table>
+      </div>
+
+
+    </div>
+  </div>
+
+  <pagination-controls (pageChange)="p = $event"
+                       maxSize="9"
+                       directionLinks="true"
+                       autoHide="true"
+                       responsive="true"
+                       previousLabel="Zurück"
+                       nextLabel="Vor"
+                       screenReaderPaginationLabel="Pagination"
+                       screenReaderPageLabel="Seite"
+                       screenReaderCurrentLabel="Du bist auf Seite">
+  </pagination-controls>
+
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-primary" (click)="onDeleteScart()">Warenkorb Löschen</button>&nbsp;
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="col-md-12">
+      <button [disabled]="(productPerOrderLocalStorage.length == 0)" class="btn btn-primary" (click)="onEnterOrderData()">Bestellen</button>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+

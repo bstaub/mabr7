@@ -1,3 +1,38 @@
-<p>
-  checkout-shipment works!
-</p>
+<div class="container">
+
+  <h1>Versandart</h1>
+
+  <form [formGroup]="ShipmentForm" (ngSubmit)="onSubmit()">
+
+
+    <label>
+      <input type="radio" value="express" name="shippingMethod" formControlName="shippingMethod"> Express Priority
+    </label>
+
+    <br>
+    <label>
+      <input type="radio" value="fedex" name="shippingMethod"  formControlName="shippingMethod">  FedEx
+    </label>
+
+    <br>
+    <label>
+      <input type="radio" value="normal" name="shippingMethod"  formControlName="shippingMethod">  Normal
+    </label>
+
+
+
+
+    <br>
+    <br>
+
+    <button type="button" class="btn btn-primary pull-left" (click)="goBack()">zurück</button>
+    <button type="submit" class="btn btn-primary pull-right">Zahlart wählen</button>
+
+
+
+
+  </form>
+
+
+
+</div>

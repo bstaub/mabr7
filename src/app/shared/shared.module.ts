@@ -15,6 +15,7 @@ import { CheckStatusPipe } from './shared/check-status.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BackButtonDirective } from './directive/back-button.directive';
 import { NgPrimeModule } from './ng-prime.module';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { NgPrimeModule } from './ng-prime.module';
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
+    AngularFontAwesomeModule
   ],
   exports: [
     CommonModule,

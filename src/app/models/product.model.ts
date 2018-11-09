@@ -5,6 +5,7 @@ export class Product {
   price?: number;
   createdDate?: string;
   active?: boolean;
+  itemcount?: number;
   image?: string;
   productCategory?: string;
   discount?: boolean;

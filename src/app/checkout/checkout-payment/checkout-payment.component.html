@@ -1,3 +1,38 @@
-<p>
-  checkout-payment works!
-</p>
+<div class="container">
+
+  <h1>Zahlart</h1>
+
+  <form [formGroup]="PaymentForm" (ngSubmit)="onSubmit()">
+
+
+    <label>
+      <input type="radio" value="invoice" name="paymentMethod" formControlName="paymentMethod"> Rechnung
+    </label>
+
+    <br>
+    <label>
+      <input type="radio" value="prepayment" name="paymentMethod"  formControlName="paymentMethod"> Vorkasse
+    </label>
+
+    <br>
+    <label>
+      <input type="radio" value="creditcard" name="paymentMethod"  formControlName="paymentMethod"> Kreditkarte
+    </label>
+
+
+
+
+    <br>
+    <br>
+
+    <button type="button" class="btn btn-primary pull-left" (click)="goBack()">zurück</button>
+    <button type="submit" class="btn btn-primary pull-right">Bestellübersicht</button>
+
+
+
+
+  </form>
+
+
+
+</div>

@@ -11,14 +11,16 @@ import { ProductCategoryService } from '../product/product-category.service';
 import { AuthService } from '../user/shared/auth.service';
 import { SettingsService } from '../shared/settings.service';
 import { AlertifyService } from '../shared/alertify.service';
-import { HeaderFlyoutComponent } from './header/header-flyout/header-flyout.component';
+import { HeaderOrderFlyoutComponent } from './header/header-orderflyout/header-orderflyout.component';
+
+
 
 @NgModule({
   declarations: [
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    HeaderFlyoutComponent],
+    HeaderOrderFlyoutComponent],
   imports: [
     CommonModule,
     SharedModule,
