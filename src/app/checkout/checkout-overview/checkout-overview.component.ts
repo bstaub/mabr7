@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Order } from '../../models/order.model';
 import { Subscription } from 'rxjs';
@@ -14,7 +14,7 @@ import { ProductPerOrderLocalStorage } from '../../models/productPerOrderLocalSt
   templateUrl: './checkout-overview.component.html',
   styleUrls: ['./checkout-overview.component.scss']
 })
-export class CheckoutOverviewComponent implements OnInit {
+export class CheckoutOverviewComponent implements OnInit, OnDestroy {
   productPerOrderLocalStorage: ProductPerOrderLocalStorage[];
   user: any;
   orderData: any;
@@ -95,11 +95,15 @@ export class CheckoutOverviewComponent implements OnInit {
 
   }
 
-
-
-
   goBack() {
     this.router.navigate(['/checkout/paymentdata']);
+  }
+
+  ngOnDestroy() {
+    this.authSubscription.unsubscribe();
+    this.nextOrderIdSubscription.unsubscribe();
+    this.orderSubscription.unsubscribe();
+    this.productsSubscription.unsubscribe();
   }
 
 }
