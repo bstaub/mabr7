@@ -32,7 +32,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
   ],
   exports: [
     CommonModule,
@@ -46,6 +46,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     CheckStatusPipe,
     BackButtonDirective,
     NgxPaginationModule,
+    AngularFontAwesomeModule,
   ]
 })
 export class SharedModule {
