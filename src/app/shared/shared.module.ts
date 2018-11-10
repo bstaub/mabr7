@@ -49,7 +49,7 @@ import { PageTitleComponent } from './page-title/page-title.component';
     BackButtonDirective,
     PageTitleComponent,
     NgxPaginationModule,
-
+    AngularFontAwesomeModule,
   ]
 })
 export class SharedModule {
