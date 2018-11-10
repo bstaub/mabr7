@@ -12,6 +12,9 @@ import { AuthService } from '../user/shared/auth.service';
 import { SettingsService } from '../shared/settings.service';
 import { AlertifyService } from '../shared/alertify.service';
 import { HeaderOrderFlyoutComponent } from './header/header-orderflyout/header-orderflyout.component';
+import { OffCanvasComponent } from './home/off-canvas/off-canvas.component';
+import { HomeSliderNgcarouselComponent } from './home/home-slider-ngcarousel/home-slider-ngcarousel.component';
+import { SliderService } from './shared/slider.service';
 
 
 
@@ -20,6 +23,8 @@ import { HeaderOrderFlyoutComponent } from './header/header-orderflyout/header-o
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    HomeSliderNgcarouselComponent,
+    OffCanvasComponent,
     HeaderOrderFlyoutComponent],
   imports: [
     CommonModule,
@@ -36,6 +41,7 @@ import { HeaderOrderFlyoutComponent } from './header/header-orderflyout/header-o
     AuthService,
     ProductService,
     ProductCategoryService,
+    SliderService,
     StorageService,
     SettingsService,
     AlertifyService,

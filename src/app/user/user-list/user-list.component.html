@@ -1,0 +1,15 @@
+<app-page-title title="User Liste" [children]="[{title: 'User Liste'}]"></app-page-title>
+<app-user-list-item *ngFor="let user of users$ | async | paginate: { itemsPerPage: itemsPerPage, currentPage: p }"
+                    [user]="user"></app-user-list-item>
+
+<pagination-controls (pageChange)="p = $event"
+                     maxSize="9"
+                     directionLinks="true"
+                     autoHide="true"
+                     responsive="true"
+                     previousLabel="Zurück"
+                     nextLabel="Vor"
+                     screenReaderPaginationLabel="Pagination"
+                     screenReaderPageLabel="Seite"
+                     screenReaderCurrentLabel="Du bist auf Seite">
+</pagination-controls>

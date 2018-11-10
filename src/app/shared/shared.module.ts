@@ -16,6 +16,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { BackButtonDirective } from './directive/back-button.directive';
 import { NgPrimeModule } from './ng-prime.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { PageTitleComponent } from './page-title/page-title.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     ArraySortDescPipe,
     CheckStatusPipe,
     BackButtonDirective,
+    PageTitleComponent,
   ],
   imports: [
     CommonModule,
@@ -45,7 +47,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     ArraySortDescPipe,
     CheckStatusPipe,
     BackButtonDirective,
+    PageTitleComponent,
     NgxPaginationModule,
+
   ]
 })
 export class SharedModule {
