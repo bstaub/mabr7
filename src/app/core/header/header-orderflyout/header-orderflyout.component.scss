@@ -6,6 +6,12 @@ li.submenu {
   padding: 10px;
 }
 
+@media (max-width: 767px) {
+  li.submenu {
+    margin-right: 25px;
+  }
+}
+
 .shopping li {
   list-style-type: none;
 }

@@ -2,7 +2,7 @@
 
   <a class="navbar-brand" [routerLink]="['']">MABRWEB</a>
 
-  <app-header-search></app-header-search>
+
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
 
@@ -14,13 +14,13 @@
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a *ngIf="isLoggedIn" class="nav-link" [routerLink]="['profile']" routerLinkActive="active">Benutzerprofil</a>
+        <a *ngIf="isLoggedIn" class="nav-link mr-4" [routerLink]="['profile']" routerLinkActive="active">Benutzerprofil</a>
       </li>
       <li class="nav-item">
-        <a [routerLink]="['user-login-register-slide']" *ngIf="!isLoggedIn" class="nav-link" routerLinkActive="active">Login/Register</a>
+        <a [routerLink]="['user-login-register-slide']" *ngIf="!isLoggedIn" class="nav-link mr-4" routerLinkActive="active">Login/Register</a>
       </li>
       <li class="nav-item">
-        <a (click)="logout()" *ngIf="isLoggedIn" class="nav-link" routerLinkActive="active">Logout</a>
+        <a (click)="logout()" *ngIf="isLoggedIn" class="nav-link mr-5" routerLinkActive="active">Logout</a>
       </li>
       <!--<li class="nav-item lang">-->
         <!--<a class="nav-link" routerLinkActive="active">DE</a><span class="nav-link">/</span><a class="nav-link">EN</a>-->
@@ -28,6 +28,8 @@
     </ul>
 
   </div>
+
+  <app-header-search></app-header-search>
 
   <!-- todo: Flyout CSS in Flyout Komponente anpassen, dann hier aktivieren, sollte gleich links von Hamburber und bei grossen Screens rechts von Login Register sein? -->
   <app-header-orderflyout></app-header-orderflyout>
