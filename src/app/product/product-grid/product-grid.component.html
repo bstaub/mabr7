@@ -1,0 +1,57 @@
+<nav class="product-filter">
+  <h1><span *ngIf="selectedCategory === '/'">Alle Kategorien</span><span *ngIf="selectedCategory !== '/'">{{selectedCategory}}</span></h1>
+
+  <div class="sort">
+    <div class="collection-sort">
+      <label>Filter nach:</label>
+        <select [(ngModel)]="selectedCategory" (change)="selectedOption()">
+        <option disabled hidden [value]="selectUndefinedOptionValue">-alle Kategorien-</option>
+        <option value="/">-alle Kategorien-</option>
+        <option *ngFor="let category of categories$ | async" [value]="category.name">{{category.name}}</option>
+      </select>
+    </div>
+
+    <div class="collection-sort">
+      <label>Sortieren nach:</label>
+        <select [(ngModel)]="selectedSort" (change)="selectedOption()">
+        <option disabled hidden [value]="selectUndefinedOptionValue">alphabetisch, A-Z</option>
+        <option value="a-z">alphabetisch, A-Z</option>
+        <option value="z-a">alphabetisch, Z-A</option>
+        <option value="low-high">Preis, tief nach hoch</option>
+        <option value="high-low">Price, hoch nach tief</option>
+      </select>
+    </div>
+  </div>
+</nav>
+
+<section class="products" *ngIf="products$">
+
+  <ng-container>
+    <a routerLink="/produkte/detail/{{product.key}}" class="product-card"
+       *ngFor="let product of products$ | async | checkStatus | paginate: { itemsPerPage: itemsPerPage, currentPage: p }; let i = index">
+      <!--*ngFor="let product of products | async | checkStatus |slice:0:limit; let i = index">-->
+      <div class="product-image">
+        <img src="{{product.image || '//:0'}}" class="img-fluid" alt="{{product.name}}">
+      </div>
+      <div class="product-info">
+        <h5>{{product.name}}</h5>
+        <p *ngIf="product.discountFactor !== 1" style="text-decoration:line-through;">CHF {{product.price}}</p>
+        <!-- https://stackoverflow.com/questions/35513413/angular-how-to-display-number-always-with-2-decimal-places-in-input -->
+        <h6>CHF {{product.price * product.discountFactor | number : '1.2-2'}}</h6>
+      </div>
+    </a>
+  </ng-container>
+
+</section>
+
+<pagination-controls (pageChange)="p = $event"
+                     maxSize="9"
+                     directionLinks="true"
+                     autoHide="true"
+                     responsive="true"
+                     previousLabel="Zurück"
+                     nextLabel="Vor"
+                     screenReaderPaginationLabel="Pagination"
+                     screenReaderPageLabel="Seite"
+                     screenReaderCurrentLabel="Du bist auf Seite">
+</pagination-controls>

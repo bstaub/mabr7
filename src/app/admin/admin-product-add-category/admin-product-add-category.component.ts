@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductCategoryService } from '../../product/product-category.service';
+import { ProductCategoryService } from '../../product/shared/product-category.service';
 import { AlertifyService } from '../../shared/alertify.service';
 
 @Component({

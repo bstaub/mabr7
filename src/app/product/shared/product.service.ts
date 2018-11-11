@@ -2,7 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
-import { Product } from '../models/product.model';
+import { Product } from '../../models/product.model';
 
 
 @Injectable({

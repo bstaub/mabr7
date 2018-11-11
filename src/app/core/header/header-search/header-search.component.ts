@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ProductService} from '../../../product/product.service';
+import { ProductService} from '../../../product/shared/product.service';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({

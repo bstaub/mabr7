@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductCategory } from '../../models/product-category.model';
-import { ProductCategoryService } from '../../product/product-category.service';
+import { ProductCategoryService } from '../../product/shared/product-category.service';
 import { AlertifyService } from '../../shared/alertify.service';
 
 @Component({

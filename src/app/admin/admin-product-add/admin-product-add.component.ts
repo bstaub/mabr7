@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/product.model';
 import { Observable } from 'rxjs';
 import { ProductCategory } from '../../models/product-category.model';
-import { ProductService} from '../../product/product.service';
+import { ProductService} from '../../product/shared/product.service';
 import { StorageService } from '../../shared/storage.service';
-import { ProductCategoryService } from '../../product/product-category.service';
+import { ProductCategoryService } from '../../product/shared/product-category.service';
 import { AlertifyService } from '../../shared/alertify.service';
 import * as firebase from 'firebase';
 
