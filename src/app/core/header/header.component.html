@@ -2,6 +2,8 @@
 
   <a class="navbar-brand" [routerLink]="['']">MABRWEB</a>
 
+  <app-header-search></app-header-search>
+
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
 
     <ul class="navbar-nav mr-auto">
@@ -28,7 +30,7 @@
   </div>
 
   <!-- todo: Flyout CSS in Flyout Komponente anpassen, dann hier aktivieren, sollte gleich links von Hamburber und bei grossen Screens rechts von Login Register sein? -->
-  <!--<app-header-orderflyout></app-header-orderflyout>-->
+  <app-header-orderflyout></app-header-orderflyout>
 
   <span class="burgerMenu" (click)="OpenMenuCanvas()">
     <div></div>

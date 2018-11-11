@@ -15,6 +15,7 @@ import { HeaderOrderFlyoutComponent } from './header/header-orderflyout/header-o
 import { OffCanvasComponent } from './home/off-canvas/off-canvas.component';
 import { HomeSliderNgcarouselComponent } from './home/home-slider-ngcarousel/home-slider-ngcarousel.component';
 import { SliderService } from './shared/slider.service';
+import { HeaderSearchComponent } from './header/header-search/header-search.component';
 
 
 
@@ -25,6 +26,7 @@ import { SliderService } from './shared/slider.service';
     FooterComponent,
     HomeSliderNgcarouselComponent,
     OffCanvasComponent,
+    HeaderSearchComponent,
     HeaderOrderFlyoutComponent],
   imports: [
     CommonModule,
