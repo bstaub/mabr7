@@ -1,17 +1,39 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
-
- <a class="navbar-brand" [routerLink]="['']">mabr</a>
-
-  <app-header-orderflyout></app-header-orderflyout>
+  <a class="navbar-brand" [routerLink]="['']">MABRWEB</a>
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
 
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a>Profile</a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['produkte']" routerLinkActive="active">Produkte <span class="sr-only">(current)</span></a>
       </li>
     </ul>
 
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a *ngIf="isLoggedIn" class="nav-link" [routerLink]="['profile']" routerLinkActive="active">Benutzerprofil</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['user-login-register-slide']" *ngIf="!isLoggedIn" class="nav-link" routerLinkActive="active">Login/Register</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="logout()" *ngIf="isLoggedIn" class="nav-link" routerLinkActive="active">Logout</a>
+      </li>
+      <!--<li class="nav-item lang">-->
+        <!--<a class="nav-link" routerLinkActive="active">DE</a><span class="nav-link">/</span><a class="nav-link">EN</a>-->
+      <!--</li>-->
+    </ul>
+
   </div>
+
+  <!-- todo: Flyout CSS in Flyout Komponente anpassen, dann hier aktivieren, sollte gleich links von Hamburber und bei grossen Screens rechts von Login Register sein? -->
+  <!--<app-header-orderflyout></app-header-orderflyout>-->
+
+  <span class="burgerMenu" (click)="OpenMenuCanvas()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </span>
+
 </nav>

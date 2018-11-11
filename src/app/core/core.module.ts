@@ -34,6 +34,7 @@ import { SliderService } from './shared/slider.service';
     CommonModule,
     HeaderComponent,
     FooterComponent,
+    OffCanvasComponent,
     SharedModule,
   ],
   providers: [

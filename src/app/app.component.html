@@ -1,4 +1,5 @@
-<app-header></app-header>
+<app-header (offCanvasClicked)="OffCanvasClicked()"></app-header>
+<app-off-canvas (closeNavState)="CloseNavState()" [changeCanvasState]="OffCanvasClickedCheck"></app-off-canvas>
 <div class="main">
   <router-outlet></router-outlet>
 </div>
