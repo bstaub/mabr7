@@ -4,7 +4,7 @@
   <a [routerLink]="['']" (click)="closeNav()">Home</a>
   <a [routerLink]="['produkte']" (click)="closeNav()">Produkte</a>
   <a [routerLink]="['bestellung']" (click)="closeNav()">Bestellung</a>
-  <a *ngIf="isLoggedIn" [routerLink]="['profile']" (click)="closeNav()">Ihr Konto</a>
+  <a *ngIf="isLoggedIn" [routerLink]="['users/profile']" (click)="closeNav()">Ihr Konto</a>
   <a *ngIf="isLoggedIn && isAdmin" [routerLink]="['admin']" (click)="closeNav()">Admin</a>
   <a *ngIf="isLoggedIn" (click)="logout()">Logout</a>
 </div>

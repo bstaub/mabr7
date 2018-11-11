@@ -14,7 +14,7 @@
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a *ngIf="isLoggedIn" class="nav-link mr-4" [routerLink]="['profile']" routerLinkActive="active">Benutzerprofil</a>
+        <a *ngIf="isLoggedIn" class="nav-link mr-4" [routerLink]="['users/profile']" routerLinkActive="active">Benutzerprofil</a>
       </li>
       <li class="nav-item">
         <a [routerLink]="['user-login-register-slide']" *ngIf="!isLoggedIn" class="nav-link mr-4" routerLinkActive="active">Login/Register</a>

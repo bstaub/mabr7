@@ -13,10 +13,11 @@ import { Auth2Guard } from './user/guards/auth2.guard';
 import { UserLoginRegisterSlideComponent } from './user/user-login-register-slide/user-login-register-slide.component';
 import { ProductComponent } from './product/product.component';
 import { PRODUCT_ROUTES } from './product/product.routing';
+import { AdminGuard } from './user/guards/admin.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'admin', component: AdminComponent, children: ADMIN_ROUTES},
+  {path: 'admin', component: AdminComponent, children: ADMIN_ROUTES, canActivate: [AdminGuard]},
   {path: 'produkte', component: ProductComponent, children: PRODUCT_ROUTES},
   {path: 'bestellung', component: OrderComponent},
   {path: 'checkout', component: CheckoutComponent, children: CHECKOUT_ROUTES},
