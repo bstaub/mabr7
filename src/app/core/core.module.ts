@@ -20,6 +20,9 @@ import { AdminGuard } from '../user/guards/admin.guard';
 import { Auth2Guard } from '../user/guards/auth2.guard';
 import { AuthuserGuard } from '../user/guards/authuser.guard';
 import { RegisterGuard } from '../user/guards/register.guard';
+import { OrderFlyoutService } from './shared/order-flyout.service';
+import { OrderService } from '../order/shared/order.service';
+import { LocalStorageService } from '../shared/local-storage.service';
 
 
 
@@ -50,8 +53,11 @@ import { RegisterGuard } from '../user/guards/register.guard';
     ProductCategoryService,
     SliderService,
     StorageService,
+    LocalStorageService,
     SettingsService,
     AlertifyService,
+    OrderService,
+    OrderFlyoutService,
     AdminGuard,
     Auth2Guard,
     AuthuserGuard,
