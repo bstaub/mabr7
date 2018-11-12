@@ -23,6 +23,7 @@ import { RegisterGuard } from '../user/guards/register.guard';
 import { OrderFlyoutService } from './shared/order-flyout.service';
 import { OrderService } from '../order/shared/order.service';
 import { LocalStorageService } from '../shared/local-storage.service';
+import { Error404PageComponent } from './404/error-404-page.component';
 
 
 
@@ -34,7 +35,9 @@ import { LocalStorageService } from '../shared/local-storage.service';
     HomeSliderNgcarouselComponent,
     OffCanvasComponent,
     HeaderSearchComponent,
-    HeaderOrderFlyoutComponent],
+    HeaderOrderFlyoutComponent,
+    Error404PageComponent
+  ],
   imports: [
     CommonModule,
     SharedModule,

@@ -14,6 +14,7 @@ import { UserLoginRegisterSlideComponent } from './user/user-login-register-slid
 import { ProductComponent } from './product/product.component';
 import { PRODUCT_ROUTES } from './product/product.routing';
 import { AdminGuard } from './user/guards/admin.guard';
+import { Error404PageComponent } from './core/404/error-404-page.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -24,7 +25,13 @@ const routes: Routes = [
   {path: 'checkout-login', component: CheckoutLoginComponent},
   {path: 'users', component: UserComponent, children: USER_ROUTES, canActivate: [Auth2Guard]},
   {path: 'user-login-register-slide', component: UserLoginRegisterSlideComponent},
-  {path: '**', redirectTo: '/'},  // default Route, must be the last rule, could also be 404 page
+  // There's a bug that's preventing wild card routes to be lazy loaded (see: https://github.com/angular/angular/issues/13848)
+  // That's why the Error page should be eagerly loaded
+  {
+    path: '**',
+    component: Error404PageComponent
+  }
+  // {path: '**', redirectTo: '/'},  // default Route, must be the last rule, could also be 404 page
 ];
 
 @NgModule({
