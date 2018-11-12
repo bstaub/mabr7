@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300i,400,500,500i,700,700i,900,900i');
+
+@import 'font-awesome';
+@import 'override_bootstrap_variables';
+@import 'bootstrap';
+
+// @import "~bootstrap/dist/css/bootstrap.css";
+// global styles goes in _override_boostrap_variables.scss, bs, 12.11.18
+// app.component.ts imports app.scss that includes shared, and more stuff..
+
+// full size bootstrap container with no padding start
+app-home {
+  > .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+// full size bootstrap container with no padding end
+
+
+
