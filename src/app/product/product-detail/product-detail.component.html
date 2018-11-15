@@ -1,44 +1,137 @@
-<div class="app-detail-list">
+<!--<div class="app-detail-list">-->
 
-  <h2>Detail Ansicht</h2>
-  <div *ngIf="selectedProduct$ | async as product; else loading" class="row mb-3">
-    <div class="col-12 col-sm-6">
-      <div>
-        <label>Name: </label>
-        <p>{{product.name}}</p>
+  <!--<h2>Detail Ansicht</h2>-->
+  <!--<div *ngIf="selectedProduct$ | async as product; else loading" class="row mb-3">-->
+    <!--<div class="col-12 col-sm-6">-->
+      <!--<div>-->
+        <!--<label>Name: </label>-->
+        <!--<p>{{product.name}}</p>-->
+      <!--</div>-->
+      <!--<div>-->
+        <!--<label>Beschreibung: </label>-->
+        <!--<p>{{product.description}}</p>-->
+
+      <!--</div>-->
+      <!--<div>-->
+        <!--<label>Preis: </label>-->
+        <!--<p *ngIf="product.discountFactor !== 1" style="text-decoration:line-through;">CHF {{product.price}}</p>-->
+        <!--<p>CHF {{product.price * product.discountFactor | number : '1.2-2'}}</p>-->
+      <!--</div>-->
+
+
+      <!--<br><input type="text" name="anzahl" style="width: 50px;height: 36px;border-radius: 5px;"-->
+                 <!--[(ngModel)]="product.itemcount">-->
+      <!--<button class="btn btn-outline-success mt-3 mb-3" style="display: inline-block;" (click)='addToBasket(product)'>in-->
+        <!--den Warenkorb-->
+      <!--</button>-->
+
+    <!--</div>-->
+    <!--<div class="col-12 col-sm-6">-->
+      <!--<img src="{{product.image || '//:0'}}" class="img-fluid" alt="Dummy Images">-->
+    <!--</div>-->
+
+
+    <!--<div class="col-12">-->
+      <!--<button class="btn btn-primary btn-detail" appBackButton>Zurück</button>-->
+    <!--</div>-->
+
+  <!--</div>-->
+
+  <!--<ng-template #loading>-->
+    <!--<div>Loading ...</div>-->
+  <!--</ng-template>-->
+
+<!--</div>-->
+
+
+<div *ngIf="selectedProduct$ | async as product; else loading">
+  <div class="product-wrapper section-gap">
+    <div class="container-fluid">
+      <div class="row mb-4">
+        <div class="col-sm-12 col-md-6">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 m-md-b">
+              <div class="feature-box-thumb"><img alt="product image"
+                                                  class="img-fluid card-shadow"
+                                                  src="{{product.image || '//:0'}}"></div>
+            </div>
+            <!--<div class="col-sm-4 col-md-4">-->
+              <!--<ul class="list-unstyled list-p-detail">-->
+                <!--<li class="mb-3"><a href="javascript:void(0);"><img-->
+                  <!--alt="product image"-->
+                  <!--class="img-fluid"-->
+                  <!--height="100"-->
+                  <!--src="assets/img/2.jpg"-->
+                  <!--width="100"></a>-->
+                <!--</li>-->
+                <!--<li class="mb-3"><a href="javascript:void(0);"><img-->
+                  <!--alt="product image"-->
+                  <!--class="img-fluid"-->
+                  <!--height="100"-->
+                  <!--src="assets/img/2.jpg"-->
+                  <!--width="100"></a>-->
+                <!--</li>-->
+                <!--<li class="mb-3"><a href="javascript:void(0);"><img-->
+                  <!--alt="product image"-->
+                  <!--class="img-fluid"-->
+                  <!--height="100"-->
+                  <!--src="assets/img/2.jpg"-->
+                  <!--width="100"></a>-->
+                <!--</li>-->
+              <!--</ul>-->
+            <!--</div>-->
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <div class="mb-3">
+            <h2 class="text-capitalize font-3x mb-3">{{product.name}}</h2>
+
+            <h4 class="font-26 text-primary" *ngIf="product.discountFactor !== 1" style="text-decoration:line-through;">CHF {{product.price}}</h4>
+            <h4 class="font-26 text-primary">CHF {{product.price * product.discountFactor | number : '1.2-2'}}</h4>
+
+          </div>
+          <p>{{product.description}}</p>
+          <div class="d-flex justify-content-between">
+            <div class="align-content-start w-50 mr-3"><input
+              class="form-control form-control-lg"
+              placeholder="1" type="number" value="1">
+            </div>
+            <div class="align-content-start w-50"><a
+              class="btn btn-primary btn-lg btn-block"
+              routerlink="/product-cart" href="/product-cart">in Warenkorb</a></div>
+          </div>
+        </div>
       </div>
-      <div>
-        <label>Beschreibung: </label>
-        <p>{{product.description}}</p>
 
-      </div>
-      <div>
-        <label>Preis: </label>
-        <p *ngIf="product.discountFactor !== 1" style="text-decoration:line-through;">CHF {{product.price}}</p>
-        <p>CHF {{product.price * product.discountFactor | number : '1.2-2'}}</p>
-      </div>
-
-
-      <br><input type="text" name="anzahl" style="width: 50px;height: 36px;border-radius: 5px;" [(ngModel)]="product.itemcount">
-      <button class="btn btn-outline-success mt-3 mb-3" style="display: inline-block;" (click)='addToBasket(product)'>in
-        den Warenkorb
-      </button>
+      <ngb-tabset>
+        <ngb-tab title="Variante1">
+          <ng-template ngbTabContent>
+            <p><span>Variante 1 Details sind hier beschrieben</span></p>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Variante2">
+          <ng-template ngbTabContent>
+            <p><span>Variante 2 Details sind hier beschrieben</span></p>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Variante3">
+          <ng-template ngbTabContent>
+            <p><span>Variante 3 Details sind hier beschrieben</span></p>
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
 
     </div>
-    <div class="col-12 col-sm-6">
-      <img src="{{product.image || '//:0'}}" class="img-fluid" alt="Dummy Images">
-    </div>
-
-
-    <div class="col-12">
-      <button class="btn btn-primary btn-detail" appBackButton>Zurück</button>
-    </div>
-
   </div>
-
-  <ng-template #loading>
-    <div>Loading ...</div>
-  </ng-template>
-
 </div>
 
+
+<div class="col-12">
+  <button class="btn btn btn-secondary" appBackButton>Zurück</button>
+</div>
+
+<ng-template #loading>
+  <div>Loading ...</div>
+</ng-template>
+
+<br>
