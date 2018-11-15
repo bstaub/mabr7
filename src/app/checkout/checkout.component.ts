@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs/operators';
 
@@ -6,7 +6,8 @@ import { filter, map, mergeMap } from 'rxjs/operators';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.scss']
+  styleUrls: ['./styles/checkout.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CheckoutComponent implements OnInit {
   currCheckoutStep: any = 1;

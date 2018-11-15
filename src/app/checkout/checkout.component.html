@@ -1,16 +1,32 @@
-<!-- <app-page-title title="Bestellung" [children]="[{title: 'Bestellung'}]"></app-page-title>-->
+<app-page-title title="Bestellung" [children]="[{title: 'Bestellung'}]"></app-page-title>
 <div class="container">
   <br>
 
-  <div class="row">
-    <div class="col-md-12">
-      <div class="pointer" [ngClass]="{'active': step.id == currCheckoutStep}" *ngFor="let step of checkoutSteps"><span>{{step.description}}</span></div>
-    </div>
+  <div class="row col-md-12 checkout-wrap">
+
+
+      <ul class="checkout-bar">
+
+      <!-- <li [ngClass]="{'active': step.id == currCheckoutStep}" *ngFor="let step of checkoutSteps">{{step.description}}</li> -->
+
+        <li class="visited first"><a href="#">Login</a></li>
+
+        <li class="previous visited">Shipping & Billing</li>
+
+        <li class="active">Shipping Options</li>
+
+        <li class="next">Review & Payment</li>
+
+        <li class="">Complete</li>
+
+      </ul>
+
+
   </div>
 
   <br>
   <div class="row">
-    <div class="col-md-10 offset-1">
+    <div class="col-md-12">
       <router-outlet></router-outlet>
     </div>
   </div>
