@@ -1,7 +1,8 @@
 <div class="container-fluid">
 
   <nav class="product-filter">
-    <h1><span *ngIf="selectedCategory === '/'">Alle Kategorien</span><span *ngIf="selectedCategory !== '/'">{{selectedCategory}}</span></h1>
+    <h1><span *ngIf="selectedCategory === '/'">Alle Kategorien</span><span
+      *ngIf="selectedCategory !== '/'">{{selectedCategory}}</span></h1>
 
     <div class="sort">
       <div class="collection-sort">
@@ -26,12 +27,52 @@
     </div>
   </nav>
 
-  <div *ngIf="products$" class="product-list">
-    <div *ngFor="let product of products$ | async | checkStatus | paginate: { itemsPerPage: itemsPerPage, currentPage: p }; let i = index">
-      <app-product-item [product]='product' [count]='i'></app-product-item>
-    </div>
-  </div>
-</div>
+<main class="col-sm-12" *ngIf="products$">
+
+  <div class="card">
+    <table class="table table-hover shopping-cart-wrap">
+      <thead class="text-muted">
+      <tr>
+        <th scope="col">Produkte</th>
+        <th scope="col" width="120">Preis</th>
+      </tr>
+      </thead>
+      <tbody>
+
+          <tr routerLink="/produkte/detail/{{product.key}}" *ngFor="let product of products$ | async | checkStatus | paginate: { itemsPerPage: itemsPerPage, currentPage: p }; let i = index">
+            <!--<app-product-item [product]='product' [count]='i'></app-product-item>-->
+            <td>
+              <figure class="media">
+                <div class="img-wrap" style="min-width: 100px; margin-right: 10px;"><img src="{{product.image || '//:0'}}"  alt="{{product.name}}" class="img-thumbnail img-sm" style="width: 200px;"></div>
+                <figcaption class="media-body">
+                  <h6 class="title">{{product.name}} </h6>
+                  <dl class="dlist-inline small">
+                    <dt>Size: </dt>
+                    <dd>XXX</dd>
+                  </dl>
+                  <dl class="dlist-inline small">
+                    <dt>Color: </dt>
+                    <dd>XXX</dd>
+                  </dl>
+                </figcaption>
+              </figure>
+            </td>
+            <td>
+              <div class="price-wrap">
+                <p *ngIf="product.discountFactor !== 1" style="text-decoration:line-through;">CHF {{product.price}}</p>
+                <p>CHF {{product.price * product.discountFactor | number : '1.2-2'}}</p>
+              </div> <!-- price-wrap .// -->
+            </td>
+          </tr>
+
+      </tbody>
+    </table>
+  </div> <!-- card.// -->
+
+</main> <!-- col.// -->
+
+</div> <!-- container-fluid // -->
+
 
 <pagination-controls (pageChange)="p = $event"
                      maxSize="9"
