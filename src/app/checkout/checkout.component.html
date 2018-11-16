@@ -1,38 +1,24 @@
 <app-page-title title="Bestellung" [children]="[{title: 'Bestellung'}]"></app-page-title>
-<div class="container">
-  <br>
+<div class="container mb-md-5">
 
   <div class="row col-md-12 checkout-wrap">
 
-
       <ul class="checkout-bar">
 
-      <!-- <li [ngClass]="{'active': step.id == currCheckoutStep}" *ngFor="let step of checkoutSteps">{{step.description}}</li> -->
+     <li [ngClass]="
+     {'active': step.id == currCheckoutStep,
+      'first': step.id == 1,
+      'visited': step.id < currCheckoutStep}" *ngFor="let step of checkoutSteps">{{step.description}}</li>
 
-        <li class="visited first"><a href="#">Login</a></li>
+     </ul>
 
-        <li class="previous visited">Shipping & Billing</li>
+ </div>
 
-        <li class="active">Shipping Options</li>
+ <br>
 
-        <li class="next">Review & Payment</li>
-
-        <li class="">Complete</li>
-
-      </ul>
+     <router-outlet></router-outlet>
 
 
-  </div>
 
-  <br>
-  <div class="row">
-    <div class="col-md-12">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
-
-  <div class="checkout-steps">
-
-  </div>
 </div>
 

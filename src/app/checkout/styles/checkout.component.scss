@@ -3,22 +3,16 @@
 @mixin gray-stripe {
   background-size: 35px 35px;
   background-color: #EcEcEc;
-  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .4) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .4) 50%, rgba(255, 255, 255, .4) 75%,transparent 75%, transparent);
-  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .4) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .4) 50%, rgba(255, 255, 255, .4) 75%,transparent 75%, transparent);
 }
 
 @mixin blue-stripe {
   background-size: 35px 35px;
-  background-color: #57aed1;
-  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,transparent 75%, transparent);
-  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,transparent 75%, transparent);
+  background-color: $theme-color1;
 }
 
 @mixin green-stripe {
   background-size: 35px 35px;
-  background-color: #8bc53f;
-  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,transparent 75%, transparent);
-  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,transparent 75%, transparent);
+  background-color: $theme-color3;
 }
 
 @mixin inner-shadow {
@@ -33,20 +27,12 @@
   }
 }
 
-h1 {
-  text-align:center;
-  font-family: 'PT Sans Caption', sans-serif;
-  font-weight: 400;
-  font-size: 30px;
-  padding: 20px 0;
 
-  color: #777;
-}
 
 .checkout-wrap {
   color: #444;
   font-family: 'PT Sans Caption', sans-serif;
-  margin: 40px auto;
+  margin: 20px auto;
   max-width: 1200px;
   position: relative;
 }
@@ -60,7 +46,6 @@ ul.checkout-bar {
     padding: 14px 20px 14px 80px;
     position: relative;
     &:before {
-      @include inner-shadow;
       background: #ddd;
       border: 2px solid #FFF;
       border-radius: 50%;
@@ -78,19 +63,19 @@ ul.checkout-bar {
       z-index: 999;
     }
     &.active {
-      color: #8bc53f;
+      color: $theme-color3;
       font-weight: bold;
       &:before {
-        background: #8bc53f;
+        background: $theme-color3;
         z-index: 99999;
       }
     }
     &.visited {
       background: #ECECEC;
-      color: #57aed1;
+      color: $theme-color1;
       z-index: 99999;
       &:before {
-        background: #57aed1;
+        background: $theme-color1;
         z-index: 99999;
       }
     }
@@ -119,18 +104,8 @@ ul.checkout-bar {
         content: "5";
       }
     }
-    &:nth-child(6) {
-      &:before {
-        content: "6";
-      }
-    }
   }
-  a {
-    color: #57aed1;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-  }
+
 }
 
 

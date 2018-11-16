@@ -77,7 +77,12 @@
 
 
     </div>
+
+
+
   </div>
+  <button class="btn btn-primary float-left" (click)="onDeleteScart()">Warenkorb Löschen</button>&nbsp;
+  <button [disabled]="(productPerOrderLocalStorage.length == 0)" class="btn btn-primary float-right" (click)="onEnterOrderData()">Bestellen</button>
 
   <pagination-controls (pageChange)="p = $event"
                        maxSize="9"
@@ -91,20 +96,11 @@
                        screenReaderCurrentLabel="Du bist auf Seite">
   </pagination-controls>
 
-  <div class="row">
-    <div class="col-md-12">
-      <button class="btn btn-primary" (click)="onDeleteScart()">Warenkorb Löschen</button>&nbsp;
-    </div>
-  </div>
-  <br>
-  <br>
-  <br>
+  <br><br><br>
 
-  <div class="row">
-    <div class="col-md-12">
-      <button [disabled]="(productPerOrderLocalStorage.length == 0)" class="btn btn-primary" (click)="onEnterOrderData()">Bestellen</button>
-    </div>
-  </div>
+
+
+
 
 
 </div>

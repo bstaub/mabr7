@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../user/shared/user.service';
 import { Order } from '../../models/order.model';
@@ -11,16 +11,11 @@ import { OrderFlyoutService } from '../../core/shared/order-flyout.service';
 import { OrderService } from '../../order/shared/order.service';
 
 
-
-
 @Component({
   selector: 'app-checkout-enterdata',
   templateUrl: './checkout-customerdata.component.html',
-  styles: [`
-    input.ng-touched.ng-invalid {
-      border: 1px solid red;
-    }
-  `]
+  styleUrls: ['./styles/checkout-customerdata.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 
 
@@ -71,8 +66,11 @@ export class CheckoutCustomerdataComponent implements OnInit, OnDestroy {
     this.addressFormSubscription = this.CustomerAddressForm.valueChanges.subscribe(() => {
         if (this.shipqingEqualsBillingAddress) {
           this.formIsValid = this.CustomerAddressForm.controls.customerBillingAddress.valid;
+          console.log('test1' + this.formIsValid);
+          console.log(this.CustomerAddressForm.value.customerBillingAddress.country_b);
         } else {
           this.formIsValid = this.CustomerAddressForm.controls.customerBillingAddress.valid && this.CustomerAddressForm.controls.customerShippingAddress.valid;
+          console.log('test2' + this.formIsValid);
         }
       }
     );
@@ -194,6 +192,10 @@ export class CheckoutCustomerdataComponent implements OnInit, OnDestroy {
 
   goBack() {
     this.router.navigate(['/bestellung']);
+  }
+
+  setValidation() {
+    this.CustomerAddressForm.updateValueAndValidity({onlySelf: false, emitEvent: true});
   }
 
   ngOnDestroy() {

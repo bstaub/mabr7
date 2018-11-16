@@ -1,38 +1,33 @@
-<div class="container">
 
   <h1>Zahlart</h1>
 
   <form [formGroup]="PaymentForm" (ngSubmit)="onSubmit()">
 
+    <table class="table table-striped">
+      <tbody>
+      <tr>
+        <td><input type="radio" value="invoice" name="paymentMethod" formControlName="paymentMethod"></td>
+        <td>Rechnung</td>
+      </tr>
+      <tr>
+        <td> <input type="radio" value="prepayment" name="paymentMethod"  formControlName="paymentMethod"></td>
+        <td>Vorkasse</td>
+      </tr>
+      <tr>
+        <td>  <input type="radio" value="creditcard" name="paymentMethod"  formControlName="paymentMethod"></td>
+        <td>Kreditkarte</td>
+      </tr>
+      </tbody>
+  </table>
 
-    <label>
-      <input type="radio" value="invoice" name="paymentMethod" formControlName="paymentMethod"> Rechnung
-    </label>
-
-    <br>
-    <label>
-      <input type="radio" value="prepayment" name="paymentMethod"  formControlName="paymentMethod"> Vorkasse
-    </label>
-
-    <br>
-    <label>
-      <input type="radio" value="creditcard" name="paymentMethod"  formControlName="paymentMethod"> Kreditkarte
-    </label>
-
-
-
-
-    <br>
-    <br>
-
-    <button type="button" class="btn btn-primary pull-left" (click)="goBack()">zurück</button>
-    <button type="submit" class="btn btn-primary pull-right">Bestellübersicht</button>
-
-
+    <div class="row">
+      <div class="col-12">
+        <button type="button" class="btn btn-primary float-left" (click)="goBack()">zurück</button>
+        <button type="submit" class="btn btn-primary float-right">Bestellübersicht</button>
+      </div>
+    </div>
 
 
   </form>
 
 
-
-</div>

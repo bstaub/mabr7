@@ -1,38 +1,41 @@
-<div class="container">
 
   <h1>Versandart</h1>
 
   <form [formGroup]="ShipmentForm" (ngSubmit)="onSubmit()">
 
 
-    <label>
-      <input type="radio" value="express" name="shippingMethod" formControlName="shippingMethod"> Express Priority
-    </label>
 
-    <br>
-    <label>
-      <input type="radio" value="fedex" name="shippingMethod"  formControlName="shippingMethod">  FedEx
-    </label>
+    <table class="table table-striped">
+      <tbody>
+      <tr>
+        <td><input type="radio" value="express" name="shippingMethod" formControlName="shippingMethod"></td>
+        <td>Express Priority</td>
+        <td>CHF 10.00</td>
+      </tr>
+      <tr>
+        <td>  <input type="radio" value="fedex" name="shippingMethod"  formControlName="shippingMethod"></td>
+        <td>FedEx</td>
+        <td>CHF 15.00</td>
+      </tr>
+      <tr>
+        <td> <input type="radio" value="normal" name="shippingMethod"  formControlName="shippingMethod"> </td>
+        <td>  Normal</td>
+        <td>CHF 5.00</td>
+      </tr>
+      </tbody>
+    </table>
 
-    <br>
-    <label>
-      <input type="radio" value="normal" name="shippingMethod"  formControlName="shippingMethod">  Normal
-    </label>
 
 
-
-
-    <br>
-    <br>
-
+    <div class="row">
+      <div class="col-12">
     <button type="button" class="btn btn-primary pull-left" (click)="goBack()">zurück</button>
     <button type="submit" class="btn btn-primary pull-right">Zahlart wählen</button>
-
+      </div>
+    </div>
 
 
 
   </form>
 
 
-
-</div>
