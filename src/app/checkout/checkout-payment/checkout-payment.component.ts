@@ -72,11 +72,13 @@ export class CheckoutPaymentComponent implements OnInit, OnDestroy {
 
 
     this.nextOrderIdSubscription = this.orderService.getLatestOrder().subscribe((res) => {
-      this.nextShopOrderId = res[0].shopOrderId + 1;
+      if (res.length === 0) {
+        this.nextShopOrderId = 1;
+      } else {
+        this.nextShopOrderId = res[0].shopOrderId + 1;
+      }
     });
-
   }
-
 
   initPaymentFormGroup() {
     this.PaymentForm = new FormGroup({
