@@ -53,8 +53,10 @@
               class="form-control form-control-lg"
               placeholder="1" type="number" value="1">
             </div>
-            <div class="align-content-start w-50"><a
-              class="btn btn-primary btn-lg btn-block" (click)="addToBasket(product)">in Warenkorb</a></div>
+            <div class="align-content-start w-50">
+              <button class="btn btn-primary btn-block" (click)="addToBasket(product)">in Warenkorb</button>
+              <!--<a class="btn btn-mabr-primary" (click)="addToBasket(product)">in Warenkorb</a>-->
+            </div>
           </div>
         </div>
       </div>
@@ -83,7 +85,8 @@
 
 
 <div class="col-12">
-  <button class="btn btn btn-secondary" appBackButton>Zurück</button>
+  <button class="btn btn btn-primary" appBackButton>Zurück</button>
+  <!--<button class="btn btn-mabr-primary" appBackButton>Zurück</button>-->
 </div>
 
 <ng-template #loading>

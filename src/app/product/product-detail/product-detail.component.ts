@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Product } from '../../models/product.model';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -10,7 +10,8 @@ import { OrderService } from '../../order/shared/order.service';
 @Component({
   selector: 'app-detail-list',
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.scss']
+  styleUrls: ['./product-detail.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ProductDetailComponent implements OnInit {
 

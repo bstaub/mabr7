@@ -33,6 +33,7 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
   }
 
   getAllSearch() {  // trigger on submit and on keyup event, need submit for reset!
+    console.log('get all');
     this.productFirestoreService.searchCloseClicked.emit(false);
     if (!this.searchFormReactive.value.search) {
       this.resetForm();
@@ -55,11 +56,13 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
   }
 
   showCloseIcon() {
+    console.log('show close icon');
     setTimeout(() => {
       this.closeIconStatus = true;
     }, 400);  // on focus delay show x
   }
   hideCloseIcon() {
+    console.log('hide close');
     this.closeIconStatus = false;
     this.searchFormReactive.reset();
     setTimeout(() => {

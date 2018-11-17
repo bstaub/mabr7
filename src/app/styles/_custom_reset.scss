@@ -1,0 +1,22 @@
+@import 'custom_mabr';
+
+body {
+  div.main#main{
+
+    a{
+      // color: $mabr-btn-color;
+    }
+
+    button.a {
+      color: $mabr-btn-color;
+    }
+
+    app-page-title{
+      a{
+        color: inherit
+      }
+    }
+
+
+  }
+}
