@@ -18,9 +18,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.productsDiscounts$ = this.productService.getDiscountProductsWithLimit(3);
-    this.productsNew$ = this.productService.getNewProductsWithLimit(3);
-    this.productsBestRated$ = this.productService.getBestRatedProductsWithLimit(3);
+    this.productsDiscounts$ = this.productService.getDiscountProductsWithLimit(5); // limit 5 = 1 - 4 (4 Produkte)
+    this.productsNew$ = this.productService.getNewProductsWithLimit(5);
+    this.productsBestRated$ = this.productService.getBestRatedProductsWithLimit(5);
   }
 
 }

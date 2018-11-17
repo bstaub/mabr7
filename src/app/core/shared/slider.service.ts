@@ -13,41 +13,29 @@ export class SliderService {
 
     this.slider = [
       {
-        image: `https://picsum.photos/2560/500?random&t=${Math.random()}`,
-        title: 'Apple Spielzeuge',
+        image: `https://picsum.photos/2560/500?image=91`,
+        title: 'Photoapparate',
+        text: 'Schiesse die besten Photos mit unseren Digitalkameras',
+        link: 'http://localhost:4200/produkte/detail/dMCPQ1NYxKGCa5yvvaII',
+      },
+      {
+        image: `https://picsum.photos/2560/500?image=110`,
+        title: 'Herbstmomente',
+        text: 'Gutschein für Übernachten auf dem Bauernhof',
+        link: 'http://localhost:4200/produkte/detail/dMCPQ1NYxKGCa5yvvaII',
+      },
+      {
+        image: `https://picsum.photos/2560/500?image=64`,
+        title: 'Sonnenbrillen',
+        text: 'Die neusten Brillenmodelle passend zu den Jahrezeiten',
+        link: 'http://localhost:4200/produkte/detail/eVR3Tj9bRLIAsjD9CrQ6',
+      },
+      {
+        image: `https://picsum.photos/2560/500?image=2`,  // https://picsum.photos/2560/500?random&t=${Math.random()}
+        title: 'Apple Macbook Air',
         text: 'Apple Lifestyle Produkte',
         link: 'http://localhost:4200/produkte/detail/eVR3Tj9bRLIAsjD9CrQ6',
       },
-      {
-        image: `https://picsum.photos/2560/500?random&t=${Math.random()}`,
-        title: 'Mac Book Air',
-        text: 'Mac Book Air, das neuste Model von Apple',
-        link: 'http://localhost:4200/produkte/detail/dMCPQ1NYxKGCa5yvvaII',
-      },
-      {
-        image: `https://picsum.photos/2560/500?random&t=${Math.random()}`,
-        title: 'Kaffee Plausch',
-        text: 'Morgenstund hat Gold im Mund',
-        link: 'https://www.alessi.com/ch_de/',
-      },
-      {
-        image: `https://picsum.photos/2560/500?random&t=${Math.random()}`,
-        title: 'Ipad Air',
-        text: 'Hier das neue IPAD Air',
-        link: 'http://localhost:4200/produkte/detail/eVR3Tj9bRLIAsjD9CrQ6',
-      },
-      {
-        image: `https://picsum.photos/2560/500?random&t=${Math.random()}`,
-        title: 'Winter Jacke',
-        text: 'Hier der Produktbeschreib2 Winter Jacke',
-        link: 'http://localhost:4200/produkte/detail/dMCPQ1NYxKGCa5yvvaII',
-      },
-      {
-        image: `https://picsum.photos/2560/500?random&t=${Math.random()}`,
-        title: 'Salewa Schuhe',
-        text: 'Hier der Produktbeschreib3',
-        link: 'https://www.salewa.com/de-ch',
-      }
     ];
 
   }

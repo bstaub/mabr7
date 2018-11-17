@@ -84,7 +84,6 @@ export class ProductService {
 
   getBestRatedProductsWithLimit(limit: number) {
     this.productCollection = this.afs.collection('products', ref => ref.where('bestRated', '==', true).limit(limit));
-
     return this.productsBestRated$ = this.productCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Product;
