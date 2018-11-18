@@ -38,7 +38,6 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
     this.subscription_getDataToSearch = this.productService.getDataToSearch()
       .subscribe( data => {
         this.resultsArray = data.filter(item => {
-          console.log(item);
           if (this.searchFormReactive.value.search && this.searchFormReactive.value.search.length > 0) {
             this.stringToSearch = this.searchFormReactive.value.search;
           } else {
