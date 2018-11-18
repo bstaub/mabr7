@@ -9,31 +9,6 @@
                                                   class="img-fluid card-shadow"
                                                   src="{{product.image || '//:0'}}"></div>
             </div>
-            <!--<div class="col-sm-4 col-md-4">-->
-              <!--<ul class="list-unstyled list-p-detail">-->
-                <!--<li class="mb-3"><a href="javascript:void(0);"><img-->
-                  <!--alt="product image"-->
-                  <!--class="img-fluid"-->
-                  <!--height="100"-->
-                  <!--src="assets/img/2.jpg"-->
-                  <!--width="100"></a>-->
-                <!--</li>-->
-                <!--<li class="mb-3"><a href="javascript:void(0);"><img-->
-                  <!--alt="product image"-->
-                  <!--class="img-fluid"-->
-                  <!--height="100"-->
-                  <!--src="assets/img/2.jpg"-->
-                  <!--width="100"></a>-->
-                <!--</li>-->
-                <!--<li class="mb-3"><a href="javascript:void(0);"><img-->
-                  <!--alt="product image"-->
-                  <!--class="img-fluid"-->
-                  <!--height="100"-->
-                  <!--src="assets/img/2.jpg"-->
-                  <!--width="100"></a>-->
-                <!--</li>-->
-              <!--</ul>-->
-            <!--</div>-->
           </div>
         </div>
         <div class="col-sm-12 col-md-6">
@@ -46,9 +21,8 @@
           </div>
           <p>{{product.description}}</p>
           <div class="d-flex justify-content-between">
-            <div class="align-content-start w-50 mr-3"><input
-              class="form-control form-control-lg"
-              type="number" value="1" [(ngModel)]="product.itemcount">
+            <div class="align-content-start w-50 mr-3">
+              <input class="form-control form-control-lg" type="number" placeholder="1" [(ngModel)]="product.itemcount">
             </div>
             <div class="align-content-start w-50">
               <button class="btn btn-primary btn-block" (click)="addToBasket(product)">in Warenkorb</button>
