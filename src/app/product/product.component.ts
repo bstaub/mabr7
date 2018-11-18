@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ProductService } from './shared/product.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,8 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private productService: ProductService,
-              private router: Router) {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
