@@ -18,7 +18,7 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
   subscription_getDataToSearch: Subscription;
 
 
-  constructor(private productFirestoreService: ProductService,
+  constructor(private productService: ProductService,
   ) {
 
   }
@@ -30,12 +30,12 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
   }
 
   getAllSearch() {  // trigger on submit and on keyup event, need submit for reset!
-    this.productFirestoreService.searchCloseClicked.emit(false);
+    this.productService.searchCloseClicked.emit(false);
     if (!this.searchFormReactive.value.search) {
       this.resetForm();
     }
 
-    this.subscription_getDataToSearch = this.productFirestoreService.getDataToSearch()
+    this.subscription_getDataToSearch = this.productService.getDataToSearch()
       .subscribe( data => {
         this.resultsArray = data.filter(item => {
           console.log(item);
@@ -48,7 +48,7 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
 
         });
         // https://angularfirebase.com/lessons/sharing-data-between-angular-components-four-methods/
-        this.productFirestoreService.changeMessage(this.resultsArray);  // RxJS BehaviorSubject
+        this.productService.changeMessage(this.resultsArray);  // RxJS BehaviorSubject
       });
   }
 
@@ -61,7 +61,8 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
     this.closeIconStatus = false;
     this.searchFormReactive.reset();
     setTimeout(() => {
-      this.productFirestoreService.searchCloseClicked.emit(true);
+      this.productService.searchCloseClicked.emit(true);
+      this.productService.changeMessage(0);
     }, 100); // on form blur reset form
   }
 
@@ -69,7 +70,8 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
     this.closeIconStatus = false;
     this.searchFormReactive.reset();
     setTimeout(() => {
-      this.productFirestoreService.searchCloseClicked.emit(true);
+      this.productService.searchCloseClicked.emit(true);
+      this.productService.changeMessage(0);
     }, 100);
 
   }
