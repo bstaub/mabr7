@@ -38,7 +38,6 @@ export class ProductDetailComponent implements OnInit {
         this.selectedProduct$ = this.productFirestoreService.getProduct(this.productId).valueChanges();
       }
     );
-
   }
 
   addToBasket(product) {
