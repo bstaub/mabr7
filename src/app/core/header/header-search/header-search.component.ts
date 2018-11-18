@@ -15,9 +15,6 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
   stringToSearch: string;
   searchFormReactive: FormGroup;
   closeIconStatus = false;
-  // get search() {
-  //   return this.searchFormReactive.get('search');
-  // }
   subscription_getDataToSearch: Subscription;
 
 
@@ -33,7 +30,6 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
   }
 
   getAllSearch() {  // trigger on submit and on keyup event, need submit for reset!
-    console.log('get all');
     this.productFirestoreService.searchCloseClicked.emit(false);
     if (!this.searchFormReactive.value.search) {
       this.resetForm();
@@ -47,7 +43,7 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
           } else {
             this.stringToSearch = 'nichtsAusgebenDasGibtEsNicht159753';
           }
-          return item.name.toLowerCase().includes(this.stringToSearch.toLocaleLowerCase());
+          return (item.name.toLowerCase().includes(this.stringToSearch.toLocaleLowerCase()) && item.active === true);
 
         });
         // https://angularfirebase.com/lessons/sharing-data-between-angular-components-four-methods/
@@ -56,13 +52,11 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
   }
 
   showCloseIcon() {
-    console.log('show close icon');
     setTimeout(() => {
       this.closeIconStatus = true;
     }, 400);  // on focus delay show x
   }
   hideCloseIcon() {
-    console.log('hide close');
     this.closeIconStatus = false;
     this.searchFormReactive.reset();
     setTimeout(() => {
