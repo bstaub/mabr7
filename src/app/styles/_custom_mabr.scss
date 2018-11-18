@@ -3,15 +3,18 @@ $c-bg-header: #72A1A7;
 $c-bg-footer: #72A1A7;
 $c-font-header: rgba(226, 220, 220, 0.5);
 $c-font-header: rgba(226, 220, 220, 0.5);
+$c-bg-login-btn: #D4AF7A;
 
-// Button Styles
+
+
+// Button Style start
 $mabr-btn-bg-color: grey;
 $mabr-btn-color: #FFF;
-$mabr-btn-border-radius: 30px;
-
+$mabr-btn-color-active: lighten($mabr-btn-bg-color, 15%);
+$mabr-btn-border-radius: 5px;
 
 .btn {
-  padding: 14px 24px;
+  padding: 12px 24px;
   border: 0 none;
   font-weight: 700;
   letter-spacing: 1px;
@@ -29,10 +32,11 @@ $mabr-btn-border-radius: 30px;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-  background: red;
+  background: $mabr-btn-color-active;
 }
 
 .btn-primary:active, .btn-primary.active {
-  background: red;
+  background: $mabr-btn-color-active;
   box-shadow: none;
 }
+// Button Style end

@@ -8,14 +8,5 @@
 // global styles goes in _override_boostrap_variables.scss, bs, 12.11.18
 // app.component.ts imports app.scss that includes shared, and more stuff..
 
-// full size bootstrap container with no padding start
-app-home {
-  > .container-fluid {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-// full size bootstrap container with no padding end
-
 
 

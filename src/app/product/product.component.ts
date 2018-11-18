@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ProductService } from './shared/product.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styles: [`
-
-  `]
+  styleUrls: ['./styles/product.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ProductComponent implements OnInit {
 

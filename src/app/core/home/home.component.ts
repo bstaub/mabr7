@@ -6,7 +6,7 @@ import { ProductService } from '../../product/shared/product.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./styles/home.component.scss']
 })
 export class HomeComponent implements OnInit {
   productsDiscounts$: Observable<Product[]>;
