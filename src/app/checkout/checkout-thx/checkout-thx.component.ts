@@ -19,7 +19,6 @@ export class CheckoutThxComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.orderIdSubscription = this.route.queryParamMap.subscribe(queryParams => {
       this.shopOrderId = queryParams.get('shopOrderId');
-      console.log(queryParams.get('shopOrderId'));
     });
 
   }

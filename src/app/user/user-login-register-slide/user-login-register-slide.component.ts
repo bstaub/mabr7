@@ -84,7 +84,6 @@ export class UserLoginRegisterSlideComponent implements OnInit {
   }
 
   onResize(event) {
-    // console.log(event.target.innerWidth);
     // https://stackoverflow.com/questions/35527456/angular-window-resize-event
     if (event.target.innerWidth > 768) {
       this.ifMobile = false;
