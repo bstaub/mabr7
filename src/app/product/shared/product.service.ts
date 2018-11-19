@@ -104,14 +104,12 @@ export class ProductService {
       } else if (field === 'high-low') {
         this.productCollection = this.afs.collection('products', ref => ref.where('productCategory', '==', category).orderBy('price', 'desc'));
       } else {
-        console.log('not defined sort option1: ', field);
+        console.error('not defined sort option1: ', field);
       }
     } else if (category !== undefined && field === undefined) {
       if (category !== '/') {
-        // console.log('aktuelle Kategorie gewählt: ', category);
         this.productCollection = this.afs.collection('products', ref => ref.where('productCategory', '==', category).orderBy('name', 'asc'));
       } else {
-        // console.log('alle Kategorien gewählt');
         this.productCollection = this.afs.collection('products', ref => ref.orderBy('name', 'asc'));
       }
     } else if ((category === undefined || category === '/') && field !== undefined) {
@@ -124,12 +122,12 @@ export class ProductService {
       } else if (field === 'high-low') {
         this.productCollection = this.afs.collection('products', ref => ref.orderBy('price', 'desc'));
       } else {
-        console.log('not defined sort option2: ', field);
+        console.error('not defined sort option2: ', field);
       }
     } else if (category === '/' && field === undefined) {
       this.productCollection = this.afs.collection('products', ref => ref.orderBy('name', 'asc'));
     } else {
-      console.log('not defined option filter');
+      console.error('not defined option filter');
     }
     return this.getProductDataWithKey();
   }

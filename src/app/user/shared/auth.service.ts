@@ -35,7 +35,7 @@ export class AuthService {
                     emailVerified: auth.emailVerified
                   };
                 }),
-                // tap( x => console.log(x))
+                // tap( x => console.error(x))
               );
           } else {
             return of(null);
@@ -72,7 +72,7 @@ export class AuthService {
           .then(() => {
             this.afAuth.auth.signOut();  // erst wenn der Benutzer erfasst wird aus Firebase ausloggen!
           })
-          .catch(err => console.log(err));
+          .catch(err => console.error(err));
       })
       .catch(error => {
         this.alertifyService.error(error.message);
@@ -108,7 +108,7 @@ export class AuthService {
           .then(() => {
             this.afAuth.auth.signOut();  // erst wenn der Benutzer erfasst wird aus Firebase ausloggen!
           })
-          .catch(err => console.log(err));
+          .catch(err => console.error(err));
       })
       .catch(error => {
         this.alertifyService.error(error.message);

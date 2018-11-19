@@ -70,7 +70,6 @@ export class UserLoginRegisterSlideComponent implements OnInit {
 
       })
       .catch(err => {
-        console.log('error bs: ' + err);
         this.alertifyService.error(err.message);
       });
   }

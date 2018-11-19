@@ -41,7 +41,6 @@ export class ProductCategoryService {
 
   deleteCategory(id: string) {
     this.categoryDoc = this.afs.doc(`categories/${id}`);
-    console.log('kat in service:', id);
     this.categoryDoc.delete();
   }
 
