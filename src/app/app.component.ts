@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { OrderService } from './order/shared/order.service';
 import { LocalStorageService } from './shared/local-storage.service';
 import { AuthService } from './user/shared/auth.service';
@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./styles/app.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'mabr7';
   OffCanvasClickedCheck = false;
   authSubscription: Subscription;
@@ -50,6 +50,9 @@ export class AppComponent implements OnInit {
       this.order = res;
       this.orderFlyoutService.refreshOrderFlyout(this.localStorageService.getData('products'), this.order);
     });
+  }
 
+  ngOnDestroy() {
+    this.authSubscription.unsubscribe();
   }
 }
