@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./styles/app.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'mabr7';
+  title = 'MABRSHOP';
   OffCanvasClickedCheck = false;
   authSubscription: Subscription;
   user: any;
