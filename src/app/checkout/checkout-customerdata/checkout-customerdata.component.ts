@@ -66,8 +66,6 @@ export class CheckoutCustomerdataComponent implements OnInit, OnDestroy {
     this.addressFormSubscription = this.CustomerAddressForm.valueChanges.subscribe(() => {
         if (this.shipqingEqualsBillingAddress) {
           this.formIsValid = this.CustomerAddressForm.controls.customerBillingAddress.valid;
-          console.log('test1' + this.formIsValid);
-          console.log(this.CustomerAddressForm.value.customerBillingAddress.country_b);
         } else {
           this.formIsValid = this.CustomerAddressForm.controls.customerBillingAddress.valid && this.CustomerAddressForm.controls.customerShippingAddress.valid;
           console.log('test2' + this.formIsValid);
