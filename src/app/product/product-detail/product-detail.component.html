@@ -22,7 +22,7 @@
           <p>{{product.description}}</p>
           <div class="d-flex justify-content-between">
             <div class="align-content-start w-50 mr-3">
-              <input class="form-control form-control-lg" type="number" placeholder="1" [(ngModel)]="product.itemcount">
+              <input class="form-control form-control-lg" type="number" min="1" placeholder="1" [(ngModel)]="product.itemcount">
             </div>
             <div class="align-content-start w-50">
               <button class="btn btn-primary btn-block" (click)="addToBasket(product)">in Warenkorb</button>
