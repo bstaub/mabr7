@@ -68,7 +68,6 @@ export class CheckoutCustomerdataComponent implements OnInit, OnDestroy {
           this.formIsValid = this.CustomerAddressForm.controls.customerBillingAddress.valid;
         } else {
           this.formIsValid = this.CustomerAddressForm.controls.customerBillingAddress.valid && this.CustomerAddressForm.controls.customerShippingAddress.valid;
-          console.log('test2' + this.formIsValid);
         }
       }
     );

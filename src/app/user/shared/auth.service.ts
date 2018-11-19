@@ -45,7 +45,6 @@ export class AuthService {
 
   // 1. Register normal, no order login!
   createUserInFirebaseAuthListEmailVerified(email, password, username) {
-    console.log('vor createUserInFirebaseAuthList->' + email + ' / ' + password);
 
     const actionCodeSettings = {
       url: 'http://localhost:4200/user-login-register-slide',
@@ -54,7 +53,6 @@ export class AuthService {
 
     this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(userData => {
-        console.log(userData);
         userData.user.sendEmailVerification(actionCodeSettings);
 
         const message = `Eine Verification EMail wurde an ${email} geschickt. Bitte prüfen Sie Ihr Posteingang und bestätigen Sie die Registrationsprüfung.`;
@@ -77,14 +75,12 @@ export class AuthService {
           .catch(err => console.log(err));
       })
       .catch(error => {
-        console.log(error);
         this.alertifyService.error(error.message);
       });
   }
 
   // 1. Register for order, not normal login!
   createUserInFirebaseAuthListEmailVerifiedOrder(email, password, username) {
-    console.log('vor createUserInFirebaseAuthList Order->' + email + ' / ' + password);
 
     const actionCodeSettings = {
       url: 'http://localhost:4200/user-login-register-slide?orderstep=1&login=1',
@@ -93,7 +89,6 @@ export class AuthService {
 
     this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(userData => {
-        console.log(userData);
         userData.user.sendEmailVerification(actionCodeSettings);
 
         const message = `Eine Verification EMail wurde an ${email} geschickt. Bitte prüfen Sie Ihr Posteingang und bestätigen Sie die Registrationsprüfung.`;
@@ -116,7 +111,6 @@ export class AuthService {
           .catch(err => console.log(err));
       })
       .catch(error => {
-        console.log(error);
         this.alertifyService.error(error.message);
       });
   }

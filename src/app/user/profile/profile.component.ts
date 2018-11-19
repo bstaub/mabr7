@@ -42,7 +42,6 @@ export class ProfileComponent implements OnInit {
       .then((uploadSnapshot: firebase.storage.UploadTaskSnapshot) => {
 
         uploadSnapshot.ref.getDownloadURL().then((downloadURL) => {
-          console.log(downloadURL);
           this.imageUrl = downloadURL;
           const data: User = {
             id: this.uid,

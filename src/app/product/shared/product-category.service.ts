@@ -30,7 +30,6 @@ export class ProductCategoryService {
 
   addCategory(category: ProductCategory) {
     this.productCategoryCollection.add(category).then((docRef) => {
-      console.log('Product written with ID: ', docRef.id);
       const NewCategoryKey: ProductCategory = {
         id: docRef.id,
       };

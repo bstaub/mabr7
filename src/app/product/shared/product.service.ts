@@ -151,7 +151,6 @@ export class ProductService {
   addProduct(product: Product) {
     // this.productCollection.add(product);
     this.productCollection.add(product).then((docRef) => {
-      // console.log('Product written with ID: ', docRef.id);
       const NewProductKey: Product = {
         key: docRef.id,
       };
