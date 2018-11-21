@@ -8,6 +8,7 @@ import { LocalStorageService } from '../../shared/local-storage.service';
 import { AuthService } from '../../user/shared/auth.service';
 import { OrderFlyoutService } from '../../core/shared/order-flyout.service';
 import { ProductPerOrderLocalStorage } from '../../models/productPerOrderLocalStorage.model';
+import { SettingsService } from '../../shared/settings.service';
 
 @Component({
   selector: 'app-checkout-overview',
@@ -26,6 +27,7 @@ export class CheckoutOverviewComponent implements OnInit, OnDestroy {
   nextOrderIdSubscription: Subscription;
   orderSubscription: Subscription;
   productsSubscription: Subscription;
+  p = 1;
 
 
   constructor(private orderService: OrderService,
@@ -34,6 +36,7 @@ export class CheckoutOverviewComponent implements OnInit, OnDestroy {
               private localStorageService: LocalStorageService,
               private authService: AuthService,
               private orderFlyoutService: OrderFlyoutService,
+              private settingsService: SettingsService,
   ) {
   }
 
@@ -102,6 +105,11 @@ export class CheckoutOverviewComponent implements OnInit, OnDestroy {
   goBack() {
     this.router.navigate(['/checkout/paymentdata']);
   }
+
+  get itemsPerPage() {
+    return this.settingsService.getSettings().itemsPerPage;
+  }
+
 
   ngOnDestroy() {
     this.authSubscription.unsubscribe();
