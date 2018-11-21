@@ -13,13 +13,13 @@ export class SliderService {
 
     this.slider = [
       {
-        image: `https://picsum.photos/2560/500?image=91`,
+        image: `assets/slider/slider1_guetzli.jpeg`,
         title: 'Photoapparate',
         text: 'Schiesse die besten Photos mit unseren Digitalkameras',
         link: 'http://localhost:4200/produkte/detail/dMCPQ1NYxKGCa5yvvaII',
       },
       {
-        image: `https://picsum.photos/2560/500?image=110`,
+        image: `assets/slider/slider2_guetzli.jpeg`,
         title: 'Herbstmomente',
         text: 'Gutschein für Übernachten auf dem Bauernhof',
         link: 'http://localhost:4200/produkte/detail/dMCPQ1NYxKGCa5yvvaII',
