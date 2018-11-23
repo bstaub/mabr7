@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UserService } from '../../user/shared/user.service';
 import { Router } from '@angular/router';
@@ -15,7 +15,8 @@ import { OrderFlyoutService } from '../../core/shared/order-flyout.service';
 @Component({
   selector: 'app-checkout-shipment',
   templateUrl: './checkout-shipment.component.html',
-  styles: [``]
+  styleUrls: ['./styles/checkout-shipment.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CheckoutShipmentComponent implements OnInit, OnDestroy {
   ShipmentForm: FormGroup;

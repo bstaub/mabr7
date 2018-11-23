@@ -1,11 +1,12 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-checkout-thx',
   templateUrl: './checkout-thx.component.html',
-  styles: []
+  styleUrls: ['./styles/checkout-thx.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CheckoutThxComponent implements OnInit, OnDestroy {
   shopOrderId: string;

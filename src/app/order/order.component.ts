@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { OrderService } from './shared/order.service';
 import { ProductService } from '../product/shared/product.service';
@@ -16,7 +16,8 @@ import { OrderFlyoutService } from '../core/shared/order-flyout.service';
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
-  styleUrls: ['./order.component.scss']
+  styleUrls: ['./style/order.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class OrderComponent implements OnInit, OnDestroy {
 

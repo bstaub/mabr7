@@ -30,7 +30,7 @@ div#mySidenav {
   color: #f1f1f1;
 }
 
-/* Position and style the close button (top right corner) */
+/* Position and styles the close button (top right corner) */
 .sidenav .closebtn {
   position: absolute;
   top: 0;
@@ -45,7 +45,7 @@ div#mySidenav {
   padding: 20px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+/* On smaller screens, where height is less than 450px, change the styles of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}

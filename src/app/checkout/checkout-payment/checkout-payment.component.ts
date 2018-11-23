@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Order } from '../../models/order.model';
 import { Router } from '@angular/router';
 import { UserService } from '../../user/shared/user.service';
@@ -14,8 +14,8 @@ import { OrderService } from '../../order/shared/order.service';
 @Component({
   selector: 'app-checkout-payment',
   templateUrl: './checkout-payment.component.html',
-  styles: [`
-  `]
+  styleUrls: ['./styles/checkout-payment.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CheckoutPaymentComponent implements OnInit, OnDestroy {
 

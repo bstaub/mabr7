@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { Order } from '../../models/order.model';
 import { Subscription } from 'rxjs';
@@ -13,7 +13,8 @@ import { SettingsService } from '../../shared/settings.service';
 @Component({
   selector: 'app-checkout-overview',
   templateUrl: './checkout-overview.component.html',
-  styleUrls: ['./checkout-overview.component.scss']
+  styleUrls: ['./styles/checkout-overview.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CheckoutOverviewComponent implements OnInit, OnDestroy {
   productPerOrderLocalStorage: ProductPerOrderLocalStorage[];

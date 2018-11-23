@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { LocalStorageService } from '../../../shared/local-storage.service';
 import { OrderFlyoutService } from '../../shared/order-flyout.service';
 import { ProductPerOrderLocalStorage } from '../../../models/productPerOrderLocalStorage.model';
@@ -9,7 +9,8 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-header-orderflyout',
   templateUrl: './header-orderflyout.component.html',
-  styleUrls: ['./header-orderflyout.component.scss']
+  styleUrls: ['./style/header-orderflyout.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HeaderOrderFlyoutComponent implements OnInit, OnDestroy {
   productsPerOrderLocalStorage: ProductPerOrderLocalStorage[];
