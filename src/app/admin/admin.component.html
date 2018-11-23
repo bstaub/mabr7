@@ -1,8 +1,8 @@
 <app-page-title title="Admin Dashboard" [children]="[{title: 'Admin Dashboard'}]"></app-page-title>
-<div class="container-fluid">
+<div class="container-fluid" id="admin">
 
   <div class="container">
-    <div class="row">
+    <div class="row admin-icons">
 
       <div class="col-md-3">
         <a routerLink="add">
@@ -31,16 +31,16 @@
       </div>
 
       <div class="col-md-3">
-        <div class="card text-center bg-primary text-white mb-3">
-          <a routerLink="users/list">
-            <div class="card-body">
-              <h6>Benutzer Verwalten</h6>
-              <h4 class="display-4">
-                <i class="fa fa-users"></i>
-              </h4>
-            </div>
-          </a>
-        </div>
+        <a routerLink="users/list">
+          <div class="card text-center bg-primary text-white mb-3">
+              <div class="card-body">
+                <h6>Benutzer Verwalten</h6>
+                <h4 class="display-4">
+                  <i class="fa fa-users"></i>
+                </h4>
+              </div>
+          </div>
+        </a>
       </div>
 
       <div class="col-md-3">
