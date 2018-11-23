@@ -4,23 +4,24 @@
 
   <div class="row">
     <div class="col-md-12">
+
       <h1>Warenkorb</h1>
 
       <div class="table-responsive">
         <table class="table table-striped">
           <thead>
           <tr>
-            <th>Artikel</th>
-            <th>Menge</th>
-            <th class="text text-right">Preis CHF</th>
-            <th class="text text-right">Rabatt %</th>
-            <th class="text text-right">Total CHF</th>
-            <th ></th>
+            <th class="product">Artikel</th>
+            <th class="orderinput">Menge</th>
+            <th class="price text text-right">Preis CHF</th>
+            <th class="discount text text-right">%</th>
+            <th class="price text text-right">Total CHF</th>
+            <th class="action text-right"></th>
           </tr>
           </thead>
           <tbody>
           <tr *ngFor="let product of productPerOrderLocalStorage | arraySort: 'name' | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
-            <td>
+            <td class="product">
               <figure class="media">
                 <div>
                   <img src="{{product.image}}" alt="{{product.description}}" class="img-thumbnail" width="100px">
@@ -73,13 +74,13 @@
           </tfoot>
 
         </table>
-      </div>
+
 
 
     </div>
 
 
-
+    </div>
   </div>
   <button class="btn btn-primary float-left" (click)="onDeleteScart()">Warenkorb Löschen</button>&nbsp;
   <button [disabled]="(productPerOrderLocalStorage.length == 0)" class="btn btn-primary float-right" (click)="onEnterOrderData()">Bestellen</button>
