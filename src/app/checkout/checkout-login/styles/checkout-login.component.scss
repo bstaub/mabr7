@@ -1,1 +1,19 @@
 @import '../../../styles/_shared';
+
+a:hover{
+
+  text-decoration: none;
+
+  .card-header {
+    background: $theme-color3;
+  }
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+  h4, .h4 {
+    font-size: 1rem;
+  }
+}
