@@ -35,6 +35,7 @@
   margin: 20px auto;
   max-width: 1200px;
   position: relative;
+  z-index: 20;
 }
 ul.checkout-bar {
   margin: 0 20px;
@@ -135,6 +136,7 @@ ul.checkout-bar {
     padding: 0;
     position: absolute;
     width: 100%;
+    z-index: 20;
     &:before {
       @include blue-stripe;
       @include inner-shadow;
