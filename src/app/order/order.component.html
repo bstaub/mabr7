@@ -8,7 +8,7 @@
       <h1>Warenkorb</h1>
 
       <div class="table-responsive">
-        <table class="table table-striped">
+        <table class="order table table-striped">
           <thead>
           <tr>
             <th class="product">Artikel</th>
@@ -20,7 +20,8 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let product of productPerOrderLocalStorage | arraySort: 'name' | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
+          <tr
+            *ngFor="let product of productPerOrderLocalStorage | arraySort: 'name' | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
             <td class="product">
               <figure class="media">
                 <div>
@@ -29,10 +30,7 @@
                 <figcaption class="media-body">
                   <h6 class="title text-truncate">{{product.name}}</h6>
                 </figcaption>
-
-
               </figure>
-
             </td>
             <td class="orderinput">
               <div class="input-group">
@@ -46,11 +44,12 @@
                 </div>
               </div>
             </td>
-
-
-            <td data-title="Preis CHF" class="text text-right">{{product.price  | number : '1.2-2'}}</td>
-            <td data-title="Rabatt %" class="text text-right"><p *ngIf="product.discountFactor != 1">{{(1- product.discountFactor) *100 | number : '1.0'}}</p></td>
-            <td data-title="Total CHF" class="text text-right">{{product.price * product.qty * product.discountFactor | number : '1.2-2'}}</td>
+            <td data-title="Preis CHF" class="text text-right">{{product.price | number : '1.2-2'}}</td>
+            <td data-title="Rabatt %" class="text text-right"><p *ngIf="product.discountFactor != 1">{{(1-
+              product.discountFactor) *100 | number : '1.0'}}</p></td>
+            <td data-title="Total CHF" class="text text-right">{{product.price * product.qty * product.discountFactor |
+              number : '1.2-2'}}
+            </td>
             <td align="rigth">
 
               <button class="btn btn-sm btn-danger" (click)="onDeletItem(product.productId)">
@@ -61,7 +60,7 @@
           </tbody>
           <tfoot>
 
-          <tr>
+          <tr class="scarttotal">
             <td class="no-responsive">Gesammttotal CHF</td>
             <td class="no-responsive"></td>
             <td class="no-responsive"></td>
@@ -70,20 +69,21 @@
             <td class="no-responsive"></td>
           </tr>
 
-
           </tfoot>
-
         </table>
 
-
-
-    </div>
+      </div>
 
 
     </div>
   </div>
-  <button class="btn btn-primary float-left" (click)="onDeleteScart()">Warenkorb Löschen</button>&nbsp;
-  <button [disabled]="(productPerOrderLocalStorage.length == 0)" class="btn btn-primary float-right" (click)="onEnterOrderData()">Bestellen</button>
+
+  <br><br><br>
+  <button class="orderaction btn btn-primary float-left" (click)="onDeleteScart()">Warenkorb Löschen</button>&nbsp;
+  <button [disabled]="(productPerOrderLocalStorage.length == 0)" class="orderaction btn btn-primary float-right"
+          (click)="onEnterOrderData()">Bestellen
+  </button>
+
 
   <pagination-controls (pageChange)="p = $event"
                        maxSize="9"
@@ -96,12 +96,6 @@
                        screenReaderPageLabel="Seite"
                        screenReaderCurrentLabel="Du bist auf Seite">
   </pagination-controls>
-
-  <br><br><br>
-
-
-
-
 
 
 </div>

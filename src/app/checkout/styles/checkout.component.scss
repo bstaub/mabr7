@@ -179,3 +179,12 @@ ul.checkout-bar {
     }
   }
 }
+
+
+@media screen and (max-width: 415px) {
+
+  button.checkoutaction {
+    width: 100%;
+  }
+
+}

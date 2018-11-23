@@ -9,6 +9,7 @@ import { AuthService } from '../../user/shared/auth.service';
 import { OrderFlyoutService } from '../../core/shared/order-flyout.service';
 import { ProductPerOrderLocalStorage } from '../../models/productPerOrderLocalStorage.model';
 import { SettingsService } from '../../shared/settings.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-checkout-overview',
@@ -17,6 +18,8 @@ import { SettingsService } from '../../shared/settings.service';
   encapsulation: ViewEncapsulation.None
 })
 export class CheckoutOverviewComponent implements OnInit, OnDestroy {
+  ShipmentForm: FormGroup;
+  PaymentForm: FormGroup;
   productPerOrderLocalStorage: ProductPerOrderLocalStorage[];
   user: any;
   orderData: any;
@@ -42,6 +45,7 @@ export class CheckoutOverviewComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.initFormGroups();
     this.authSubscription = this.authService.user$.subscribe((user) => {
       if (user && user.emailVerified) {
         this.user = user;
@@ -91,6 +95,7 @@ export class CheckoutOverviewComponent implements OnInit, OnDestroy {
     this.orderSubscription = this.orderService.getUserOrder(userId).subscribe((res) => {
       this.orderData = res;
       this.orderFlyoutService.refreshOrderFlyout(this.localStorageService.getData('products'), this.orderData);
+      this.setOrderData();
     });
 
     this.nextOrderIdSubscription = this.orderService.getLatestOrder().subscribe((res) => {
@@ -111,6 +116,26 @@ export class CheckoutOverviewComponent implements OnInit, OnDestroy {
     return this.settingsService.getSettings().itemsPerPage;
   }
 
+  setOrderData() {
+    this.ShipmentForm.patchValue({
+      shippingMethod: this.orderData.shippingMethod
+    });
+
+    this.PaymentForm.patchValue({
+      paymentMethod: this.orderData.paymentMethod
+    });
+
+  }
+
+  initFormGroups() {
+    this.ShipmentForm = new FormGroup({
+      shippingMethod: new FormControl()
+    });
+
+    this.PaymentForm = new FormGroup({
+      paymentMethod: new FormControl()
+    });
+  }
 
   ngOnDestroy() {
     this.authSubscription.unsubscribe();

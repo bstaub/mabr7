@@ -1,24 +1,22 @@
-<div class="container">
 
   <h1>Übersicht</h1>
 
 
-  <div class="container">
 
     <div class="table-responsive">
-      <table class="table table-striped">
+      <table class="order table table-striped">
         <thead>
         <tr>
-          <th>Artikel</th>
-          <th>Menge</th>
-          <th class="text text-right">Preis CHF</th>
-          <th class="text text-right">Rabatt %</th>
-          <th class="text text-right">Total CHF</th>
-          <th ></th>
+          <th class="product">Artikel</th>
+          <th class="orderinput text-right">Menge</th>
+          <th class="price text text-right">Preis CHF</th>
+          <th class="discount text text-right">%</th>
+          <th class="price text text-right">Total CHF</th>
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let product of productPerOrderLocalStorage | arraySort: 'name' | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
+        <tr
+          *ngFor="let product of productPerOrderLocalStorage | arraySort: 'name' | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
           <td>
             <figure class="media">
               <div>
@@ -32,33 +30,26 @@
             </figure>
 
           </td>
-          <td class="orderinput">
-            <div class="input-group">
+          <td data-title="Menge" class="orderinput text text-right">{{product.qty}}</td>
 
-              <input type="text"  class="form-control text-center" value="{{product.qty}}" readonly>
 
-            </div>
+          <td data-title="Preis CHF" class="text text-right">{{product.price | number : '1.2-2'}}</td>
+          <td data-title="Rabatt %" class="text text-right"><p *ngIf="product.discountFactor != 1">{{(1-
+            product.discountFactor) *100 | number : '1.0'}}</p></td>
+          <td data-title="Total CHF" class="text text-right">{{product.price * product.qty * product.discountFactor |
+            number : '1.2-2'}}
           </td>
 
-
-          <td data-title="Preis CHF" class="text text-right">{{product.price  | number : '1.2-2'}}</td>
-          <td data-title="Rabatt %" class="text text-right"><p *ngIf="product.discountFactor != 1">{{(1- product.discountFactor) *100 | number : '1.0'}}</p></td>
-          <td data-title="Total CHF" class="text text-right">{{product.price * product.qty * product.discountFactor | number : '1.2-2'}}</td>
-          <td align="rigth">
-
-
-          </td>
         </tr>
         </tbody>
         <tfoot>
 
-        <tr>
+        <tr class="scarttotal">
           <td class="no-responsive">Gesammttotal CHF</td>
           <td class="no-responsive"></td>
           <td class="no-responsive"></td>
           <td class="no-responsive"></td>
-          <td data-title="Gesammtsumme CHF" class="text-right">{{orderData?.totalValue | number : '1.2-2'}}</td>
-          <td class="no-responsive"></td>
+          <td data-title="Gesammtsumme CHF" class=" price text-right">{{orderData?.totalValue | number : '1.2-2'}}</td>
         </tr>
 
 
@@ -67,7 +58,7 @@
       </table>
     </div>
 
-
+     <br><br><br>
     <h1>Rechnungsadresse</h1>
 
 
@@ -75,55 +66,58 @@
 
       <div>
         <label for="firstname_b">Vorname</label>
-        <input class="form-control" type="text" id="firstname_b" name="firstname_b"  value="{{orderData?.customerBillingAddress.firstname}}">
+        <input class="form-control" type="text" id="firstname_b" name="firstname_b"
+               value="{{orderData?.customerBillingAddress.firstname}}">
       </div>
 
 
       <div>
         <label for="lastname_b">Nachname</label>
-        <input class="form-control" type="text" id="lastname_b" name="lastname_b" value="{{orderData?.customerBillingAddress.lastname}}">
+        <input class="form-control" type="text" id="lastname_b" name="lastname_b"
+               value="{{orderData?.customerBillingAddress.lastname}}">
       </div>
-
 
 
       <div>
         <label for="address_b">Strasse</label>
-        <input class="form-control" type="text" id="address_b" name="address_b" value="{{orderData?.customerBillingAddress.address}}">
+        <input class="form-control" type="text" id="address_b" name="address_b"
+               value="{{orderData?.customerBillingAddress.address}}">
       </div>
-
 
 
       <div>
         <label for="zip_b">PLZ</label>
-        <input class="form-control" type="text" id="zip_b" name="zip_b" value="{{orderData?.customerBillingAddress.zip}}">
+        <input class="form-control" type="text" id="zip_b" name="zip_b"
+               value="{{orderData?.customerBillingAddress.zip}}">
       </div>
-
 
 
       <div>
         <label for="city_b">Ort</label>
-        <input class="form-control" type="text" id="city_b" name="city_b" value="{{orderData?.customerBillingAddress.city}}">
+        <input class="form-control" type="text" id="city_b" name="city_b"
+               value="{{orderData?.customerBillingAddress.city}}">
       </div>
-
 
 
       <div>
         <label for="country_b">Land</label>
-        <input class="form-control" type="text" id="country_b" name="country_b" value="{{orderData?.customerBillingAddress.country}}">
+        <input class="form-control" type="text" id="country_b" name="country_b"
+               value="{{orderData?.customerBillingAddress.country}}">
       </div>
-
 
 
       <div>
         <label for="phone_b">Telefon</label>
-        <input class="form-control" type="text" id="phone_b" name="phone_b" value="{{orderData?.customerBillingAddress.phone}}">
+        <input class="form-control" type="text" id="phone_b" name="phone_b"
+               value="{{orderData?.customerBillingAddress.phone}}">
       </div>
 
 
       <div *ngIf="!user">
         <div>
           <label for="mail_b">E-Mail</label>
-          <input class="form-control" type="text" id="mail_b" name="mail_b" value="{{orderData?.customerBillingAddress.mail}}">
+          <input class="form-control" type="text" id="mail_b" name="mail_b"
+                 value="{{orderData?.customerBillingAddress.mail}}">
         </div>
       </div>
 
@@ -133,12 +127,12 @@
 
     <br>
     <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="shipqingEqualsBillingAddress" [ngModel]="orderData?.shipqingEqualsBillingAddress" onclick="return false">
-      <label class="form-check-label" for="shipqingEqualsBillingAddress">Lieferadresse gleich wie Rechnungsadresse</label>
+      <input type="checkbox" class="form-check-input" id="shipqingEqualsBillingAddress"
+             [ngModel]="orderData?.shipqingEqualsBillingAddress" onclick="return false">
+      <label class="form-check-label" for="shipqingEqualsBillingAddress">Lieferadresse gleich wie
+        Rechnungsadresse</label>
     </div>
     <p></p>
-
-
 
 
     <div *ngIf="!orderData?.shipqingEqualsBillingAddress">
@@ -147,149 +141,130 @@
       <h1>Lieferadresse</h1>
 
 
-
-
       <div>
         <label for="firstname_s">Vorname</label>
-        <input class="form-control" type="text" id="firstname_s" name="firstname_s" value="{{orderData?.customerShippingAddress.firstname}}">
+        <input class="form-control" type="text" id="firstname_s" name="firstname_s"
+               value="{{orderData?.customerShippingAddress.firstname}}">
       </div>
-
-
-
-
 
       <div>
         <label for="lastname_s">Nachname</label>
-        <input class="form-control" type="text" id="lastname_s" name="lastname_s" value="{{orderData?.customerShippingAddress.lastname}}">
+        <input class="form-control" type="text" id="lastname_s" name="lastname_s"
+               value="{{orderData?.customerShippingAddress.lastname}}">
       </div>
-
 
 
       <div>
         <label for="address_s">Strasse</label>
-        <input class="form-control" type="text" id="address_s" name="address_s" value="{{orderData?.customerShippingAddress.address}}">
+        <input class="form-control" type="text" id="address_s" name="address_s"
+               value="{{orderData?.customerShippingAddress.address}}">
       </div>
-
 
 
       <div>
         <label for="zip_s">PLZ</label>
-        <input class="form-control" type="text" id="zip_s" name="zip_s" value="{{orderData?.customerShippingAddress.zip}}">
+        <input class="form-control" type="text" id="zip_s" name="zip_s"
+               value="{{orderData?.customerShippingAddress.zip}}">
       </div>
-
 
 
       <div>
         <label for="city_s">Ort</label>
-        <input class="form-control" type="text" id="city_s" name="city_s" value="{{orderData?.customerShippingAddress.city}}">
+        <input class="form-control" type="text" id="city_s" name="city_s"
+               value="{{orderData?.customerShippingAddress.city}}">
       </div>
-
 
 
       <div>
         <label for="country_s">Land</label>
-        <input class="form-control" type="text" id="country_s" name="country_s" value="{{orderData?.customerShippingAddress.country}}">
+        <input class="form-control" type="text" id="country_s" name="country_s"
+               value="{{orderData?.customerShippingAddress.country}}">
       </div>
-
 
 
       <div>
         <label for="phone_s">Telefon</label>
-        <input class="form-control" type="text" id="phone_s" name="phone_s" value="{{orderData?.customerShippingAddress.phone}}">
+        <input class="form-control" type="text" id="phone_s" name="phone_s"
+               value="{{orderData?.customerShippingAddress.phone}}">
       </div>
 
 
       <div>
         <div class="form-group">
           <label for="mail_s">E-Mail</label>
-          <input class="form-control" type="text" id="mail_s" name="mail_s" value="{{orderData?.customerShippingAddress.mail}}">
+          <input class="form-control" type="text" id="mail_s" name="mail_s"
+                 value="{{orderData?.customerShippingAddress.mail}}">
         </div>
       </div>
 
     </div>
 
-    <br>
-    <br>
+  <br><br><br>
 
     <h1>Versandart</h1>
 
-    <div>
+    <form [formGroup]="ShipmentForm">
 
+    <table class="table table-striped">
+      <tbody>
+      <tr>
+        <td><input type="radio" value="express" name="shippingMethod" formControlName="shippingMethod" onclick="return false"></td>
+        <td>Express Priority</td>
+        <td>CHF 10.00</td>
+      </tr>
+      <tr>
+        <td><input type="radio" value="fedex" name="shippingMethod" formControlName="shippingMethod" onclick="return false"></td>
+        <td>FedEx</td>
+        <td>CHF 15.00</td>
+      </tr>
+      <tr>
+        <td><input type="radio" value="normal" name="shippingMethod" formControlName="shippingMethod" onclick="return false"></td>
+        <td> Normal</td>
+        <td>CHF 5.00</td>
+      </tr>
+      </tbody>
+    </table>
 
-      <label>
-        <input type="radio" value="express" name="shippingMethod" [ngModel]="orderData?.shippingMethod" onclick="return false"> Express Priority
-      </label>
+    </form>
 
-      <br>
-      <label>
-        <input type="radio" value="fedex" name="shippingMethod" [ngModel]="orderData?.shippingMethod" onclick="return false">  FedEx
-      </label>
+  <br><br><br>
 
-      <br>
-      <label>
-        <input type="radio" value="normal" name="shippingMethod"  [ngModel]="orderData?.shippingMethod" onclick="return false">  Normal
-      </label>
-
-
-
-
-      <br>
-      <br>
-
-
-
-    </div>
 
 
     <h1>Zahlart</h1>
-    <div>
 
+    <form [formGroup]="PaymentForm">
 
-      <label>
-        <input type="radio" value="invoice" name="paymentMethod" [ngModel]="orderData?.paymentMethod" onclick="return false"> Rechnung
-      </label>
-
-      <br>
-      <label>
-        <input type="radio" value="prepayment" name="paymentMethod"  [ngModel]="orderData?.paymentMethod" onclick="return false"> Vorkasse
-      </label>
-
-      <br>
-      <label>
-        <input type="radio" value="creditcard" name="paymentMethod"  [ngModel]="orderData?.paymentMethod" onclick="return false"> Kreditkarte
-      </label>
-
-
-
-
-
-    </div>
-
-
-    <br><br>
-
-
-    <button  type="button" class="btn btn-primary pull-left" (click)="goBack()">zurück</button>
-    <button  type="button" class="btn btn-primary pull-right" (click)="orderNow()">Bestellung abschicken</button>
+    <table class="table table-striped">
+      <tbody>
+      <tr>
+        <td><input type="radio" value="invoice" name="paymentMethod" formControlName="paymentMethod" onclick="return false"></td>
+        <td>Rechnung</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td> <input type="radio" value="prepayment" name="paymentMethod"  formControlName="paymentMethod" onclick="return false"></td>
+        <td>Vorkasse</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>  <input type="radio" value="creditcard" name="paymentMethod"  formControlName="paymentMethod" onclick="return false"></td>
+        <td>Kreditkarte</td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
 
 
 
+      <div class="row">
+        <div class="col-12">
+    <button type="button" class="checkoutaction btn btn-primary float-left mb-2" (click)="goBack()">zurück</button>
+    <button type="button" class="checkoutaction btn btn-primary float-right" (click)="orderNow()">Bestellung
+      abschicken
+    </button>
+        </div>
+      </div>
 
 
-
-
-
-
-
-
-
-    <br>
-    <br>
-    <br>
-
-
-  </div>
-
-
-
-</div>
+    </form>

@@ -1,5 +1,15 @@
 @import '../../styles/_shared';
 
+tr.scarttotal {
+  border-bottom: 1px solid $grey-button;
+  font-weight: 600;
+}
+
+table.table-striped > thead > tr > th{
+  border-top:1px solid $grey-button;
+  border-bottom:1px solid $grey-button;
+}
+
 .img-thumbnail {
   max-width: 100px;
   height: auto;
@@ -19,10 +29,8 @@
 
 
 
-
-
 th.action{
-  width: 7%;
+  width: 9%;
 }
 
 th.orderinput,
@@ -35,7 +43,7 @@ th.discount{
 }
 
 th.price{
-  width: 10%;
+  width: 13%;
 }
 
 
@@ -71,8 +79,11 @@ button.btn {
     float: left;
     width: 100%;}
 
-  thead, .no-responsive { display: none }
-  td,th { display: block }
+
+  .order {
+    td,th { display: block }
+    thead,.no-responsive { display: none }
+  }
 
   .table td:before {
     content: attr(data-title)" ";
@@ -96,4 +107,14 @@ button.btn {
     width: 100%;
   }
 }
+
+@media screen and (max-width: 415px) {
+
+  button.orderaction {
+    width: 100%;
+  }
+
+}
+
+
 
