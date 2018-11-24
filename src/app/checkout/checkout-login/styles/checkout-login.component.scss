@@ -1,12 +1,41 @@
 @import '../../../styles/_shared';
 
+
+i {
+  color: #fff;
+}
+
+a{
+  .card-header {
+    &.card-header-green {
+      background: $theme-color6;
+    }
+    &.card-header-red{
+      background: $theme-color7;
+    }
+    &.card-header-blue{
+      background: $theme-color8;
+    }
+  }
+}
+
+
 a:hover{
 
   text-decoration: none;
 
   .card-header {
-    background: $theme-color3;
+    &.card-header-green {
+      background: $theme-color6-active;
+    }
+    &.card-header-red {
+      background: $theme-color7-active;
+    }
+    &.card-header-blue {
+      background: $theme-color8-active;
+    }
   }
+
 
 }
 

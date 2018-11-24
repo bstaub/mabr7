@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../shared/auth.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
@@ -9,7 +9,8 @@ import { AlertifyService } from '../../shared/alertify.service';
 @Component({
   selector: 'app-user-login-register-slide',
   templateUrl: './user-login-register-slide.component.html',
-  styleUrls: ['./user-login-register-slide.component.scss']
+  styleUrls: ['./styles/user-login-register-slide.component.scss'],
+  // encapsulation: ViewEncapsulation.None
 })
 export class UserLoginRegisterSlideComponent implements OnInit {
 

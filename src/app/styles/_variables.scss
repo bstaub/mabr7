@@ -25,12 +25,17 @@ $spinner-color: $grey;
 
 
 //Theme Colors https://color.adobe.com/de/webshop-color-theme-11628321/edit/?copy=true
-$theme-color1: #6166C5;
+$theme-color1: #000;
 $theme-color2: #70A1A8;
-$theme-color3: #6BBA49; // grün
+$theme-color3: #51a52e; // grün
 $theme-color4: #FD933A;
 $theme-color5: #FC6C48;
+$theme-color6: #7cbf8b; // dezent grün
+$theme-color7: #f98d8d; // dezent rot
+$theme-color8: #7b8dc5; // dezent blau
 
 $grey-button: grey;
 
-
+$theme-color6-active: lighten($theme-color6, 15%);
+$theme-color7-active: lighten($theme-color7, 15%);
+$theme-color8-active: lighten($theme-color8, 15%);
