@@ -1,9 +1,11 @@
-<div class="container-fluid">
+<app-page-title title="Produkt verwalten" [children]="[{title: 'Produkt verwalten'}]"></app-page-title>
+<div class="container">
   <div *ngIf="products$" class="product-list">
     <div *ngFor="let product of products$ | async | paginate: { itemsPerPage: 20, currentPage: p }; let i = index">
       <app-admin-product-list-edit [product]='product' [count]='i'></app-admin-product-list-edit>
     </div>
   </div>
+  <a appBackButton class="mt-4 d-block pointer">Zurück zum Dashboard</a>
 </div>
 
 <pagination-controls (pageChange)="p = $event"

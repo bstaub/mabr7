@@ -1,0 +1,35 @@
+@import '../../../styles/_shared';
+
+a{
+  .card {
+    &.card-green {
+      background: $theme-color6;
+    }
+    &.card-red{
+      background: $theme-color7;
+    }
+    &.card-blue{
+      background: $theme-color8;
+    }
+  }
+}
+
+
+a:hover{
+
+  text-decoration: none;
+
+  .card {
+    &.card-green {
+      background: $theme-color6-active;
+    }
+    &.card-red {
+      background: $theme-color7-active;
+    }
+    &.card-blue {
+      background: $theme-color8-active;
+    }
+  }
+
+
+}
