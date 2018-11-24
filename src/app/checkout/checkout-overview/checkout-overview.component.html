@@ -1,270 +1,276 @@
-
-  <h3>Übersicht</h3>
-
+<h3>Übersicht</h3>
 
 
-    <div class="table-responsive">
-      <table class="order table table-striped">
-        <thead>
-        <tr>
-          <th class="product">Artikel</th>
-          <th class="orderinput text-right">Menge</th>
-          <th class="price text text-right">Preis CHF</th>
-          <th class="discount text text-right">%</th>
-          <th class="price text text-right">Total CHF</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr
-          *ngFor="let product of productPerOrderLocalStorage | arraySort: 'name' | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
-          <td>
-            <figure class="media">
-              <div>
-                <img src="{{product.image}}" alt="{{product.description}}" class="img-thumbnail" width="100px">
-              </div>
-              <figcaption class="media-body">
-                <h6 class="title text-truncate">{{product.name}}</h6>
-              </figcaption>
+<div class="table-responsive">
+  <table class="order table table-striped">
+    <thead>
+    <tr>
+      <th class="product">Artikel</th>
+      <th class="orderinput text-right">Menge</th>
+      <th class="price text text-right">Preis CHF</th>
+      <th class="discount text text-right">%</th>
+      <th class="price text text-right">Total CHF</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr
+      *ngFor="let product of productPerOrderLocalStorage | arraySort: 'name' | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
+      <td>
+        <figure class="media">
+          <div>
+            <img src="{{product.image}}" alt="{{product.description}}" class="img-thumbnail" width="100px">
+          </div>
+          <figcaption class="media-body">
+            <h6 class="title text-truncate">{{product.name}}</h6>
+          </figcaption>
 
 
-            </figure>
+        </figure>
 
-          </td>
-          <td data-title="Menge" class="orderinput text text-right">{{product.qty}}</td>
-
-
-          <td data-title="Preis CHF" class="text text-right">{{product.price | number : '1.2-2'}}</td>
-          <td data-title="Rabatt %" class="text text-right"><p *ngIf="product.discountFactor != 1">{{(1-
-            product.discountFactor) *100 | number : '1.0'}}</p></td>
-          <td data-title="Total CHF" class="text text-right">{{product.price * product.qty * product.discountFactor |
-            number : '1.2-2'}}
-          </td>
-
-        </tr>
-        </tbody>
-        <tfoot>
-
-        <tr class="scarttotal">
-          <td class="no-responsive">Gesammttotal CHF</td>
-          <td class="no-responsive"></td>
-          <td class="no-responsive"></td>
-          <td class="no-responsive"></td>
-          <td data-title="Gesammtsumme CHF" class=" price text-right">{{orderData?.totalValue | number : '1.2-2'}}</td>
-        </tr>
+      </td>
+      <td data-title="Menge" class="orderinput text text-right">{{product.qty}}</td>
 
 
-        </tfoot>
+      <td data-title="Preis CHF" class="text text-right">{{product.price | number : '1.2-2'}}</td>
+      <td data-title="Rabatt %" class="text text-right"><p *ngIf="product.discountFactor != 1">{{(1-
+        product.discountFactor) *100 | number : '1.0'}}</p></td>
+      <td data-title="Total CHF" class="text text-right">{{product.price * product.qty * product.discountFactor |
+        number : '1.2-2'}}
+      </td>
 
-      </table>
+    </tr>
+    </tbody>
+    <tfoot>
+
+    <tr class="scarttotal">
+      <td class="no-responsive">Gesammttotal CHF</td>
+      <td class="no-responsive"></td>
+      <td class="no-responsive"></td>
+      <td class="no-responsive"></td>
+      <td data-title="Gesammtsumme CHF" class=" price text-right">{{orderData?.totalValue | number : '1.2-2'}}</td>
+    </tr>
+
+
+    </tfoot>
+
+  </table>
+</div>
+
+<br><br><br>
+<h1>Rechnungsadresse</h1>
+
+
+<div>
+
+  <div class="row">
+    <div class="form-group col-md-6 col-sm-12">
+    <label for="firstname_b">Vorname</label>
+    <input class="form-control" type="text" id="firstname_b" name="firstname_b"
+           value="{{orderData?.customerBillingAddress.firstname}}" readonly>
+  </div>
+
+
+    <div class="form-group col-md-6 col-sm-12">
+    <label for="lastname_b">Nachname</label>
+    <input class="form-control" type="text" id="lastname_b" name="lastname_b"
+           value="{{orderData?.customerBillingAddress.lastname}}" readonly>
+  </div>
+  </div>
+
+  <div>
+    <label for="address_b">Strasse</label>
+    <input class="form-control" type="text" id="address_b" name="address_b"
+           value="{{orderData?.customerBillingAddress.address}}" readonly>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-3 col-sm-12">
+    <label for="zip_b">PLZ</label>
+    <input class="form-control" type="text" id="zip_b" name="zip_b"
+           value="{{orderData?.customerBillingAddress.zip}}" readonly>
+  </div>
+
+
+    <div class="form-group col-md-5 col-sm-12">
+    <label for="city_b">Ort</label>
+    <input class="form-control" type="text" id="city_b" name="city_b"
+           value="{{orderData?.customerBillingAddress.city}}" readonly>
+  </div>
+
+
+    <div class="form-group col-md-4 col-sm-12">
+    <label for="country_b">Land</label>
+    <input class="form-control" type="text" id="country_b" name="country_b"
+           value="{{orderData?.customerBillingAddress.country}}" readonly>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="form-group col-md-6 col-sm-12">
+    <label for="phone_b">Telefon</label>
+    <input class="form-control" type="text" id="phone_b" name="phone_b"
+           value="{{orderData?.customerBillingAddress.phone}}" readonly>
+  </div>
+
+
+  <div *ngIf="!user">
+    <div class="form-group col-md-6 col-sm-12">
+      <label for="mail_b">E-Mail</label>
+      <input class="form-control" type="text" id="mail_b" name="mail_b"
+             value="{{orderData?.customerBillingAddress.mail}}" readonly>
     </div>
+  </div>
+  </div>
 
-     <br><br><br>
-    <h1>Rechnungsadresse</h1>
-
-
-    <div>
-
-      <div>
-        <label for="firstname_b">Vorname</label>
-        <input class="form-control" type="text" id="firstname_b" name="firstname_b"
-               value="{{orderData?.customerBillingAddress.firstname}}">
-      </div>
+</div>
+<br>
 
 
-      <div>
-        <label for="lastname_b">Nachname</label>
-        <input class="form-control" type="text" id="lastname_b" name="lastname_b"
-               value="{{orderData?.customerBillingAddress.lastname}}">
-      </div>
+<br>
+<div class="form-check">
+  <input type="checkbox" class="form-check-input" id="shipqingEqualsBillingAddress"
+         [ngModel]="orderData?.shipqingEqualsBillingAddress" onclick="return false">
+  <label class="form-check-label" for="shipqingEqualsBillingAddress">Lieferadresse gleich wie
+    Rechnungsadresse</label>
+</div>
+<p></p>
 
 
-      <div>
-        <label for="address_b">Strasse</label>
-        <input class="form-control" type="text" id="address_b" name="address_b"
-               value="{{orderData?.customerBillingAddress.address}}">
-      </div>
+<div *ngIf="!orderData?.shipqingEqualsBillingAddress">
 
 
-      <div>
-        <label for="zip_b">PLZ</label>
-        <input class="form-control" type="text" id="zip_b" name="zip_b"
-               value="{{orderData?.customerBillingAddress.zip}}">
-      </div>
+  <h3>Lieferadresse</h3>
 
-
-      <div>
-        <label for="city_b">Ort</label>
-        <input class="form-control" type="text" id="city_b" name="city_b"
-               value="{{orderData?.customerBillingAddress.city}}">
-      </div>
-
-
-      <div>
-        <label for="country_b">Land</label>
-        <input class="form-control" type="text" id="country_b" name="country_b"
-               value="{{orderData?.customerBillingAddress.country}}">
-      </div>
-
-
-      <div>
-        <label for="phone_b">Telefon</label>
-        <input class="form-control" type="text" id="phone_b" name="phone_b"
-               value="{{orderData?.customerBillingAddress.phone}}">
-      </div>
-
-
-      <div *ngIf="!user">
-        <div>
-          <label for="mail_b">E-Mail</label>
-          <input class="form-control" type="text" id="mail_b" name="mail_b"
-                 value="{{orderData?.customerBillingAddress.mail}}">
-        </div>
-      </div>
-
+  <div class="row">
+    <div class="form-group col-md-6 col-sm-12">
+      <label for="firstname_s">Vorname</label>
+      <input class="form-control" type="text" id="firstname_s" name="firstname_s"
+             value="{{orderData?.customerShippingAddress.firstname}}" readonly>
     </div>
-    <br>
-
-
-    <br>
-    <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="shipqingEqualsBillingAddress"
-             [ngModel]="orderData?.shipqingEqualsBillingAddress" onclick="return false">
-      <label class="form-check-label" for="shipqingEqualsBillingAddress">Lieferadresse gleich wie
-        Rechnungsadresse</label>
+    <div class="form-group col-md-6 col-sm-12">
+      <label for="lastname_s">Nachname</label>
+      <input class="form-control" type="text" id="lastname_s" name="lastname_s"
+             value="{{orderData?.customerShippingAddress.lastname}}" readonly>
     </div>
-    <p></p>
+  </div>
+
+  <div>
+    <label for="address_s">Strasse</label>
+    <input class="form-control" type="text" id="address_s" name="address_s"
+           value="{{orderData?.customerShippingAddress.address}}" readonly>
+  </div>
+
+  <div class="row">
+  <div class="form-group col-md-3 col-sm-12">
+    <label for="zip_s">PLZ</label>
+    <input class="form-control" type="text" id="zip_s" name="zip_s"
+           value="{{orderData?.customerShippingAddress.zip}}" readonly>
+  </div>
 
 
-    <div *ngIf="!orderData?.shipqingEqualsBillingAddress">
+  <div class="form-group col-md-5 col-sm-12">
+    <label for="city_s">Ort</label>
+    <input class="form-control" type="text" id="city_s" name="city_s"
+           value="{{orderData?.customerShippingAddress.city}}" readonly>
+  </div>
 
 
-      <h3>Lieferadresse</h3>
+  <div class="form-group col-md-4 col-sm-12">
+    <label for="country_s">Land</label>
+    <input class="form-control" type="text" id="country_s" name="country_s"
+           value="{{orderData?.customerShippingAddress.country}}" readonly>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="form-group col-md-6 col-sm-12">
+    <label for="phone_s">Telefon</label>
+    <input class="form-control" type="text" id="phone_s" name="phone_s"
+           value="{{orderData?.customerShippingAddress.phone}}" readonly>
+  </div>
 
 
-      <div>
-        <label for="firstname_s">Vorname</label>
-        <input class="form-control" type="text" id="firstname_s" name="firstname_s"
-               value="{{orderData?.customerShippingAddress.firstname}}">
-      </div>
-
-      <div>
-        <label for="lastname_s">Nachname</label>
-        <input class="form-control" type="text" id="lastname_s" name="lastname_s"
-               value="{{orderData?.customerShippingAddress.lastname}}">
-      </div>
-
-
-      <div>
-        <label for="address_s">Strasse</label>
-        <input class="form-control" type="text" id="address_s" name="address_s"
-               value="{{orderData?.customerShippingAddress.address}}">
-      </div>
-
-
-      <div>
-        <label for="zip_s">PLZ</label>
-        <input class="form-control" type="text" id="zip_s" name="zip_s"
-               value="{{orderData?.customerShippingAddress.zip}}">
-      </div>
-
-
-      <div>
-        <label for="city_s">Ort</label>
-        <input class="form-control" type="text" id="city_s" name="city_s"
-               value="{{orderData?.customerShippingAddress.city}}">
-      </div>
-
-
-      <div>
-        <label for="country_s">Land</label>
-        <input class="form-control" type="text" id="country_s" name="country_s"
-               value="{{orderData?.customerShippingAddress.country}}">
-      </div>
-
-
-      <div>
-        <label for="phone_s">Telefon</label>
-        <input class="form-control" type="text" id="phone_s" name="phone_s"
-               value="{{orderData?.customerShippingAddress.phone}}">
-      </div>
-
-
-      <div>
-        <div class="form-group">
-          <label for="mail_s">E-Mail</label>
-          <input class="form-control" type="text" id="mail_s" name="mail_s"
-                 value="{{orderData?.customerShippingAddress.mail}}">
-        </div>
-      </div>
-
+  <div class="form-group col-md-6 col-sm-12">
+    <div class="form-group">
+      <label for="mail_s">E-Mail</label>
+      <input class="form-control" type="text" id="mail_s" name="mail_s"
+             value="{{orderData?.customerShippingAddress.mail}}" readonly>
     </div>
+  </div>
+  </div>
 
-  <br><br><br>
+</div>
 
-    <h3>Versandart</h3>
+<br><br><br>
 
-    <form [formGroup]="ShipmentForm">
+<h3>Versandart</h3>
 
-    <table class="table table-striped">
-      <tbody>
-      <tr>
-        <td><input type="radio" value="express" name="shippingMethod" formControlName="shippingMethod" onclick="return false"></td>
-        <td>Express Priority</td>
-        <td>CHF 10.00</td>
-      </tr>
-      <tr>
-        <td><input type="radio" value="fedex" name="shippingMethod" formControlName="shippingMethod" onclick="return false"></td>
-        <td>FedEx</td>
-        <td>CHF 15.00</td>
-      </tr>
-      <tr>
-        <td><input type="radio" value="normal" name="shippingMethod" formControlName="shippingMethod" onclick="return false"></td>
-        <td> Normal</td>
-        <td>CHF 5.00</td>
-      </tr>
-      </tbody>
-    </table>
+<form [formGroup]="ShipmentForm">
 
-    </form>
+  <table class="table table-striped">
+    <tbody>
+    <tr>
+      <td><input type="radio" value="express" name="shippingMethod" formControlName="shippingMethod"
+                 onclick="return false"></td>
+      <td>Express Priority</td>
+      <td>CHF 10.00</td>
+    </tr>
+    <tr>
+      <td><input type="radio" value="fedex" name="shippingMethod" formControlName="shippingMethod"
+                 onclick="return false"></td>
+      <td>FedEx</td>
+      <td>CHF 15.00</td>
+    </tr>
+    <tr>
+      <td><input type="radio" value="normal" name="shippingMethod" formControlName="shippingMethod"
+                 onclick="return false"></td>
+      <td> Normal</td>
+      <td>CHF 5.00</td>
+    </tr>
+    </tbody>
+  </table>
 
-  <br><br><br>
+</form>
 
-
-
-    <h3>Zahlart</h3>
-
-    <form [formGroup]="PaymentForm">
-
-    <table class="table table-striped">
-      <tbody>
-      <tr>
-        <td><input type="radio" value="invoice" name="paymentMethod" formControlName="paymentMethod" onclick="return false"></td>
-        <td>Rechnung</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td> <input type="radio" value="prepayment" name="paymentMethod"  formControlName="paymentMethod" onclick="return false"></td>
-        <td>Vorkasse</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>  <input type="radio" value="creditcard" name="paymentMethod"  formControlName="paymentMethod" onclick="return false"></td>
-        <td>Kreditkarte</td>
-        <td></td>
-      </tr>
-      </tbody>
-    </table>
+<br><br><br>
 
 
+<h3>Zahlart</h3>
 
-      <div class="row">
-        <div class="col-12">
-    <button type="button" class="checkoutaction btn btn-primary float-left mb-2" (click)="goBack()">zurück</button>
-    <button type="button" class="checkoutaction btn btn-primary float-right" (click)="orderNow()">Bestellung
-      abschicken
-    </button>
-        </div>
-      </div>
+<form [formGroup]="PaymentForm">
+
+  <table class="table table-striped">
+    <tbody>
+    <tr>
+      <td><input type="radio" value="invoice" name="paymentMethod" formControlName="paymentMethod"
+                 onclick="return false"></td>
+      <td>Rechnung</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><input type="radio" value="prepayment" name="paymentMethod" formControlName="paymentMethod"
+                 onclick="return false"></td>
+      <td>Vorkasse</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><input type="radio" value="creditcard" name="paymentMethod" formControlName="paymentMethod"
+                 onclick="return false"></td>
+      <td>Kreditkarte</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
 
 
-    </form>
+  <div class="row">
+    <div class="col-12">
+      <button type="button" class="checkoutaction btn btn-primary float-left mb-2" (click)="goBack()">zurück</button>
+      <button type="button" class="checkoutaction btn btn-primary float-right" (click)="orderNow()">Bestellung
+        abschicken
+      </button>
+    </div>
+  </div>
+
+
+</form>
