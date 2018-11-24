@@ -1,29 +1,32 @@
-<div class="product-add">
-  <div class="col-xs-12">
-    <h3>Produkt Kategorie erfassen</h3>
-    <div>
-      <form (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="category">Kategorie</label>
-          <input type="text"
-                 class="form-control"
-                 style="width: 300px"
-                 id="category"
-                 required
-                 [(ngModel)]="category"
-                 name="category">
-          <label for="beschreibung">Beschreibung der Kategorie</label>
-          <input type="text"
-                 class="form-control"
-                 style="width: 300px"
-                 id="beschreibung"
-                 required
-                 [(ngModel)]="beschreibung"
-                 name="beschreibung">
-        </div>
-        <button type="submit" class="btn btn-secondary">Eingabe bestätigen</button>
-      </form>
-    </div>
+<app-page-title title="Kategorie hinzufügen" [children]="[{title: 'Kategorie Hinzufügen'}]"></app-page-title>
+<div class="container">
+  <div class="product-add">
+    <div class="col-xs-12">
+      <div>
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="category">Kategorie</label>
+            <input type="text"
+                   class="form-control"
+                   style="width: 300px"
+                   id="category"
+                   required
+                   [(ngModel)]="category"
+                   name="category">
+            <label for="beschreibung">Beschreibung der Kategorie</label>
+            <input type="text"
+                   class="form-control"
+                   style="width: 300px"
+                   id="beschreibung"
+                   required
+                   [(ngModel)]="beschreibung"
+                   name="beschreibung">
+          </div>
+          <button type="submit" class="btn btn-secondary">Eingabe bestätigen</button>
+        </form>
+      </div>
 
+    </div>
   </div>
+  <a appBackButton class="mt-4 d-block pointer">Zurück zum Dashboard</a>
 </div>

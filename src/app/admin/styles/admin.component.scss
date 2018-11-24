@@ -1,0 +1,12 @@
+@import '../../styles/_shared';
+
+#main {
+  .admin-icons{
+    a:hover {
+      .card.text-center.bg-primary.text-white.mb-3{
+        background-color: $mabr-btn-color-active!important;
+      }
+    }
+  }
+}
+

@@ -1,54 +1,96 @@
-<form (ngSubmit)="onSubmit()">
-  <input type="hidden" id="createdDate" [(ngModel)]="product.createdDate" name="createdDate">
-  <div class="ui-inputgroup">
-    <input type="text" pInputText placeholder="Name" required [(ngModel)]="product.name" name="name">
-  </div>
-  <br>
+<app-page-title title="Produkt hinzufügen" [children]="[{title: 'Produkt hinzufügen'}]"></app-page-title>
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <input type="hidden" id="createdDate" [(ngModel)]="product.createdDate" name="createdDate">
+    <div class="ui-inputgroup">
+      <input type="text" pInputText placeholder="Name" required [(ngModel)]="product.name" name="name">
+    </div>
+    <br>
+    <div class="ui-inputgroup">
+      <input type="text" pInputText placeholder="Beschreibung" required [(ngModel)]="product.description"
+             name="description">
+    </div>
 
-  <div class="ui-inputgroup">
-    <input type="text" pInputText placeholder="Beschreibung" required [(ngModel)]="product.description"
-           name="beschreibung">
-  </div>
-  <br>
+    <br>
+    <div class="ui-inputgroup">
+      <input type="number" placeholder="Preis" required [(ngModel)]="product.price" name="price">
+    </div>
+    <br>
 
-  <div class="ui-inputgroup">
-    <input type="number" placeholder="Preis" required [(ngModel)]="product.price" name="price">
-  </div>
-  <br>
-  <br>
 
-  <p>Bildname</p>
-  <p-fileUpload
-    name="myfile[]"
-    chooseLabel="Bild Upload"
-    cancelLabel="Abbrechen"
-    type="file"
-    (onSelect)="onFileSelection($event)"
-    [showUploadButton]="false"
-    accept="image/*">
-  </p-fileUpload>
+    <p>Bildname</p>
+    <p-fileUpload
+      name="myfile[]"
+      chooseLabel="Bild Upload"
+      cancelLabel="Abbrechen"
+      type="file"
+      (onSelect)="onFileSelection($event)"
+      [showUploadButton]="false"
+      accept="image/*">
+    </p-fileUpload>
 
-  <br>
-  <div *ngIf="(categories$ | async) as Cat">
-    <p-dropdown [options]="Cat" [(ngModel)]="selectedCategory" name="selectedCategory"
-                placeholder="Wähle eine Kategorie" optionLabel="name" [showClear]="true" filter="true"></p-dropdown>
-    <p>Gewählte Kategorie: {{selectedCategory ? selectedCategory.name : 'none'}}</p>
-  </div>
+    <br>
+    <div *ngIf="(categories$ | async) as Cat">
+      <p-dropdown [options]="Cat" [(ngModel)]="selectedCategory" name="selectedCategory"
+                  placeholder="Wähle eine Kategorie" optionLabel="name" [showClear]="true" filter="true"></p-dropdown>
+      <p>Gewählte Kategorie: {{selectedCategory ? selectedCategory.name : 'none'}}</p>
+    </div>
 
-  <p-checkbox binary="true" value="discount" label="Aktion" [(ngModel)]="discount" name="discount"></p-checkbox>
-  <br>
 
-  <div class="ui-inputgroup" *ngIf="discount">
-    <input type="number" placeholder="1" required [(ngModel)]="product.discountFactor" name="discountFactor"> (Rabatt
-    Default 1=kein Rabatt, Bereich: 0.00-1)
-  </div>
 
-  <p-checkbox binary="true" value="newProduct" label="Neuheit" [(ngModel)]="newProduct" name="newProduct"></p-checkbox>
-  <br>
-  <p-checkbox binary="true" value="bestRated" label="Beste Bewertung" [(ngModel)]="bestRated"
-              name="bestRated"></p-checkbox>
-  <br><br>
+    <br>
+    <div class="ui-inputgroup">
+      <input type="text" pInputText placeholder="moreInfo1Title" required [(ngModel)]="product.moreInfo1Title"
+             name="moreInfo1Title">
+    </div>
+    <br>
+    <div class="ui-inputgroup">
+      <input type="text" pInputText placeholder="moreInfo1Text" required [(ngModel)]="product.moreInfo1Text"
+             name="moreInfo1Text">
+    </div>
+    <br>
+    <div class="ui-inputgroup">
+      <input type="text" pInputText placeholder="moreInfo2Title" required [(ngModel)]="product.moreInfo2Title"
+             name="moreInfo2Title">
+    </div>
+    <br>
+    <div class="ui-inputgroup">
+      <input type="text" pInputText placeholder="moreInfo2Text" required [(ngModel)]="product.moreInfo2Text"
+             name="moreInfo2Text">
+    </div>
+    <br>
+    <div class="ui-inputgroup">
+      <input type="text" pInputText placeholder="moreInfo3Title" required [(ngModel)]="product.moreInfo3Title"
+             name="moreInfo3Title">
+    </div>
+    <br>
+    <div class="ui-inputgroup">
+      <input type="text" pInputText placeholder="moreInfo3Text" required [(ngModel)]="product.moreInfo3Text"
+             name="moreInfo3Text">
+    </div>
 
-  <button type="submit" class="btn btn-secondary">Eingabe bestätigen</button>
-</form>
+
+    <br>
+
+    <p-checkbox binary="true" value="discount" label="Aktion" [(ngModel)]="discount" name="discount"></p-checkbox>
+    <br>
+
+    <div class="ui-inputgroup" *ngIf="discount">
+      <input type="number" placeholder="1" required [(ngModel)]="product.discountFactor" name="discountFactor"> (Rabatt
+      Default 1=kein Rabatt, Bereich: 0.00-1)
+    </div>
+
+    <p-checkbox binary="true" value="newProduct" label="Neuheit" [(ngModel)]="newProduct" name="newProduct"></p-checkbox>
+    <br>
+    <p-checkbox binary="true" value="bestRated" label="Beste Bewertung" [(ngModel)]="bestRated"
+                name="bestRated"></p-checkbox>
+    <br><br>
+
+    <button type="submit" class="btn btn-secondary">Eingabe bestätigen</button>
+  </form>
+
+
+  <a appBackButton class="mt-4 d-block pointer">Zurück zum Dashboard</a>
+</div>
+
 

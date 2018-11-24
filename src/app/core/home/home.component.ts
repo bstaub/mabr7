@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../../models/product.model';
 import { ProductService } from '../../product/shared/product.service';
@@ -6,7 +6,8 @@ import { ProductService } from '../../product/shared/product.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./styles/home.component.scss']
+  styleUrls: ['./styles/home.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
   productsDiscounts$: Observable<Product[]>;

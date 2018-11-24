@@ -1,15 +1,20 @@
-<app-page-title title="User Liste" [children]="[{title: 'User Liste'}]"></app-page-title>
-<app-user-list-item *ngFor="let user of users$ | async | paginate: { itemsPerPage: itemsPerPage, currentPage: p }"
-                    [user]="user"></app-user-list-item>
+<app-page-title title="Benutzer verwalten" [children]="[{title: 'Benutzer verwalten'}]"></app-page-title>
+<div class="container">
+  <app-user-list-item *ngFor="let user of users$ | async | paginate: { itemsPerPage: itemsPerPage, currentPage: p }"
+                      [user]="user"></app-user-list-item>
 
-<pagination-controls (pageChange)="p = $event"
-                     maxSize="9"
-                     directionLinks="true"
-                     autoHide="true"
-                     responsive="true"
-                     previousLabel="Zurück"
-                     nextLabel="Vor"
-                     screenReaderPaginationLabel="Pagination"
-                     screenReaderPageLabel="Seite"
-                     screenReaderCurrentLabel="Du bist auf Seite">
-</pagination-controls>
+  <pagination-controls (pageChange)="p = $event"
+                       maxSize="9"
+                       directionLinks="true"
+                       autoHide="true"
+                       responsive="true"
+                       previousLabel="Zurück"
+                       nextLabel="Vor"
+                       screenReaderPaginationLabel="Pagination"
+                       screenReaderPageLabel="Seite"
+                       screenReaderCurrentLabel="Du bist auf Seite">
+  </pagination-controls>
+
+  <a appBackButton class="mt-4 d-block pointer">Zurück zum Dashboard</a>
+</div>
+

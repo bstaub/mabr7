@@ -11,6 +11,21 @@ $theme-colors: (
 );
 
 
+body {
+  a {
+    color: #212529;
+  }
+  a:hover {
+    text-decoration: none;
+    color: grey;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+
 // Button Style start
 $mabr-btn-bg-color: grey;
 $mabr-btn-color: #FFF;
