@@ -47,3 +47,14 @@ label {
 main.col-sm-12 {
   padding: 0;
 }
+
+// https://bootsnipp.com/snippets/ORE0l
+// bootstrap4: text-truncate
+.description-crop-text-1 {
+  @media(max-width: 450px){
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+}
