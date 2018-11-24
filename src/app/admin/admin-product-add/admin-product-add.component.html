@@ -6,18 +6,17 @@
       <input type="text" pInputText placeholder="Name" required [(ngModel)]="product.name" name="name">
     </div>
     <br>
-
     <div class="ui-inputgroup">
       <input type="text" pInputText placeholder="Beschreibung" required [(ngModel)]="product.description"
-             name="beschreibung">
+             name="description">
     </div>
-    <br>
 
+    <br>
     <div class="ui-inputgroup">
       <input type="number" placeholder="Preis" required [(ngModel)]="product.price" name="price">
     </div>
     <br>
-    <br>
+
 
     <p>Bildname</p>
     <p-fileUpload
@@ -36,6 +35,42 @@
                   placeholder="Wähle eine Kategorie" optionLabel="name" [showClear]="true" filter="true"></p-dropdown>
       <p>Gewählte Kategorie: {{selectedCategory ? selectedCategory.name : 'none'}}</p>
     </div>
+
+
+
+    <br>
+    <div class="ui-inputgroup">
+      <input type="text" pInputText placeholder="moreInfo1Title" required [(ngModel)]="product.moreInfo1Title"
+             name="moreInfo1Title">
+    </div>
+    <br>
+    <div class="ui-inputgroup">
+      <input type="text" pInputText placeholder="moreInfo1Text" required [(ngModel)]="product.moreInfo1Text"
+             name="moreInfo1Text">
+    </div>
+    <br>
+    <div class="ui-inputgroup">
+      <input type="text" pInputText placeholder="moreInfo2Title" required [(ngModel)]="product.moreInfo2Title"
+             name="moreInfo2Title">
+    </div>
+    <br>
+    <div class="ui-inputgroup">
+      <input type="text" pInputText placeholder="moreInfo2Text" required [(ngModel)]="product.moreInfo2Text"
+             name="moreInfo2Text">
+    </div>
+    <br>
+    <div class="ui-inputgroup">
+      <input type="text" pInputText placeholder="moreInfo3Title" required [(ngModel)]="product.moreInfo3Title"
+             name="moreInfo3Title">
+    </div>
+    <br>
+    <div class="ui-inputgroup">
+      <input type="text" pInputText placeholder="moreInfo3Text" required [(ngModel)]="product.moreInfo3Text"
+             name="moreInfo3Text">
+    </div>
+
+
+    <br>
 
     <p-checkbox binary="true" value="discount" label="Aktion" [(ngModel)]="discount" name="discount"></p-checkbox>
     <br>
