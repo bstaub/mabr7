@@ -41,9 +41,10 @@ li.submenu {
   background-color: white;
   padding: 20px;
   min-height: 200px;
-  min-width: 373px;
+  min-width: 500px;
   border: 1px solid black;
 }
+
 
 .remove {
   background-color: red;
@@ -64,7 +65,58 @@ li.submenu {
   border-radius: 10px;
 }
 
-@media only screen and (max-width: 620px) {
+thead {
+  border-bottom: 1px solid black;
+}
+
+table {
+  table-layout: fixed;
+}
+
+td.preview-prodname {
+  vertical-align: text-bottom;
+  padding-top: 8px;
+}
+
+th.preview-product {
+  width: 65px;
+}
+
+th.preview-discount{
+  width: 10%;
+}
+
+#cart-content tr.ellipsis{
+  height: 20px;
+  td {text-align: center;}
+}
+
+#cart-content tfoot > tr {
+  margin-top: 5px;
+}
+
+
+th.preview-qty{
+  width: 12%;
+}
+
+th.preview-total{
+  width: 15%;
+}
+
+.preview-picture{
+  width: 50px;
+  margin-right: 15px;
+}
+
+#cart-content tbody > tr {
+  border-bottom: 1px solid #9e9e9e;
+  height: 92px;
+  border-bottom: 1px solid $grey;
+}
+
+
+@media only screen and (max-width: 680px) {
 
   .shopping .submenu div#shopping-cart {
     display: none;
