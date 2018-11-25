@@ -1,9 +1,9 @@
 
-  <h3>Zahlart</h3>
+  <h3 class="checkout-titel">Zahlart</h3>
 
   <form [formGroup]="PaymentForm" (ngSubmit)="onSubmit()">
 
-    <table class="table table-striped">
+    <table class="table table-striped checkout">
       <tbody>
       <tr>
         <td><input type="radio" value="invoice" name="paymentMethod" formControlName="paymentMethod"></td>
@@ -20,7 +20,7 @@
       </tbody>
   </table>
 
-    <div class="row">
+    <div class="row checkout-button">
       <div class="col-12">
         <button type="button" class="checkoutaction btn btn-primary float-left mb-2" (click)="goBack()">zurück</button>
         <button type="submit" class="checkoutaction btn btn-primary float-right">Bestellübersicht</button>

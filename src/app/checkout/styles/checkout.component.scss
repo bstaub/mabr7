@@ -110,6 +110,16 @@ ul.checkout-bar {
 }
 
 
+.row.checkout-button {
+  margin-top: 50px;
+}
+
+h3.checkout-titel {
+  margin-top: 80px;
+  margin-bottom: 25px;
+}
+
+
 
 @media all and (min-width: 800px) {
   .checkout-bar li.active:after {
@@ -188,3 +198,12 @@ ul.checkout-bar {
   }
 
 }
+
+@media screen and (max-width: 800px) {
+
+  ul.checkout-bar {
+    margin: auto;
+    padding: 0;
+  }
+}
+

@@ -1,7 +1,7 @@
 
 
 
-  <h3>Rechnungsadresse</h3>
+  <h3 class="checkout-titel">Rechnungsadresse</h3>
 
 
   <form [formGroup]="CustomerAddressForm" (ngSubmit)="onSubmit()">
@@ -82,7 +82,7 @@
     <div *ngIf="!shipqingEqualsBillingAddress" formGroupName="customerShippingAddress">
 
 
-      <h3>Lieferadresse</h3>
+      <h3 class="checkout-titel">Lieferadresse</h3>
 
 
       <div class="row">
@@ -144,7 +144,7 @@
       </div>
 
 
-    <div class="row">
+    <div class="row checkout-button">
       <div class="col-12">
       <button type="button" class="checkoutaction btn btn-primary float-left  mb-2" (click)="goBack()">zurück</button>
       <button [disabled]="!formIsValid" type="submit" class="checkoutaction btn btn-primary float-right">weiter zur Versandart</button>

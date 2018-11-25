@@ -1,4 +1,4 @@
-<h3>Übersicht</h3>
+<h3 class="checkout-titel">Übersicht</h3>
 
 
 <div class="table-responsive">
@@ -56,8 +56,8 @@
   </table>
 </div>
 
-<br><br><br>
-<h3>Rechnungsadresse</h3>
+
+<h3 class="checkout-titel">Rechnungsadresse</h3>
 
 
 <div>
@@ -123,7 +123,7 @@
   </div>
 
 </div>
-<br>
+
 
 
 <br>
@@ -139,7 +139,7 @@
 <div *ngIf="!orderData?.shipqingEqualsBillingAddress">
 
 
-  <h3>Lieferadresse</h3>
+  <h3 class="checkout-titel">Lieferadresse</h3>
 
   <div class="row">
     <div class="form-group col-md-6 col-sm-12">
@@ -201,9 +201,9 @@
 
 </div>
 
-<br><br><br>
 
-<h3>Versandart</h3>
+
+<h3 class="checkout-titel">Versandart</h3>
 
 <form [formGroup]="ShipmentForm">
 
@@ -232,14 +232,14 @@
 
 </form>
 
-<br><br><br>
 
 
-<h3>Zahlart</h3>
+
+<h3 class="checkout-titel">Zahlart</h3>
 
 <form [formGroup]="PaymentForm">
 
-  <table class="table table-striped">
+  <table class="table table-striped checkout">
     <tbody>
     <tr>
       <td><input type="radio" value="invoice" name="paymentMethod" formControlName="paymentMethod"
@@ -263,7 +263,7 @@
   </table>
 
 
-  <div class="row">
+  <div class="row checkout-button">
     <div class="col-12">
       <button type="button" class="checkoutaction btn btn-primary float-left mb-2" (click)="goBack()">zurück</button>
       <button type="button" class="checkoutaction btn btn-primary float-right" (click)="orderNow()">Bestellung
