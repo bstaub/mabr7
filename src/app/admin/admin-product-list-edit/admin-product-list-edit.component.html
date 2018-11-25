@@ -33,19 +33,19 @@
           <label>TabTitel1: </label> <input type="text" [(ngModel)]="product.moreInfo1Title" name="moreInfo1Title">
         </div>
         <div>
-          <label>TabText1: </label> <input type="text" [(ngModel)]="product.moreInfo1Text" name="moreInfo1Text">
+          <p-editor [(ngModel)]="product.moreInfo1Text" [style]="{'height':'150px'}" name="moreInfo1Text"></p-editor>
         </div>
         <div>
           <label>TabTitel2: </label> <input type="text" [(ngModel)]="product.moreInfo2Title" name="moreInfo2Title">
         </div>
         <div>
-          <label>TabText2: </label> <input type="text" [(ngModel)]="product.moreInfo2Text" name="moreInfo2Text">
+          <p-editor [(ngModel)]="product.moreInfo2Text" [style]="{'height':'150px'}" name="moreInfo2Text"></p-editor>
         </div>
         <div>
           <label>TabTitel3: </label> <input type="text" [(ngModel)]="product.moreInfo3Title" name="moreInfo3Title">
         </div>
         <div>
-          <label>TabText3: </label> <input type="text" [(ngModel)]="product.moreInfo3Text" name="moreInfo3Text">
+          <p-editor [(ngModel)]="product.moreInfo3Text" [style]="{'height':'150px'}" name="moreInfo3Text"></p-editor>
         </div>
         <div>
           <label>Discount: </label> <p-checkbox binary="true" value="discount" label="Aktion" [(ngModel)]="product.discount" name="discount"></p-checkbox>
@@ -105,19 +105,19 @@
         <label>Tab1Titel: </label> {{product.moreInfo1Title}}
       </div>
       <div>
-        <label>Tab1Text: </label> {{product.moreInfo1Text}}
+        <label>Tab1Text: </label> <p [innerHTML]="product.moreInfo1Text"></p>
       </div>
       <div>
         <label>Tab2Titel: </label> {{product.moreInfo2Title}}
       </div>
       <div>
-        <label>Tab2Text: </label> {{product.moreInfo2Text}}
+        <label>Tab2Text: </label> <p [innerHTML]="product.moreInfo2Text"></p>
       </div>
       <div>
         <label>Tab3Titel: </label> {{product.moreInfo3Title}}
       </div>
       <div>
-        <label>Tab3Text: </label> {{product.moreInfo3Text}}
+        <label>Tab3Text: </label> <p [innerHTML]="product.moreInfo3Text"></p>
       </div>
       <div>
         <label>Discount: </label> {{product.discount}}

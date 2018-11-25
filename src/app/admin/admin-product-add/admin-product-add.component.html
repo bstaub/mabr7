@@ -1,110 +1,81 @@
 <app-page-title title="Produkt hinzufügen" [children]="[{title: 'Produkt hinzufügen'}]"></app-page-title>
+
 <div class="container">
   <form (ngSubmit)="onSubmit()">
     <input type="hidden" id="createdDate" [(ngModel)]="product.createdDate" name="createdDate">
-    <div class="ui-inputgroup">
-      <input type="text" pInputText placeholder="Name" required [(ngModel)]="product.name" name="name">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="name" class="col-form-label">Produktname</label>
+        <input type="text" class="form-control" pInputText placeholder="Name" required [(ngModel)]="product.name" name="name" id="name">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="price" class="col-form-label">Preis</label>
+        <input type="number" class="form-control" placeholder="Preis" required [(ngModel)]="product.price" name="price" id="price">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="kategorie" class="col-form-label">Kategorie</label>
+        <div *ngIf="(categories$ | async) as Cat">
+          <p-dropdown [options]="Cat" [(ngModel)]="selectedCategory" name="selectedCategory"
+                      placeholder="Wähle eine Kategorie" optionLabel="name" [showClear]="true" filter="true" id="kategorie"></p-dropdown>
+        </div>
+      </div>
     </div>
-    <br>
-    <!--<div class="ui-inputgroup">-->
-      <!--<input type="text" pInputText placeholder="Beschreibung" required [(ngModel)]="product.description"-->
-             <!--name="description">-->
-    <!--</div>-->
-
-    <p-editor [(ngModel)]="product.description" [style]="{'height':'320px'}" name="description">
-      <!--<p-header>-->
-        <!--<span class="ql-format-group">-->
-            <!--<span title="Bold" class="ql-format-button ql-bold"></span>-->
-            <!--<span class="ql-format-separator"></span>-->
-            <!--<span title="Italic" class="ql-format-button ql-italic"></span>-->
-            <!--<span class="ql-format-separator"></span>-->
-            <!--<span title="Underline" class="ql-format-button ql-underline"></span>-->
-            <!--<span class="ql-format-separator"></span>-->
-            <!--<span title="Strikethrough" class="ql-format-button ql-strike"></span>-->
-        <!--</span>-->
-      <!--</p-header>-->
-    </p-editor>
-
-    <br>
-    <div class="ui-inputgroup">
-      <input type="number" placeholder="Preis" required [(ngModel)]="product.price" name="price">
+    <div class="form-group">
+      <p-editor [(ngModel)]="product.description" [style]="{'height':'320px'}" name="description"></p-editor>
     </div>
-    <br>
-
-
-    <p>Bildname</p>
-    <p-fileUpload
-      name="myfile[]"
-      chooseLabel="Bild Upload"
-      cancelLabel="Abbrechen"
-      type="file"
+    <div class="form-group">
+      <label for="bild" class="col-form-label">Bild</label>
+      <p-fileUpload name="myfile[]" chooseLabel="Bild Upload" cancelLabel="Abbrechen" type="file"
       (onSelect)="onFileSelection($event)"
-      [showUploadButton]="false"
-      accept="image/*">
-    </p-fileUpload>
-
-    <br>
-    <div *ngIf="(categories$ | async) as Cat">
-      <p-dropdown [options]="Cat" [(ngModel)]="selectedCategory" name="selectedCategory"
-                  placeholder="Wähle eine Kategorie" optionLabel="name" [showClear]="true" filter="true"></p-dropdown>
-      <p>Gewählte Kategorie: {{selectedCategory ? selectedCategory.name : 'none'}}</p>
+      [showUploadButton]="false" accept="image/*" id="bild">
+      </p-fileUpload>
     </div>
-
-
-
-    <br>
-    <div class="ui-inputgroup">
-      <input type="text" pInputText placeholder="moreInfo1Title" required [(ngModel)]="product.moreInfo1Title"
-             name="moreInfo1Title">
+    <div class="form-group">
+      <p-checkbox binary="true" value="register" label="Register Laschen hinzufügen" [(ngModel)]="register" name="register"></p-checkbox>
     </div>
-    <br>
-    <div class="ui-inputgroup">
-      <input type="text" pInputText placeholder="moreInfo1Text" required [(ngModel)]="product.moreInfo1Text"
-             name="moreInfo1Text">
+    <div *ngIf="register">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="moreInfo1Title" class="col-form-label">RegisterTitel1</label>
+          <input type="text" class="form-control" pInputText placeholder="Register Namen..." required [(ngModel)]="product.moreInfo1Title" name="moreInfo1Title" id="moreInfo1Title">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="moreInfo2Title" class="col-form-label">RegisterTitel2</label>
+          <input type="text" class="form-control" pInputText placeholder="Register Namen..." required [(ngModel)]="product.moreInfo2Title" name="moreInfo1Title" id="moreInfo2Title">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="moreInfo3Title" class="col-form-label">RegisterTitel3</label>
+          <input type="text" class="form-control" pInputText placeholder="Register Namen..." required [(ngModel)]="product.moreInfo3Title" name="moreInfo1Title" id="moreInfo3Title">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="moreInfo1Text" class="col-form-label">RegisterText1</label>
+          <p-editor [(ngModel)]="product.moreInfo1Text" [style]="{'height':'150px'}" name="moreInfo1Text" id="moreInfo1Text"></p-editor>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="moreInfo2Text" class="col-form-label">RegisterText2</label>
+          <p-editor [(ngModel)]="product.moreInfo2Text" [style]="{'height':'150px'}" name="moreInfo2Text" id="moreInfo2Text"></p-editor>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="moreInfo3Text" class="col-form-label">RegisterText3</label>
+          <p-editor [(ngModel)]="product.moreInfo3Text" [style]="{'height':'150px'}" name="moreInfo3Text" id="moreInfo3Text"></p-editor>
+        </div>
+      </div>
     </div>
-    <br>
-    <div class="ui-inputgroup">
-      <input type="text" pInputText placeholder="moreInfo2Title" required [(ngModel)]="product.moreInfo2Title"
-             name="moreInfo2Title">
+    <div class="form-group">
+      <p-checkbox binary="true" value="discount" label="Aktion" [(ngModel)]="discount" name="discount"></p-checkbox>
     </div>
-    <br>
-    <div class="ui-inputgroup">
-      <input type="text" pInputText placeholder="moreInfo2Text" required [(ngModel)]="product.moreInfo2Text"
-             name="moreInfo2Text">
+    <div class="form-group" *ngIf="discount">
+      <input type="number" placeholder="1" required [(ngModel)]="product.discountFactor" name="discountFactor"> (Rabatt Default 1=kein Rabatt, Bereich: 0.00-1)
     </div>
-    <br>
-    <div class="ui-inputgroup">
-      <input type="text" pInputText placeholder="moreInfo3Title" required [(ngModel)]="product.moreInfo3Title"
-             name="moreInfo3Title">
+    <div class="form-group">
+      <p-checkbox binary="true" value="newProduct" label="Neuheit" [(ngModel)]="newProduct" name="newProduct"></p-checkbox>
     </div>
-    <br>
-    <div class="ui-inputgroup">
-      <input type="text" pInputText placeholder="moreInfo3Text" required [(ngModel)]="product.moreInfo3Text"
-             name="moreInfo3Text">
+    <div class="form-group">
+      <p-checkbox binary="true" value="bestRated" label="Beste Bewertung" [(ngModel)]="bestRated" name="bestRated"></p-checkbox>
     </div>
-
-
-    <br>
-
-    <p-checkbox binary="true" value="discount" label="Aktion" [(ngModel)]="discount" name="discount"></p-checkbox>
-    <br>
-
-    <div class="ui-inputgroup" *ngIf="discount">
-      <input type="number" placeholder="1" required [(ngModel)]="product.discountFactor" name="discountFactor"> (Rabatt
-      Default 1=kein Rabatt, Bereich: 0.00-1)
-    </div>
-
-    <p-checkbox binary="true" value="newProduct" label="Neuheit" [(ngModel)]="newProduct" name="newProduct"></p-checkbox>
-    <br>
-    <p-checkbox binary="true" value="bestRated" label="Beste Bewertung" [(ngModel)]="bestRated"
-                name="bestRated"></p-checkbox>
-    <br><br>
-
     <button type="submit" class="btn btn-secondary">Eingabe bestätigen</button>
   </form>
-
-
   <a appBackButton class="mt-4 d-block pointer">Zurück zum Dashboard</a>
 </div>
-
-
