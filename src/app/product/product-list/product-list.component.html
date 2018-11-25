@@ -45,13 +45,10 @@
               <figure class="media">
                 <div class="img-wrap" style="min-width: 100px; margin-right: 10px;"><img src="{{product.image || '//:0'}}"  alt="{{product.name}}" class="img-thumbnail img-sm" style="width: 200px;"></div>
 
-                <div class="description">
-                  <p *ngIf="product.description" class="description-crop-text-1">{{product.description}}</p>
-                </div>
+                  <p *ngIf="product.name" class="crop-text-1">{{product.name}}</p><br/>
+                  <!--<p *ngIf="product.description" class="crop-text-1">{{product.description}}</p>-->
 
               </figure>
-
-
             </td>
             <td>
               <div class="price-wrap">
