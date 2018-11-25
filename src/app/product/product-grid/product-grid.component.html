@@ -24,7 +24,7 @@
   </div>
 </nav>
 
-<section class="products" *ngIf="products$">
+<section class="products" *ngIf="(products$ | async)?.length !=0; else noItems">
 
   <ng-container>
     <a routerLink="/produkte/detail/{{product.key}}" class="product-card"
@@ -44,7 +44,11 @@
 
 </section>
 
-<pagination-controls (pageChange)="p = $event"
+<ng-template #noItems>
+  <p style="margin: 0 20px">In der ausgewählten Kategorie <span style="font-weight: 700">{{selectedCategory}}</span> gits es zur Zeit kleine Produkte.</p>
+</ng-template>
+
+<pagination-controls *ngIf="(products$ | async)?.length >0" (pageChange)="p = $event"
                      maxSize="9"
                      directionLinks="true"
                      autoHide="true"

@@ -27,8 +27,7 @@
     </div>
   </nav>
 
-<main class="col-sm-12" *ngIf="products$">
-
+<main class="col-sm-12" *ngIf="(products$ | async)?.length !=0; else noItems">
   <div class="card">
     <table class="table table-hover shopping-cart-wrap">
       <thead class="text-muted">
@@ -66,8 +65,11 @@
 
 </div> <!-- container-fluid // -->
 
+<ng-template #noItems>
+  <p>In der ausgewählten Kategorie <strong>{{selectedCategory}}</strong> gits es zur Zeit kleine Produkte.</p>
+</ng-template>
 
-<pagination-controls (pageChange)="p = $event"
+<pagination-controls *ngIf="(products$ | async)?.length >0" (pageChange)="p = $event"
                      maxSize="9"
                      directionLinks="true"
                      autoHide="true"

@@ -4,7 +4,7 @@ declare let alertify: any;
 
 
 // https://alertifyjs.com/guide.html
-/*
+
 alertify.defaults = {
   // dialogs defaults
   autoReset: true,
@@ -56,7 +56,7 @@ alertify.defaults = {
     cancel: 'ajs-cancel'
   }
 };
-*/
+
 
 
 @Injectable({
