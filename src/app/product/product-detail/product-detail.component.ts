@@ -17,6 +17,8 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   private productId: string;
   activatedRouteSubscription: Subscription;
   selectedProduct$: Observable<Product>;
+  currentOrientation = 'horizontal';
+  currentJustify = 'start';
 
 
   constructor(private activatedRoute: ActivatedRoute,

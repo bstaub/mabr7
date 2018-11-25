@@ -11,7 +11,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12 col-md-6 mt-5">
           <div class="mb-3">
             <h2 class="text-capitalize font-3x mb-3">{{product.name}}</h2>
 
@@ -31,7 +31,7 @@
         </div>
       </div>
 
-      <ngb-tabset *ngIf="product.moreInfo1Title || product.moreInfo1Text || product.moreInfo2Title || product.moreInfo2Text || product.moreInfo3Title || product.moreInfo3Text">
+      <ngb-tabset [orientation]="currentOrientation" [justify]="currentJustify" *ngIf="product.moreInfo1Title || product.moreInfo1Text || product.moreInfo2Title || product.moreInfo2Text || product.moreInfo3Title || product.moreInfo3Text">
         <ngb-tab title="{{product.moreInfo1Title}}" *ngIf="product.moreInfo1Title">
           <ng-template ngbTabContent *ngIf="product.moreInfo1Text">
             <p><span>{{product.moreInfo1Text}}</span></p>
@@ -55,7 +55,7 @@
 
 
 <div class="col-12">
-  <button class="btn btn btn-primary" appBackButton>Zurück</button>
+  <button class="btn btn btn-primary mt-5" appBackButton>Zurück</button>
 </div>
 
 <ng-template #loading>
