@@ -35,7 +35,7 @@ th.action{
 
 th.orderinput,
 td.orderinput {
-  width: 15%;
+  width: 12%;
 }
 
 th.discount{
@@ -60,7 +60,16 @@ button.btn {
   padding: 0.375rem 0.75rem;
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1200px) {
+
+  th.orderinput,
+  td.orderinput {
+    width: 15%;
+  }
+
+}
+
+@media screen and (max-width: 980px) {
 
   th.orderinput,
   td.orderinput {
@@ -68,7 +77,6 @@ button.btn {
   }
 
 }
-
 
 
 @media screen and (max-width: 768px) {
