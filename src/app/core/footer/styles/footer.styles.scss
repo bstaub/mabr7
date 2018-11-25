@@ -6,7 +6,7 @@ app-footer {
   .main-footer {
     margin-top: 50px;
     background-color: $black;
-    padding: 50px 0;
+    padding-top: 50px;
 
     .footer-sitemap-section {
       @include media-breakpoint-down(xs) {
@@ -75,6 +75,69 @@ app-footer {
         }
       }
     }
+    a, p, span
+    {
+      color: #9e9e9e;
+    }
+
+    .footer-copyright {
+      margin: auto;
+      margin-top: 27px;
+    }
+
+    i.fa.fa-heart {
+      color: red;
+    }
+
+    .sitemap-link i.fa:hover {
+      color: #FFF;
+    }
+
 
   }// .main-footer
+}
+
+
+
+
+
+@media only screen and (max-width: 770px) {
+
+  app-footer  {
+
+    .main-footer .footer-sitemap-section .sitemap-title {
+      margin-bottom: 1rem;
+    }
+
+    .footer-sitemap-section.col-12.col-sm-6.col-md-3.col-lg-3.md-bottomrow {
+      margin-top: 30px;
+    }
+
+    .main-footer .footer-copyright {
+      margin: auto;
+      margin-top: 25px;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 574px) {
+
+  app-footer  {
+
+
+    .main-footer .footer-sitemap-section .sitemap-title {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-sitemap-section.col-12.col-sm-6.col-md-3.col-lg-3 {
+      margin-top: 30px;
+    }
+
+    ul.list-unstyled.list-inline.text-center.mt-2.float-left {
+      float: none !important;
+    }
+
+  }
+
 }
