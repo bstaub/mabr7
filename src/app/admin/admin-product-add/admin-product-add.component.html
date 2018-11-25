@@ -6,10 +6,24 @@
       <input type="text" pInputText placeholder="Name" required [(ngModel)]="product.name" name="name">
     </div>
     <br>
-    <div class="ui-inputgroup">
-      <input type="text" pInputText placeholder="Beschreibung" required [(ngModel)]="product.description"
-             name="description">
-    </div>
+    <!--<div class="ui-inputgroup">-->
+      <!--<input type="text" pInputText placeholder="Beschreibung" required [(ngModel)]="product.description"-->
+             <!--name="description">-->
+    <!--</div>-->
+
+    <p-editor [(ngModel)]="product.description" [style]="{'height':'320px'}" name="description">
+      <!--<p-header>-->
+        <!--<span class="ql-format-group">-->
+            <!--<span title="Bold" class="ql-format-button ql-bold"></span>-->
+            <!--<span class="ql-format-separator"></span>-->
+            <!--<span title="Italic" class="ql-format-button ql-italic"></span>-->
+            <!--<span class="ql-format-separator"></span>-->
+            <!--<span title="Underline" class="ql-format-button ql-underline"></span>-->
+            <!--<span class="ql-format-separator"></span>-->
+            <!--<span title="Strikethrough" class="ql-format-button ql-strike"></span>-->
+        <!--</span>-->
+      <!--</p-header>-->
+    </p-editor>
 
     <br>
     <div class="ui-inputgroup">

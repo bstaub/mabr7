@@ -9,9 +9,10 @@
         <div>
           <label>Name: </label> <input type="text" [(ngModel)]="product.name" name="product">
         </div>
-        <div>
-          <label>Beschreibung: </label> <input type="text" [(ngModel)]="product.description" name="description">
-        </div>
+        <!--<div>-->
+          <!--<label>Beschreibung: </label> <input type="text" [(ngModel)]="product.description" name="description">-->
+        <!--</div>-->
+        <p-editor [(ngModel)]="product.description" [style]="{'height':'320px'}" name="description"></p-editor>
         <div>
           <label>Preis: </label> <input type="number" [(ngModel)]="product.price" name="price">
         </div>
@@ -92,7 +93,7 @@
         <label>Name: </label> {{product.name}}
       </div>
       <div>
-        <label>Beschreibung: </label> {{product.description}}
+        <label>Beschreibung: </label> <p [innerHTML]="product.description"></p>
       </div>
       <div>
         <label>Preis: </label> {{product.price}}
