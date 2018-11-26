@@ -13,6 +13,7 @@ export class Product {
   bestRated?: boolean;
   discountFactor?: number;
   bestRatedNumber?: number;
+  register?: boolean;
   moreInfo1Title?: string;
   moreInfo1Text?: string;
   moreInfo2Title?: string;

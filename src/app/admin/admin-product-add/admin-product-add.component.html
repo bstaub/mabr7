@@ -31,9 +31,9 @@
       </p-fileUpload>
     </div>
     <div class="form-group">
-      <p-checkbox binary="true" value="register" label="Register Laschen hinzufügen" [(ngModel)]="register" name="register"></p-checkbox>
+      <p-checkbox binary="true" value="register" label="Register Laschen hinzufügen" [(ngModel)]="product.register" name="register"></p-checkbox>
     </div>
-    <div *ngIf="register">
+    <div *ngIf="product.register">
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="moreInfo1Title" class="col-form-label">RegisterTitel1</label>
@@ -41,11 +41,11 @@
         </div>
         <div class="form-group col-md-4">
           <label for="moreInfo2Title" class="col-form-label">RegisterTitel2</label>
-          <input type="text" class="form-control" pInputText placeholder="Register Namen..." required [(ngModel)]="product.moreInfo2Title" name="moreInfo1Title" id="moreInfo2Title">
+          <input type="text" class="form-control" pInputText placeholder="Register Namen..." required [(ngModel)]="product.moreInfo2Title" name="moreInfo2Title" id="moreInfo2Title">
         </div>
         <div class="form-group col-md-4">
           <label for="moreInfo3Title" class="col-form-label">RegisterTitel3</label>
-          <input type="text" class="form-control" pInputText placeholder="Register Namen..." required [(ngModel)]="product.moreInfo3Title" name="moreInfo1Title" id="moreInfo3Title">
+          <input type="text" class="form-control" pInputText placeholder="Register Namen..." required [(ngModel)]="product.moreInfo3Title" name="moreInfo3Title" id="moreInfo3Title">
         </div>
       </div>
       <div class="form-row">

@@ -8,6 +8,18 @@ span{
   margin-right: 5px;
   padding: 5px;
 }
-button {
-  cursor: pointer;
+
+span.button.is-small{
+  &.btn-primary,&.btn-secondary,&.btn-danger {
+    cursor: pointer;
+  }
+}
+
+.editstate{
+  .media-body{
+    padding-top: 12px;
+  }
+  label {
+    margin-right: 8px;
+  }
 }

@@ -31,23 +31,25 @@
         </div>
       </div>
 
-      <ngb-tabset [orientation]="currentOrientation" [justify]="currentJustify" *ngIf="product.moreInfo1Title || product.moreInfo1Text || product.moreInfo2Title || product.moreInfo2Text || product.moreInfo3Title || product.moreInfo3Text">
-        <ngb-tab title="{{product.moreInfo1Title}}" *ngIf="product.moreInfo1Title">
-          <ng-template ngbTabContent *ngIf="product.moreInfo1Text">
-            <p [innerHTML]="product.moreInfo1Text"></p>
-          </ng-template>
-        </ngb-tab>
-        <ngb-tab title="{{product.moreInfo2Title}}" *ngIf="product.moreInfo2Title">
-          <ng-template ngbTabContent *ngIf="product.moreInfo2Text">
-            <p [innerHTML]="product.moreInfo2Text"></p>
-          </ng-template>
-        </ngb-tab>
-        <ngb-tab title="{{product.moreInfo3Title}}" *ngIf="product.moreInfo3Title">
-          <ng-template ngbTabContent *ngIf="product.moreInfo3Text">
-            <p [innerHTML]="product.moreInfo3Text"></p>
-          </ng-template>
-        </ngb-tab>
-      </ngb-tabset>
+      <ng-container *ngIf="product.register">
+        <ngb-tabset [orientation]="currentOrientation" [justify]="currentJustify" *ngIf="product.moreInfo1Title || product.moreInfo1Text || product.moreInfo2Title || product.moreInfo2Text || product.moreInfo3Title || product.moreInfo3Text">
+          <ngb-tab title="{{product.moreInfo1Title}}" *ngIf="product.moreInfo1Title">
+            <ng-template ngbTabContent *ngIf="product.moreInfo1Text">
+              <p [innerHTML]="product.moreInfo1Text"></p>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="{{product.moreInfo2Title}}" *ngIf="product.moreInfo2Title">
+            <ng-template ngbTabContent *ngIf="product.moreInfo2Text">
+              <p [innerHTML]="product.moreInfo2Text"></p>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="{{product.moreInfo3Title}}" *ngIf="product.moreInfo3Title">
+            <ng-template ngbTabContent *ngIf="product.moreInfo3Text">
+              <p [innerHTML]="product.moreInfo3Text"></p>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+      </ng-container>
 
     </div>
   </div>
