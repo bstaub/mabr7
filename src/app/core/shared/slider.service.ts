@@ -16,25 +16,25 @@ export class SliderService {
         image: `assets/slider/slider1_guetzli.jpeg`,
         title: 'Photoapparate',
         text: 'Schiesse die besten Photos mit unseren Digitalkameras',
-        link: 'http://localhost:4200/produkte/detail/dMCPQ1NYxKGCa5yvvaII',
+        link: 'http://localhost:4200/produkte/detail/9H9kq3pUEELAS8GYdsPB',
       },
       {
         image: `assets/slider/slider2_guetzli.jpeg`,
         title: 'Herbstmomente',
         text: 'Gutschein für Übernachten auf dem Bauernhof',
-        link: 'http://localhost:4200/produkte/detail/dMCPQ1NYxKGCa5yvvaII',
+        link: 'http://localhost:4200/produkte/detail/Buwxv9NLdMae3yM5pilA',
       },
       {
         image: `assets/slider/slide_sonnenbrillen.jpg`,
         title: 'Sonnenbrillen',
         text: 'Die neusten Brillenmodelle passend zu den Jahrezeiten',
-        link: 'http://localhost:4200/produkte/detail/eVR3Tj9bRLIAsjD9CrQ6',
+        link: 'http://localhost:4200/produkte/detail/YQyZmAeqMKseNF4EEsZ7',
       },
       {
         image: `assets/slider/slide_computer.jpg`,  // https://picsum.photos/2560/500?random&t=${Math.random()}
         title: 'Apple Macbook Air',
         text: 'Apple Lifestyle Produkte',
-        link: 'http://localhost:4200/produkte/detail/eVR3Tj9bRLIAsjD9CrQ6',
+        link: 'https://www.apple.com/chde/macbook-air/',
       },
     ];
 
