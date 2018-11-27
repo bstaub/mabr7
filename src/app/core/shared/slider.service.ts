@@ -31,11 +31,17 @@ export class SliderService {
         link: 'http://localhost:4200/produkte/detail/YQyZmAeqMKseNF4EEsZ7',
       },
       {
-        image: `assets/slider/slide_computer.jpg`,  // https://picsum.photos/2560/500?random&t=${Math.random()}
-        title: 'Apple Macbook Air',
-        text: 'Apple Lifestyle Produkte',
-        link: 'https://www.apple.com/chde/macbook-air/',
+        image: `assets/slider/laedeli_mydeer_opt.jpg`,
+        title: 'Stoff & Kuscheltierli',
+        text: 'Ein passendes Geschenk zu jeder Jahreszeit',
+        link: 'http://localhost:4200/produkte/detail/3VYZKtlBGf6az2jvmVlo',
       },
+      // {
+      //   image: `assets/slider/slide_computer.jpg`,  // https://picsum.photos/2560/500?random&t=${Math.random()}
+      //   title: 'Apple Macbook Air',
+      //   text: 'Apple Lifestyle Produkte',
+      //   link: 'https://www.apple.com/chde/macbook-air/',
+      // },
     ];
 
   }

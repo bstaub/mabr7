@@ -58,6 +58,7 @@ export class AdminProductListEditComponent implements OnInit {
   updateProduct(product: Product) {
     this.productService.updateProduct(product.key, product, this.image, this.selectedCategory.name);  // Parameter 3 und 4 is optional for Admin Edit!
     this.alertifyService.success(product.name + ' wurde erfolgreich editiert.');
+    this.editState = false;
   }
 
   onFileSelection($event) {
