@@ -1,5 +1,6 @@
 <form (ngSubmit)="getAllSearch()" [formGroup]="searchFormReactive">
-  <input type="text"
+  <input #search
+          type="text"
          formControlName="search"
          (keyup)="getAllSearch()"
          (blur)="hideCloseIcon()"
@@ -8,7 +9,7 @@
          placeholder="Sucheingabe..."
          autocomplete="off">
 
- <i class="fa fa-search"></i>
+ <i class="fa fa-search" (click)="openSearchBox()"></i>
 
 
          <div class="searchhelper" [style.display]="closeIconStatus == true ? 'block' : 'none'">

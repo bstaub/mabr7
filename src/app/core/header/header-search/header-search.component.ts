@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ProductService } from '../../../product/shared/product.service';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -16,6 +16,7 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
   searchFormReactive: FormGroup;
   closeIconStatus = false;
   subscription_getDataToSearch: Subscription;
+  @ViewChild('search') searchField: ElementRef;
 
 
   constructor(private productService: ProductService,
@@ -81,6 +82,11 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscription_getDataToSearch.unsubscribe();
+  }
+
+  openSearchBox(): void {
+    this.searchField.nativeElement.focus();
+    this.showCloseIcon();
   }
 
 
