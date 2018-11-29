@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ProductService} from '../../../product/shared/product.service';
+import { ProductService } from '../../../product/shared/product.service';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -36,7 +36,7 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
     }
 
     this.subscription_getDataToSearch = this.productService.getDataToSearch()
-      .subscribe( data => {
+      .subscribe(data => {
         this.resultsArray = data.filter(item => {
           if (this.searchFormReactive.value.search && this.searchFormReactive.value.search.length > 0) {
             this.stringToSearch = this.searchFormReactive.value.search;
@@ -52,11 +52,14 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
   }
 
   showCloseIcon() {
+    console.log('showCloseIcon');
     setTimeout(() => {
       this.closeIconStatus = true;
     }, 400);  // on focus delay show x
   }
+
   hideCloseIcon() {
+    console.log('hideCloseIcon');
     this.closeIconStatus = false;
     this.searchFormReactive.reset();
     setTimeout(() => {
@@ -66,6 +69,7 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
   }
 
   resetForm() {
+    console.log('resetForm');
     this.closeIconStatus = false;
     this.searchFormReactive.reset();
     setTimeout(() => {

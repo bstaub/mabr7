@@ -2,11 +2,15 @@
   <input type="text"
          formControlName="search"
          (keyup)="getAllSearch()"
-         (focus)="showCloseIcon()"
          (blur)="hideCloseIcon()"
+         (click)="showCloseIcon()"
          name="search"
          placeholder="Sucheingabe..."
          autocomplete="off">
+
+ <i class="fa fa-search"></i>
+
+
          <div class="searchhelper" [style.display]="closeIconStatus == true ? 'block' : 'none'">
            <a class="searchhelper-close" (click)="resetForm()">X</a>
          </div>
