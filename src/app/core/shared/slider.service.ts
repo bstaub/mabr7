@@ -16,25 +16,25 @@ export class SliderService {
         image: `assets/slider/slider1_guetzli.jpeg`,
         title: 'Photoapparate',
         text: 'Schiesse die besten Photos mit unseren Digitalkameras',
-        link: 'http://localhost:4200/produkte/detail/9H9kq3pUEELAS8GYdsPB',
+        link: 'http://localhost:4200/produkte/list?category=Fotoapparate',
       },
       {
         image: `assets/slider/slider2_guetzli.jpeg`,
         title: 'Herbstmomente',
         text: 'Gutschein für Übernachten auf dem Bauernhof',
-        link: 'http://localhost:4200/produkte/detail/Buwxv9NLdMae3yM5pilA',
+        link: 'http://localhost:4200/produkte/list?category=Gartenzubeh%C3%B6r',
       },
       {
         image: `assets/slider/slide_sonnenbrillen.jpg`,
         title: 'Sonnenbrillen',
         text: 'Die neusten Brillenmodelle passend zu den Jahrezeiten',
-        link: 'http://localhost:4200/produkte/detail/YQyZmAeqMKseNF4EEsZ7',
+        link: 'http://localhost:4200/produkte/list?category=Sonnenbrillen',
       },
       {
         image: `assets/slider/laedeli_mydeer_opt.jpg`,
         title: 'Stoff & Kuscheltierli',
         text: 'Ein passendes Geschenk zu jeder Jahreszeit',
-        link: 'http://localhost:4200/produkte/detail/3VYZKtlBGf6az2jvmVlo',
+        link: 'http://localhost:4200/produkte/list?category=Maileg%20Tierchen',
       },
       // {
       //   image: `assets/slider/slide_computer.jpg`,  // https://picsum.photos/2560/500?random&t=${Math.random()}

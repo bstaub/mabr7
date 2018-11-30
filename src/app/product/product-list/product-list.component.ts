@@ -5,6 +5,7 @@ import { Product } from '../../models/product.model';
 import { SettingsService } from '../../shared/settings.service';
 import { ProductCategory } from '../../models/product-category.model';
 import { ProductCategoryService } from '../shared/product-category.service';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -19,16 +20,31 @@ export class ProductListComponent implements OnInit {
   selectedSort: string;
   p = 1;
   selectUndefinedOptionValue: any;
+  queryParams: Params;
 
   constructor(private productService: ProductService,
               private productCategory: ProductCategoryService,
               private settingsService: SettingsService,
+              private activeRoute: ActivatedRoute,
+              private router: Router,
   ) {
   }
 
   ngOnInit() {
     this.getProductList();
     this.categories$ = this.productCategory.getCategories();
+
+    this.queryParams = this.activeRoute.snapshot.queryParams;
+    if (this.queryParams.category !== '') {
+      this.products$ = this.productService.filterProductsByCategoryAndField(this.queryParams.category, 'a-z');
+      this.selectedCategory = this.queryParams.category;
+      this.router.navigate([], {
+        queryParams: {
+          category: null,
+        },
+        queryParamsHandling: 'merge'
+      });
+    }
   }
 
   getProductList() {
