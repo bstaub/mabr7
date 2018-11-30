@@ -1,108 +1,130 @@
 <app-page-title title="Bestellung" [children]="[{title: 'Bestellung'}]"></app-page-title>
-<div class="container">
+
+<div *ngIf="(productPerOrderLocalStorage?.length > 0);then items else no_items"></div>
+
+<ng-template #items>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
 
 
-  <div class="row">
-    <div class="col-md-12">
+        <h3 class="checkout-titel">Warenkorb</h3>
 
-      <h3 class="checkout-titel">Warenkorb</h3>
-
-      <div class="table-responsive">
-        <table class="order table table-striped">
-          <thead>
-          <tr>
-            <th class="product">Artikel</th>
-            <th class="orderinput">Menge</th>
-            <th class="price text text-right">Preis CHF</th>
-            <th class="discount text text-right">%</th>
-            <th class="price text text-right">Total CHF</th>
-            <th class="action text-right"></th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr
-            *ngFor="let product of productPerOrderLocalStorage | arraySort: 'name' | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
-            <td class="product">
-              <figure class="media">
-                <div>
-                  <img src="{{product.image}}" alt="{{product.description}}" class="img-thumbnail" width="100px">
+        <div class="table-responsive">
+          <table class="order table table-striped">
+            <thead>
+            <tr>
+              <th class="product">Artikel</th>
+              <th class="orderinput">Menge</th>
+              <th class="price text text-right">Preis CHF</th>
+              <th class="discount text text-right">%</th>
+              <th class="price text text-right">Total CHF</th>
+              <th class="action text-right"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr
+              *ngFor="let product of productPerOrderLocalStorage | arraySort: 'name' | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
+              <td class="product">
+                <figure class="media">
+                  <div>
+                    <img src="{{product.image}}" alt="{{product.description}}" class="img-thumbnail" width="100px">
+                  </div>
+                  <figcaption class="media-body">
+                    <h6 class="title text-truncate">{{product.name}}</h6>
+                  </figcaption>
+                </figure>
+              </td>
+              <td class="orderinput">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button" (click)="onDecreaseQty(product)">-</button>
+                  </div>
+                  <input type="text" class="form-control text-center" [(ngModel)]="product.qty"
+                         (blur)="onChangeQty(product)">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" (click)="onIncreaseQty(product)">+</button>
+                  </div>
                 </div>
-                <figcaption class="media-body">
-                  <h6 class="title text-truncate">{{product.name}}</h6>
-                </figcaption>
-              </figure>
-            </td>
-            <td class="orderinput">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <button class="btn btn-outline-secondary" type="button" (click)="onDecreaseQty(product)">-</button>
-                </div>
-                <input type="text" class="form-control text-center" [(ngModel)]="product.qty"
-                       (blur)="onChangeQty(product)">
-                <div class="input-group-append">
-                  <button class="btn btn-outline-secondary" type="button" (click)="onIncreaseQty(product)">+</button>
-                </div>
-              </div>
-            </td>
-            <td data-title="Preis CHF" class="text text-right">{{product.price | number : '1.2-2'}}</td>
-            <td data-title="Rabatt %" class="text text-right"><p *ngIf="product.discountFactor != 1">{{(1-
-              product.discountFactor) *100 | number : '1.0'}}</p></td>
-            <td data-title="Total CHF" class="text text-right">{{product.price * product.qty * product.discountFactor |
-              number : '1.2-2'}}
-            </td>
-            <td align="rigth">
+              </td>
+              <td data-title="Preis CHF" class="text text-right">{{product.price | number : '1.2-2'}}</td>
+              <td data-title="Rabatt %" class="text text-right"><p *ngIf="product.discountFactor != 1">{{(1-
+                product.discountFactor) *100 | number : '1.0'}}</p></td>
+              <td data-title="Total CHF" class="text text-right">{{product.price * product.qty * product.discountFactor
+                |
+                number : '1.2-2'}}
+              </td>
+              <td align="rigth">
 
-              <button class="btn btn-sm btn-danger" (click)="onDeletItem(product.productId)">
-                <fa name="trash"></fa>
-              </button>
-            </td>
-          </tr>
-          </tbody>
-          <tfoot>
+                <button class="btn btn-sm btn-danger" (click)="onDeletItem(product.productId)">
+                  <fa name="trash"></fa>
+                </button>
+              </td>
+            </tr>
+            </tbody>
+            <tfoot>
 
-          <tr class="scarttotal">
-            <td class="no-responsive">Gesammttotal CHF</td>
-            <td class="no-responsive"></td>
-            <td class="no-responsive"></td>
-            <td class="no-responsive"></td>
-            <td data-title="Gesammtsumme CHF" class="text-right">{{order?.totalValue | number : '1.2-2'}}</td>
-            <td class="no-responsive"></td>
-          </tr>
+            <tr class="scarttotal">
+              <td class="no-responsive">Gesammttotal CHF</td>
+              <td class="no-responsive"></td>
+              <td class="no-responsive"></td>
+              <td class="no-responsive"></td>
+              <td data-title="Gesammtsumme CHF" class="text-right">{{order?.totalValue | number : '1.2-2'}}</td>
+              <td class="no-responsive"></td>
+            </tr>
 
-          </tfoot>
-        </table>
+            </tfoot>
+          </table>
+
+        </div>
+
 
       </div>
+    </div>
+
+    <br><br><br>
+    <button class="orderaction btn btn-primary float-left" (click)="onDeleteScart()">Warenkorb Löschen</button>&nbsp;
+    <button [disabled]="(productPerOrderLocalStorage.length == 0)" class="orderaction btn btn-primary float-right"
+            (click)="onEnterOrderData()">Bestellen
+    </button>
 
 
+    <div style="clear: both"></div>
+
+
+    <pagination-controls (pageChange)="p = $event"
+                         maxSize="9"
+                         directionLinks="true"
+                         autoHide="true"
+                         responsive="true"
+                         previousLabel="Zurück"
+                         nextLabel="Vor"
+                         screenReaderPaginationLabel="Pagination"
+                         screenReaderPageLabel="Seite"
+                         screenReaderCurrentLabel="Du bist auf Seite">
+    </pagination-controls>
+
+
+  </div>
+
+
+</ng-template>
+
+<ng-template #no_items>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <h3 class="checkout-titel">Warenkorb</h3>
+
+        Es befinden sich keine Artikel im Warenkorb
+
+      </div>
     </div>
   </div>
 
-  <br><br><br>
-  <button class="orderaction btn btn-primary float-left" (click)="onDeleteScart()">Warenkorb Löschen</button>&nbsp;
-  <button [disabled]="(productPerOrderLocalStorage.length == 0)" class="orderaction btn btn-primary float-right"
-          (click)="onEnterOrderData()">Bestellen
-  </button>
-
-
-  <div style="clear: both"></div>
-
-  <pagination-controls (pageChange)="p = $event"
-                       maxSize="9"
-                       directionLinks="true"
-                       autoHide="true"
-                       responsive="true"
-                       previousLabel="Zurück"
-                       nextLabel="Vor"
-                       screenReaderPaginationLabel="Pagination"
-                       screenReaderPageLabel="Seite"
-                       screenReaderCurrentLabel="Du bist auf Seite">
-  </pagination-controls>
-
-
-</div>
-
-
+</ng-template>
 
 
 
