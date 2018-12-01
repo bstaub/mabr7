@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
-
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../../environments/environment';
-
 import { NgxPaginationModule } from 'ngx-pagination';
-
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -31,18 +28,16 @@ import { CommonModule } from '@angular/common';
   ],
   imports: [
     CommonModule,
-    // AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFontAwesomeModule,
-    RouterModule,  // holy shit..
+    RouterModule,
   ],
   exports: [
     CommonModule,
-    // AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
