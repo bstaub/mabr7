@@ -23,6 +23,10 @@ const routes: Routes = [
   {path: 'checkout-login', component: CheckoutLoginComponent},
   {path: 'users', component: UserComponent, children: USER_ROUTES, canActivate: [Auth2Guard]},
   {path: 'user-login-register-slide', component: UserLoginRegisterSlideComponent},
+  {
+    path: 'lazyfeature',
+    loadChildren: './lazyfeature/lazyfeature.module#LazyfeatureModule'
+  },
   // There's a bug that's preventing wild card routes to be lazy loaded (see: https://github.com/angular/angular/issues/13848)
   // That's why the Error page should be eagerly loaded
   {

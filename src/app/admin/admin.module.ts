@@ -18,7 +18,7 @@ import { AdminProductListEditComponent } from './admin-product-list-edit/admin-p
     AdminHomeComponent,
     AdminProductListEditComponent],
   imports: [
-    SharedModule
+    SharedModule,
   ]
 })
 export class AdminModule { }
