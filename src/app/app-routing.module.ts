@@ -4,9 +4,7 @@ import { HomeComponent } from './core/home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { ADMIN_ROUTES } from './admin/admin.routing';
 import { OrderComponent } from './order/order.component';
-import { CheckoutComponent } from './checkout/checkout.component';
 import { CheckoutLoginComponent } from './checkout/checkout-login/checkout-login.component';
-import { CHECKOUT_ROUTES } from './checkout/checkout.routing';
 import { UserComponent } from './user/user.component';
 import { USER_ROUTES } from './user/user.routing';
 import { Auth2Guard } from './user/guards/auth2.guard';
@@ -21,7 +19,7 @@ const routes: Routes = [
   {path: 'admin', component: AdminComponent, children: ADMIN_ROUTES, canActivate: [AdminGuard]},
   {path: 'produkte', component: ProductComponent, children: PRODUCT_ROUTES},
   {path: 'bestellung', component: OrderComponent},
-  {path: 'checkout', component: CheckoutComponent, children: CHECKOUT_ROUTES},
+  {path: 'checkout', loadChildren: './checkout/checkout.module#CheckoutModule'},
   {path: 'checkout-login', component: CheckoutLoginComponent},
   {path: 'users', component: UserComponent, children: USER_ROUTES, canActivate: [Auth2Guard]},
   {path: 'user-login-register-slide', component: UserLoginRegisterSlideComponent},
