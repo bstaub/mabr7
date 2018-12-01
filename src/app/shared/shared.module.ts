@@ -17,6 +17,7 @@ import { BackButtonDirective } from './directive/back-button.directive';
 import { NgPrimeModule } from './ng-prime.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { PageTitleComponent } from './page-title/page-title.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { PageTitleComponent } from './page-title/page-title.component';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule,
+    RouterModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -38,7 +39,7 @@ import { PageTitleComponent } from './page-title/page-title.component';
   ],
   exports: [
     CommonModule,
-    AppRoutingModule,
+    RouterModule,
     FormsModule,
     ReactiveFormsModule,
     NgbModule,

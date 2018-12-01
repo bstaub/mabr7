@@ -8,6 +8,7 @@ import { ProductModule } from './product/product.module';
 import { OrderModule } from './order/order.module';
 import { CheckoutModule } from './checkout/checkout.module';
 import { UserModule } from './user/user.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { UserModule } from './user/user.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule,
     AdminModule,
