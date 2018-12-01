@@ -9,16 +9,15 @@ import { UserComponent } from './user/user.component';
 import { USER_ROUTES } from './user/user.routing';
 import { Auth2Guard } from './user/guards/auth2.guard';
 import { UserLoginRegisterSlideComponent } from './user/user-login-register-slide/user-login-register-slide.component';
-import { ProductComponent } from './product/product.component';
-import { PRODUCT_ROUTES } from './product/product.routing';
 import { AdminGuard } from './user/guards/admin.guard';
 import { Error404PageComponent } from './404/error-404-page.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'admin', component: AdminComponent, children: ADMIN_ROUTES, canActivate: [AdminGuard]},
-  {path: 'produkte', component: ProductComponent, children: PRODUCT_ROUTES},
+  {path: 'produkte', component: ProductComponent, loadChildren: './product/product.module#ProductModule'},
   {path: 'bestellung', component: OrderComponent},
   {path: 'checkout', component: CheckoutComponent, loadChildren: './checkout/checkout.module#CheckoutModule'},
   {path: 'checkout-login', component: CheckoutLoginComponent},
