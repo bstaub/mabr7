@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LocalStorageService } from '../shared/local-storage.service';
 import { AuthService } from '../user/shared/auth.service';
 import { SettingsService } from '../shared/settings.service';
-import { OrderFlyoutService } from '../core/shared/order-flyout.service';
+import { OrderFlyoutService } from '../shared/order-flyout.service';
 
 
 

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AppRoutingModule } from '../app-routing.module';
+// import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -17,6 +17,7 @@ import { BackButtonDirective } from './directive/back-button.directive';
 import { NgPrimeModule } from './ng-prime.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { PageTitleComponent } from './page-title/page-title.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [

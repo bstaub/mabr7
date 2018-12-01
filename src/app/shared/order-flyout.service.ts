@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { ProductPerOrderLocalStorage } from '../../models/productPerOrderLocalStorage.model';
-import { Order } from '../../models/order.model';
+import { ProductPerOrderLocalStorage } from '../models/productPerOrderLocalStorage.model';
+import { Order } from '../models/order.model';
 
 @Injectable({
   providedIn: 'root'

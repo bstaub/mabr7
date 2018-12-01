@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from '../home/home.component';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProductService } from '../product/shared/product.service';
 import { UserService } from '../user/shared/user.service';
@@ -11,19 +11,19 @@ import { ProductCategoryService } from '../product/shared/product-category.servi
 import { AuthService } from '../user/shared/auth.service';
 import { SettingsService } from '../shared/settings.service';
 import { AlertifyService } from '../shared/alertify.service';
-import { HeaderOrderFlyoutComponent } from './header/header-orderflyout/header-orderflyout.component';
-import { OffCanvasComponent } from './home/off-canvas/off-canvas.component';
-import { HomeSliderNgcarouselComponent } from './home/home-slider-ngcarousel/home-slider-ngcarousel.component';
-import { SliderService } from './shared/slider.service';
-import { HeaderSearchComponent } from './header/header-search/header-search.component';
+import { HeaderOrderFlyoutComponent } from '../header/header-orderflyout/header-orderflyout.component';
+import { OffCanvasComponent } from '../home/off-canvas/off-canvas.component';
+import { HomeSliderNgcarouselComponent } from '../home/home-slider-ngcarousel/home-slider-ngcarousel.component';
+import { SliderService } from '../shared/slider.service';
+import { HeaderSearchComponent } from '../header/header-search/header-search.component';
 import { AdminGuard } from '../user/guards/admin.guard';
 import { Auth2Guard } from '../user/guards/auth2.guard';
 import { AuthuserGuard } from '../user/guards/authuser.guard';
 import { RegisterGuard } from '../user/guards/register.guard';
-import { OrderFlyoutService } from './shared/order-flyout.service';
+import { OrderFlyoutService } from '../shared/order-flyout.service';
 import { OrderService } from '../order/shared/order.service';
 import { LocalStorageService } from '../shared/local-storage.service';
-import { Error404PageComponent } from './404/error-404-page.component';
+import { Error404PageComponent } from '../404/error-404-page.component';
 
 
 

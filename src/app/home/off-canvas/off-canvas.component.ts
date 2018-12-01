@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output } from '@angular/core';
-import { AuthService } from '../../../user/shared/auth.service';
-import { Order } from '../../../models/order.model';
-import { LocalStorageService } from '../../../shared/local-storage.service';
+import { AuthService } from '../../user/shared/auth.service';
+import { Order } from '../../models/order.model';
+import { LocalStorageService } from '../../shared/local-storage.service';
 import { OrderFlyoutService} from '../../shared/order-flyout.service';
 import { Subscription } from 'rxjs';
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Slide } from '../../models/Slide';
+import { Slide } from '../models/Slide';
 
 
 @Injectable({

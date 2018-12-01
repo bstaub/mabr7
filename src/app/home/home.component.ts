@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Product } from '../../models/product.model';
-import { ProductService } from '../../product/shared/product.service';
+import { Product } from '../models/product.model';
+import { ProductService } from '../product/shared/product.service';
 
 @Component({
   selector: 'app-home',

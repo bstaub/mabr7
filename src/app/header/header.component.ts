@@ -1,10 +1,10 @@
 import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AuthService } from '../../user/shared/auth.service';
-import { UserService } from '../../user/shared/user.service';
-import { SettingsService } from '../../shared/settings.service';
-import { LocalStorageService } from '../../shared/local-storage.service';
-import { Order } from '../../models/order.model';
+import { AuthService } from '../user/shared/auth.service';
+import { UserService } from '../user/shared/user.service';
+import { SettingsService } from '../shared/settings.service';
+import { LocalStorageService } from '../shared/local-storage.service';
+import { Order } from '../models/order.model';
 import { OrderFlyoutService} from '../shared/order-flyout.service';
 import { Subscription } from 'rxjs';
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './core/home/home.component';
+import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { ADMIN_ROUTES } from './admin/admin.routing';
 import { OrderComponent } from './order/order.component';
@@ -12,14 +12,14 @@ import { UserLoginRegisterSlideComponent } from './user/user-login-register-slid
 import { ProductComponent } from './product/product.component';
 import { PRODUCT_ROUTES } from './product/product.routing';
 import { AdminGuard } from './user/guards/admin.guard';
-import { Error404PageComponent } from './core/404/error-404-page.component';
+import { Error404PageComponent } from './404/error-404-page.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'admin', component: AdminComponent, children: ADMIN_ROUTES, canActivate: [AdminGuard]},
   {path: 'produkte', component: ProductComponent, children: PRODUCT_ROUTES},
   {path: 'bestellung', component: OrderComponent},
-  {path: 'checkout', loadChildren: './checkout/checkout.module#CheckoutModule'},
+  // {path: 'checkout', loadChildren: './checkout/checkout.module#CheckoutModule'},
   {path: 'checkout-login', component: CheckoutLoginComponent},
   {path: 'users', component: UserComponent, children: USER_ROUTES, canActivate: [Auth2Guard]},
   {path: 'user-login-register-slide', component: UserLoginRegisterSlideComponent},

@@ -6,7 +6,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { LocalStorageService } from '../../shared/local-storage.service';
 import { AuthService } from '../../user/shared/auth.service';
 import { Subscription } from 'rxjs';
-import { OrderFlyoutService } from '../../core/shared/order-flyout.service';
+import { OrderFlyoutService } from '../../shared/order-flyout.service';
 import { OrderService } from '../../order/shared/order.service';
 
 
