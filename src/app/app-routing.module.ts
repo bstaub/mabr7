@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './core/home/home.component';
 import { AdminComponent } from './admin/admin.component';
-import { ADMIN_ROUTES } from './admin/admin.routing';
 import { OrderComponent } from './order/order.component';
 import { CheckoutLoginComponent } from './checkout/checkout-login/checkout-login.component';
 import { UserComponent } from './user/user.component';
@@ -13,14 +12,29 @@ import { AdminGuard } from './user/guards/admin.guard';
 import { Error404PageComponent } from './core/404/error-404-page.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductComponent } from './product/product.component';
+import { ADMIN_ROUTES } from './admin/admin-routing.module';
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'admin', component: AdminComponent, children: ADMIN_ROUTES, canActivate: [AdminGuard]},
-  {path: 'produkte', component: ProductComponent, loadChildren: './product/product.module#ProductModule'},
-  {path: 'bestellung', component: OrderComponent},
-  {path: 'checkout', component: CheckoutComponent, loadChildren: './checkout/checkout.module#CheckoutModule'},
+  {
+    path: 'produkte',
+    component: ProductComponent,
+    loadChildren: './product/product.module#ProductModule'
+  },
+  {
+    path: 'bestellung',
+    component: OrderComponent,
+    loadChildren: './order/order.module#OrderModule'
+  },
+
   {path: 'checkout-login', component: CheckoutLoginComponent},
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
+    loadChildren: './checkout/checkout.module#CheckoutModule'
+  },
   {path: 'users', component: UserComponent, children: USER_ROUTES, canActivate: [Auth2Guard]},
   {path: 'user-login-register-slide', component: UserLoginRegisterSlideComponent},
   {

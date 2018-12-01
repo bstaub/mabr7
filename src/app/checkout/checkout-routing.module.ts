@@ -1,13 +1,14 @@
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 import { CheckoutCustomerdataComponent } from './checkout-customerdata/checkout-customerdata.component';
 import { CheckoutShipmentComponent } from './checkout-shipment/checkout-shipment.component';
 import { CheckoutPaymentComponent } from './checkout-payment/checkout-payment.component';
 import { CheckoutThxComponent } from './checkout-thx/checkout-thx.component';
 import { CheckoutOverviewComponent } from './checkout-overview/checkout-overview.component';
-import { NgModule } from '@angular/core';
+import { CheckoutLoginComponent } from './checkout-login/checkout-login.component';
 
 
-const CHECKOUT_ROUTES: Routes = [
+const routes: Routes = [
   {path: '', redirectTo: 'customerdata', pathMatch: 'full'},
   {path: 'customerdata', component: CheckoutCustomerdataComponent, data: {checkoutStep: 1}},
   {path: 'shipmentdata', component: CheckoutShipmentComponent, data: {checkoutStep: 2}},
@@ -17,7 +18,7 @@ const CHECKOUT_ROUTES: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(CHECKOUT_ROUTES)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 
