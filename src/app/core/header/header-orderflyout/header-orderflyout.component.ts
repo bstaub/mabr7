@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { LocalStorageService } from '../../shared/local-storage.service';
-import { OrderFlyoutService } from '../../shared/order-flyout.service';
-import { ProductPerOrderLocalStorage } from '../../models/productPerOrderLocalStorage.model';
-import { Order } from '../../models/order.model';
+import { LocalStorageService } from '../../../shared/local-storage.service';
+import { OrderFlyoutService } from '../../../shared/order-flyout.service';
+import { ProductPerOrderLocalStorage } from '../../../models/productPerOrderLocalStorage.model';
+import { Order } from '../../../models/order.model';
 import { Subscription } from 'rxjs';
 
 

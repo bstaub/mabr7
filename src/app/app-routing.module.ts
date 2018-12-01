@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './core/home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { ADMIN_ROUTES } from './admin/admin.routing';
 import { OrderComponent } from './order/order.component';
@@ -10,7 +10,7 @@ import { USER_ROUTES } from './user/user.routing';
 import { Auth2Guard } from './user/guards/auth2.guard';
 import { UserLoginRegisterSlideComponent } from './user/user-login-register-slide/user-login-register-slide.component';
 import { AdminGuard } from './user/guards/admin.guard';
-import { Error404PageComponent } from './404/error-404-page.component';
+import { Error404PageComponent } from './core/404/error-404-page.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductComponent } from './product/product.component';
 
