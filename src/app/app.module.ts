@@ -9,6 +9,7 @@ import { OrderModule } from './order/order.module';
 import { CheckoutModule } from './checkout/checkout.module';
 import { UserModule } from './user/user.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     OrderModule,
     CheckoutModule,
     UserModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

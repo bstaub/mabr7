@@ -7,7 +7,7 @@ import { AuthService } from '../../user/shared/auth.service';
 import { LocalStorageService } from '../../shared/local-storage.service';
 import { Subscription } from 'rxjs';
 import { OrderService } from '../../order/shared/order.service';
-import { OrderFlyoutService } from '../../core/shared/order-flyout.service';
+import { OrderFlyoutService } from '../../shared/order-flyout.service';
 
 
 

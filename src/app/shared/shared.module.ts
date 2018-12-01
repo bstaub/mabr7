@@ -28,17 +28,16 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    RouterModule,
   ],
   exports: [
     CommonModule,
-    RouterModule,
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
@@ -50,6 +49,7 @@ import { RouterModule } from '@angular/router';
     PageTitleComponent,
     NgxPaginationModule,
     AngularFontAwesomeModule,
+    RouterModule,
   ]
 })
 export class SharedModule {

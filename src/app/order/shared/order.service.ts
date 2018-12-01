@@ -8,7 +8,7 @@ import { ProductPerOrderLocalStorage } from '../../models/productPerOrderLocalSt
 import { UserService } from '../../user/shared/user.service';
 import { LocalStorageService } from '../../shared/local-storage.service';
 import { CustomerAddress } from '../../models/customerAddress.model';
-import { OrderFlyoutService } from '../../core/shared/order-flyout.service';
+import { OrderFlyoutService } from '../../shared/order-flyout.service';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 
 
