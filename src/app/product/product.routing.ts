@@ -1,8 +1,9 @@
 import { RouterModule, Routes } from '@angular/router';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { ProductGridComponent } from './product-grid/product-grid.component';
+import {ProductListComponent} from './product-list/product-list.component';
+import {ProductDetailComponent} from './product-detail/product-detail.component';
+import {ProductGridComponent} from './product-grid/product-grid.component';
 import { NgModule } from '@angular/core';
+import { ProductComponent } from './product.component';
 
 
 const PRODUCT_ROUTES: Routes = [
@@ -22,5 +23,4 @@ const PRODUCT_ROUTES: Routes = [
   exports: [RouterModule]
 })
 
-export class ProductRoutingModule {
-}
+export class ProductRoutingModule {}

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CheckboxModule, DropdownModule, EditorModule, FileUploadModule } from 'primeng/primeng';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RatingModule } from 'primeng/rating';
 
 
@@ -7,6 +8,7 @@ import { RatingModule } from 'primeng/rating';
   declarations: [],
 
   imports: [
+    // BrowserAnimationsModule,  // in conflikt with browsermodule!
     DropdownModule,
     CheckboxModule,
     FileUploadModule,
@@ -15,6 +17,7 @@ import { RatingModule } from 'primeng/rating';
   ],
 
   exports: [
+    // BrowserAnimationsModule,
     DropdownModule,
     CheckboxModule,
     FileUploadModule,

@@ -1,22 +1,25 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../../environments/environment';
+
+import { NgxPaginationModule } from 'ngx-pagination';
+
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgPrimeModule } from './ng-prime.module';
 import { ArraySortPipe } from './shared/array-sort.pipe';
 import { ArraySortDescPipe } from './shared/array-sort-desc.pipe';
 import { CheckStatusPipe } from './shared/check-status.pipe';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { BackButtonDirective } from './directive/back-button.directive';
-import { NgPrimeModule } from './ng-prime.module';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { PageTitleComponent } from './page-title/page-title.component';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -28,16 +31,18 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
+    // AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFontAwesomeModule,
-    RouterModule,
+    RouterModule,  // holy shit..
   ],
   exports: [
     CommonModule,
+    // AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     NgbModule,

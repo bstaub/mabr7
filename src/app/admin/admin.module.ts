@@ -8,6 +8,7 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { SharedModule } from '../shared/shared.module';
 import { AdminProductListEditComponent } from './admin-product-list-edit/admin-product-list-edit.component';
 
+
 @NgModule({
   declarations: [
     AdminComponent,
@@ -18,7 +19,7 @@ import { AdminProductListEditComponent } from './admin-product-list-edit/admin-p
     AdminHomeComponent,
     AdminProductListEditComponent],
   imports: [
-    SharedModule
+    SharedModule,
   ]
 })
 export class AdminModule { }

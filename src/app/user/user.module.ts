@@ -17,7 +17,7 @@ import { SharedModule } from '../shared/shared.module';
     UserDetailComponent,
   ],
   imports: [
-    SharedModule
+    SharedModule,
   ]
 })
 export class UserModule { }
