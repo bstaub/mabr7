@@ -8,21 +8,21 @@ import { RatingModule } from 'primeng/rating';
   declarations: [],
 
   imports: [
-    BrowserAnimationsModule,
-    DropdownModule,
-    CheckboxModule,
-    FileUploadModule,
-    RatingModule,
-    EditorModule,
+    // BrowserAnimationsModule,  // in conflikt with browsermodule!
+    // DropdownModule,
+    // CheckboxModule,
+    // FileUploadModule,
+    // RatingModule,
+    // EditorModule,
   ],
 
   exports: [
-    BrowserAnimationsModule,
-    DropdownModule,
-    CheckboxModule,
-    FileUploadModule,
-    RatingModule,
-    EditorModule,
+    // BrowserAnimationsModule,
+    // DropdownModule,
+    // CheckboxModule,
+    // FileUploadModule,
+    // RatingModule,
+    // EditorModule,
   ]
 
 })

@@ -1,89 +1,90 @@
 <div class="container-fluid">
-  <app-page-title title="Homepage" [children]="[{title: 'Homepage'}]" [homepage]="true"></app-page-title>
-  <app-home-slider-ngcarousel></app-home-slider-ngcarousel>
+  <!--<app-page-title title="Homepage" [children]="[{title: 'Homepage'}]" [homepage]="true"></app-page-title>-->
+  <!--<app-home-slider-ngcarousel></app-home-slider-ngcarousel>-->
 
-  <div class="container mt-5">
-    <div class="card-deck mb-3 text-center">
-      <div *ngIf="(productsDiscounts$ | async | checkStatus | arraySort: 'price') as discount" class="card mb-4 shadow-sm">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Aktionen</h4>
-        </div>
-        <div class="card-body">
-          <ul class="list-unstyled mt-3 mb-4" >
-            <li *ngFor="let item of discount">
-              <div class="row">
-                <div class="col-6 col-sm-12 col-md-6">
-                  <a routerLink="/produkte/detail/{{item.key}}">
-                    <img class="img-fluid" src="{{item.image}}" alt="{{item.name}}">
-                  </a>
-                </div>
-                <div class="col-6 col-sm-12 col-md-6">
-                  <a routerLink="/produkte/detail/{{item.key}}">
-                    <p>{{item.name}}</p>
-                  </a>
-                  <p *ngIf="item.discountFactor !== 1" style="text-decoration:line-through;">CHF {{item.price}}</p>
-                  <p>CHF {{item.price * item.discountFactor | number : '1.2-2'}}</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div *ngIf="(productsNew$ | async | checkStatus | arraySortDesc: 'createdDate') as np" class="card mb-4 shadow-sm">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Neue Produkte</h4>
-        </div>
-        <div class="card-body">
-          <ul class="list-unstyled mt-3 mb-4" >
-            <li *ngFor="let item of np">
-              <div class="row">
-                <div class="col-6 col-sm-12 col-md-6">
-                  <a routerLink="/produkte/detail/{{item.key}}">
-                    <img class="img-fluid" src="{{item.image}}" alt="{{item.name}}">
-                  </a>
-                </div>
-                <div class="col-6 col-sm-12 col-md-6">
-                  <a routerLink="/produkte/detail/{{item.key}}">
-                    <p>{{item.name}}</p>
-                  </a>
-                  <p *ngIf="item.discountFactor !== 1" style="text-decoration:line-through;">CHF {{item.price}}</p>
-                  <p>CHF {{item.price * item.discountFactor | number : '1.2-2'}}</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div *ngIf="(productsBestRated$ | async | checkStatus | arraySortDesc: 'bestRatedNumber') as best" class="card mb-4 shadow-sm">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal">Bestseller</h4>
-        </div>
-        <div class="card-body">
-          <ul class="list-unstyled mt-3 mb-4">
-            <ul class="list-unstyled mt-3 mb-4" >
-              <li *ngFor="let item of best">
-                <div class="row">
-                  <div class="col-6 col-sm-12 col-md-6">
-                    <a routerLink="/produkte/detail/{{item.key}}">
-                      <img class="img-fluid" src="{{item.image}}" alt="{{item.name}}">
-                    </a>
-                  </div>
-                  <div class="col-6 col-sm-12 col-md-6">
-                    <a routerLink="/produkte/detail/{{item.key}}">
-                      <p>{{item.name}}</p>
-                    </a>
-                    <p *ngIf="item.discountFactor !== 1" style="text-decoration:line-through;">CHF {{item.price}}</p>
-                    <p>CHF {{item.price * item.discountFactor | number : '1.2-2'}}</p>
-                  </div>
-                </div>
+  <!--<div class="container mt-5">-->
+    <!--<div class="card-deck mb-3 text-center">-->
+      <!--<div *ngIf="(productsDiscounts$ | async | checkStatus | arraySort: 'price') as discount" class="card mb-4 shadow-sm">-->
+        <!--<div class="card-header">-->
+          <!--<h4 class="my-0 font-weight-normal">Aktionen</h4>-->
+        <!--</div>-->
+        <!--<div class="card-body">-->
+          <!--<ul class="list-unstyled mt-3 mb-4" >-->
+            <!--<li *ngFor="let item of discount">-->
+              <!--<div class="row">-->
+                <!--<div class="col-6 col-sm-12 col-md-6">-->
+                  <!--<a routerLink="/produkte/detail/{{item.key}}">-->
+                    <!--<img class="img-fluid" src="{{item.image}}" alt="{{item.name}}">-->
+                  <!--</a>-->
+                <!--</div>-->
+                <!--<div class="col-6 col-sm-12 col-md-6">-->
+                  <!--<a routerLink="/produkte/detail/{{item.key}}">-->
+                    <!--<p>{{item.name}}</p>-->
+                  <!--</a>-->
+                  <!--<p *ngIf="item.discountFactor !== 1" style="text-decoration:line-through;">CHF {{item.price}}</p>-->
+                  <!--<p>CHF {{item.price * item.discountFactor | number : '1.2-2'}}</p>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</li>-->
+          <!--</ul>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div *ngIf="(productsNew$ | async | checkStatus | arraySortDesc: 'createdDate') as np" class="card mb-4 shadow-sm">-->
+        <!--<div class="card-header">-->
+          <!--<h4 class="my-0 font-weight-normal">Neue Produkte</h4>-->
+        <!--</div>-->
+        <!--<div class="card-body">-->
+          <!--<ul class="list-unstyled mt-3 mb-4" >-->
+            <!--<li *ngFor="let item of np">-->
+              <!--<div class="row">-->
+                <!--<div class="col-6 col-sm-12 col-md-6">-->
+                  <!--<a routerLink="/produkte/detail/{{item.key}}">-->
+                    <!--<img class="img-fluid" src="{{item.image}}" alt="{{item.name}}">-->
+                  <!--</a>-->
+                <!--</div>-->
+                <!--<div class="col-6 col-sm-12 col-md-6">-->
+                  <!--<a routerLink="/produkte/detail/{{item.key}}">-->
+                    <!--<p>{{item.name}}</p>-->
+                  <!--</a>-->
+                  <!--<p *ngIf="item.discountFactor !== 1" style="text-decoration:line-through;">CHF {{item.price}}</p>-->
+                  <!--<p>CHF {{item.price * item.discountFactor | number : '1.2-2'}}</p>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</li>-->
+          <!--</ul>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div *ngIf="(productsBestRated$ | async | checkStatus | arraySortDesc: 'bestRatedNumber') as best" class="card mb-4 shadow-sm">-->
+        <!--<div class="card-header">-->
+          <!--<h4 class="my-0 font-weight-normal">Bestseller</h4>-->
+        <!--</div>-->
+        <!--<div class="card-body">-->
+          <!--<ul class="list-unstyled mt-3 mb-4">-->
+            <!--<ul class="list-unstyled mt-3 mb-4" >-->
+              <!--<li *ngFor="let item of best">-->
+                <!--<div class="row">-->
+                  <!--<div class="col-6 col-sm-12 col-md-6">-->
+                    <!--<a routerLink="/produkte/detail/{{item.key}}">-->
+                      <!--<img class="img-fluid" src="{{item.image}}" alt="{{item.name}}">-->
+                    <!--</a>-->
+                  <!--</div>-->
+                  <!--<div class="col-6 col-sm-12 col-md-6">-->
+                    <!--<a routerLink="/produkte/detail/{{item.key}}">-->
+                      <!--<p>{{item.name}}</p>-->
+                    <!--</a>-->
+                    <!--<p *ngIf="item.discountFactor !== 1" style="text-decoration:line-through;">CHF {{item.price}}</p>-->
+                    <!--<p>CHF {{item.price * item.discountFactor | number : '1.2-2'}}</p>-->
+                  <!--</div>-->
+                <!--</div>-->
 
-              </li>
-            </ul>
-          </ul>
-        </div>
-      </div>
-    </div>
+              <!--</li>-->
+            <!--</ul>-->
+          <!--</ul>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
 
-  </div>
+  <!--</div>-->
+  <p>Test</p>
 
 </div>

@@ -15,24 +15,24 @@ import { AdminGuard } from './user/guards/admin.guard';
 import { Error404PageComponent } from './404/error-404-page.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'admin', component: AdminComponent, children: ADMIN_ROUTES, canActivate: [AdminGuard]},
-  {path: 'produkte', component: ProductComponent, children: PRODUCT_ROUTES},
-  {path: 'bestellung', component: OrderComponent},
+  // {path: '', component: HomeComponent},
+  // {path: 'admin', component: AdminComponent, children: ADMIN_ROUTES, canActivate: [AdminGuard]},
+  // {path: 'produkte', component: ProductComponent, children: PRODUCT_ROUTES},
+  // {path: 'bestellung', component: OrderComponent},
   // {path: 'checkout', loadChildren: './checkout/checkout.module#CheckoutModule'},
-  {path: 'checkout-login', component: CheckoutLoginComponent},
-  {path: 'users', component: UserComponent, children: USER_ROUTES, canActivate: [Auth2Guard]},
-  {path: 'user-login-register-slide', component: UserLoginRegisterSlideComponent},
+  // {path: 'checkout-login', component: CheckoutLoginComponent},
+  // {path: 'users', component: UserComponent, children: USER_ROUTES, canActivate: [Auth2Guard]},
+  // {path: 'user-login-register-slide', component: UserLoginRegisterSlideComponent},
   {
     path: 'lazyfeature',
     loadChildren: './lazyfeature/lazyfeature.module#LazyfeatureModule'
   },
   // There's a bug that's preventing wild card routes to be lazy loaded (see: https://github.com/angular/angular/issues/13848)
   // That's why the Error page should be eagerly loaded
-  {
-    path: '**',
-    component: Error404PageComponent
-  }
+  // {
+  //   path: '**',
+  //   component: Error404PageComponent
+  // }
   // {path: '**', redirectTo: '/'},  // default Route, must be the last rule, could also be 404 page
 ];
 
