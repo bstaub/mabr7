@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Product } from '../../models/product.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { AlertifyService } from '../../shared/alertify.service';
 import { ProductService } from '../shared/product.service';
@@ -25,6 +25,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
               private productService: ProductService,
               private orderService: OrderService,
               private alertifyService: AlertifyService,
+              private router: Router,
   ) {
   }
 
@@ -35,6 +36,19 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
         this.selectedProduct$ = this.productService.getProduct(this.productId).valueChanges();
       }
     );
+    this.activatedRouteSubscription = this.activatedRoute.queryParams.subscribe(
+      queryParams => {
+        if (queryParams['key']) {
+          this.productId = queryParams['key'];
+          this.selectedProduct$ = this.productService.getProduct(this.productId).valueChanges();
+        }
+    });
+    this.router.navigate([], {
+      queryParams: {
+        key: null,
+      },
+      queryParamsHandling: 'merge'
+    });
   }
 
   addToBasket(product) {

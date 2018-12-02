@@ -38,7 +38,7 @@
       </thead>
       <tbody>
 
-          <tr routerLink="/produkte/detail/{{product.key}}" *ngFor="let product of products$ | async | checkStatus | paginate: { itemsPerPage: itemsPerPage, currentPage: p }; let i = index">
+          <tr routerLink="/produkte/detail/{{product.name | urlPrettifier}}" [queryParams]="{key: product.key}" *ngFor="let product of products$ | async | checkStatus | paginate: { itemsPerPage: itemsPerPage, currentPage: p }; let i = index">
             <!--<app-product-item [product]='product' [count]='i'></app-product-item>-->
             <td>
               <figure class="media">

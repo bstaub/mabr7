@@ -17,6 +17,7 @@ import { BackButtonDirective } from './directive/back-button.directive';
 import { PageTitleComponent } from './page-title/page-title.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { UrlPrettifierPipe } from './shared/url-prettifier.pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CommonModule } from '@angular/common';
     CheckStatusPipe,
     BackButtonDirective,
     PageTitleComponent,
+    UrlPrettifierPipe,
   ],
   imports: [
     CommonModule,
@@ -50,6 +52,7 @@ import { CommonModule } from '@angular/common';
     NgxPaginationModule,
     AngularFontAwesomeModule,
     RouterModule,
+    UrlPrettifierPipe,
   ]
 })
 export class SharedModule {
