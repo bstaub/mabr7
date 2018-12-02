@@ -13,7 +13,7 @@
             <li *ngFor="let item of discount">
               <div class="row">
                 <div class="col-6 col-sm-12 col-md-6">
-                  <a routerLink="/produkte/detail/{{item.key}}">
+                  <a routerLink="/produkte/detail/{{item.key}}/{{item.productCategory | urlPrettifier}}/{{item.name | urlPrettifier}}">
                     <img class="img-fluid" src="{{item.image}}" alt="{{item.name}}">
                   </a>
                 </div>
@@ -38,7 +38,7 @@
             <li *ngFor="let item of np">
               <div class="row">
                 <div class="col-6 col-sm-12 col-md-6">
-                  <a routerLink="/produkte/detail/{{item.key}}">
+                  <a routerLink="/produkte/detail/{{item.key}}/{{item.productCategory | urlPrettifier}}/{{item.name | urlPrettifier}}">
                     <img class="img-fluid" src="{{item.image}}" alt="{{item.name}}">
                   </a>
                 </div>
@@ -64,7 +64,7 @@
               <li *ngFor="let item of best">
                 <div class="row">
                   <div class="col-6 col-sm-12 col-md-6">
-                    <a routerLink="/produkte/detail/{{item.key}}">
+                    <a routerLink="/produkte/detail/{{item.key}}/{{item.productCategory | urlPrettifier}}/{{item.name | urlPrettifier}}">
                       <img class="img-fluid" src="{{item.image}}" alt="{{item.name}}">
                     </a>
                   </div>

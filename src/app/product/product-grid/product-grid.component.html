@@ -27,7 +27,7 @@
 <section class="products" *ngIf="(products$ | async)?.length !=0; else noItems">
 
   <ng-container>
-    <a routerLink="/produkte/detail/{{product.name | urlPrettifier}}" [queryParams]="{key: product.key}" class="product-card"
+    <a routerLink="/produkte/detail/{{product.key}}/{{product.productCategory | urlPrettifier}}/{{product.name | urlPrettifier}}" class="product-card"
        *ngFor="let product of products$ | async | checkStatus | paginate: { itemsPerPage: itemsPerPage, currentPage: p }; let i = index">
       <!--*ngFor="let product of products | async | checkStatus |slice:0:limit; let i = index">-->
       <div class="product-image">

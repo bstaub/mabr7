@@ -14,7 +14,7 @@ const PRODUCT_ROUTES: Routes = [
   },
   {path: 'grid', component: ProductGridComponent},
   {path: 'list', component: ProductListComponent},
-  {path: 'detail/:id', component: ProductDetailComponent},
+  {path: 'detail/:id/:category/:name', component: ProductDetailComponent},
   {path: 'detail/:id/edit', component: ProductDetailComponent},
 ];
 
