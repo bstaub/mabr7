@@ -80,5 +80,7 @@ input[type=text]:focus {
 @media (max-width: 767px) {
   input[type=text] {  // search icon left to the hamburger
     right: 68px!important;
+    width: 0px;
+    height: 0px;
   }
 }
