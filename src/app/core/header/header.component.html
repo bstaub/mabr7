@@ -31,6 +31,12 @@
 
   <app-header-orderflyout></app-header-orderflyout>
 
+
+    <a class="nav-link visible-mobile" *ngIf="isLoggedIn" [routerLink]="['users/profile']" routerLinkActive="active"> <i class="fa fa-user-circle"></i></a>
+
+
+
+
   <span class="burgerMenu" (click)="OpenMenuCanvas()">
     <div></div>
     <div></div>
