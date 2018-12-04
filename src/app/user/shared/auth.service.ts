@@ -126,7 +126,7 @@ export class AuthService {
   resetPassword(email) {
 
     const actionCodeSettings = {
-      url: 'http://localhost:4200/login',
+      url: 'http://localhost:4200/user-login-register-slide',
       // This must be true.
       handleCodeInApp: true
     };

@@ -3,7 +3,6 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminGuard } from './guards/admin.guard';
-import { UserLoginRegisterSlideComponent } from './user-login-register-slide/user-login-register-slide.component';
 
 
 export const USER_ROUTES: Routes = [

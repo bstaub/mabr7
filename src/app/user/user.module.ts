@@ -6,11 +6,13 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserComponent } from './user.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SharedModule } from '../shared/shared.module';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
     UserComponent,
     ProfileComponent,
+    ResetPasswordComponent,
     UserLoginRegisterSlideComponent,
     UserListComponent,
     UserListItemComponent,

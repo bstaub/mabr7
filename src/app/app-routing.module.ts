@@ -13,6 +13,7 @@ import { Error404PageComponent } from './core/404/error-404-page.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProductComponent } from './product/product.component';
 import { ADMIN_ROUTES } from './admin/admin-routing.module';
+import { ResetPasswordComponent } from './user/reset-password/reset-password.component';
 
 
 const routes: Routes = [
@@ -41,6 +42,7 @@ const routes: Routes = [
     path: 'lazyfeature',
     loadChildren: './lazyfeature/lazyfeature.module#LazyfeatureModule'
   },
+  {path: 'resetpw', component: ResetPasswordComponent},
   // There's a bug that's preventing wild card routes to be lazy loaded (see: https://github.com/angular/angular/issues/13848)
   // That's why the Error page should be eagerly loaded
   {
