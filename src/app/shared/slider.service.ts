@@ -1,5 +1,6 @@
 import { Injectable, isDevMode } from '@angular/core';
 import { Slide } from '../models/Slide';
+import { SettingsService } from './settings.service';
 
 
 
@@ -11,12 +12,12 @@ export class SliderService {
   slider: Slide[];
   url: string;
 
-  constructor() {
+  constructor(private settingsService: SettingsService) {
 
     if (this.isDevMode()) {
       this.url = 'http://localhost:4200';
     } else {
-      this.url = 'https://mabr7-shop.firebaseapp.com';
+      this.url = `https://${this.settingsService.getSettings().domainName}`;
     }
 
     this.slider = [

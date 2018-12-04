@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../../models/user.model';
 import { UserService } from './user.service';
@@ -8,11 +8,13 @@ import { map, switchMap, tap } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AlertifyService } from '../../shared/alertify.service';
+import { SettingsService } from '../../shared/settings.service';
 
 
 @Injectable()
 export class AuthService {
   user$: Observable<any>;
+  url: string;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -20,6 +22,7 @@ export class AuthService {
     private router: Router,
     private userService: UserService,
     private alertifyService: AlertifyService,
+    private settingsService: SettingsService,
   ) {
     this.user$ = afAuth.authState
       .pipe(
@@ -46,8 +49,13 @@ export class AuthService {
   // 1. Register normal, no order login!
   createUserInFirebaseAuthListEmailVerified(email, password, username) {
 
+    if (isDevMode()) {
+      this.url = `http://localhost:4200/user-login-register-slide`;
+    } else {
+      this.url = `https://${this.settingsService.getSettings().domainName}/user-login-register-slide`;
+    }
     const actionCodeSettings = {
-      url: 'http://localhost:4200/user-login-register-slide',
+      url: this.url,
       handleCodeInApp: true
     };
 
@@ -82,8 +90,13 @@ export class AuthService {
   // 1. Register for order, not normal login!
   createUserInFirebaseAuthListEmailVerifiedOrder(email, password, username) {
 
+    if (isDevMode()) {
+      this.url = `http://localhost:4200/user-login-register-slide?orderstep=1&login=1`;
+    } else {
+      this.url = `https://${this.settingsService.getSettings().domainName}/user-login-register-slide?orderstep=1&login=1`;
+    }
     const actionCodeSettings = {
-      url: 'http://localhost:4200/user-login-register-slide?orderstep=1&login=1',
+      url: this.url,
       handleCodeInApp: true
     };
 
@@ -125,8 +138,13 @@ export class AuthService {
   // 3. Reset PW
   resetPassword(email) {
 
+    if (isDevMode()) {
+      this.url = `http://localhost:4200/user-login-register-slide`;
+    } else {
+      this.url = `https://${this.settingsService.getSettings().domainName}/user-login-register-slide`;
+    }
     const actionCodeSettings = {
-      url: 'http://localhost:4200/user-login-register-slide',
+      url: this.url,
       // This must be true.
       handleCodeInApp: true
     };
