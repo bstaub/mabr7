@@ -132,8 +132,10 @@ export class OrderService {
   }
 
   creatNewUserOrder(userId: string) {
+    this.user = this.userService.getCurrentUser();
     this.order = this.createEmptyOrder();
     this.order.userId = userId;
+    this.order.customerBillingAddress.mail = this.user.email;
     this.order.anonymusOrder = false;
     this.orderCollection.doc(userId).set(JSON.parse(JSON.stringify(this.order)));
   }
