@@ -134,6 +134,7 @@ export class OrderService {
   creatNewUserOrder(userId: string) {
     this.order = this.createEmptyOrder();
     this.order.userId = userId;
+    this.order.anonymusOrder = false;
     this.orderCollection.doc(userId).set(JSON.parse(JSON.stringify(this.order)));
   }
 

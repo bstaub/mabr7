@@ -73,10 +73,16 @@ export class CheckoutOverviewComponent implements OnInit, OnDestroy {
     this.order.customerShippingAddress = this.orderData.customerShippingAddress;
     this.order.shipqingEqualsBillingAddress = this.orderData.shipqingEqualsBillingAddress;
     this.order.shippingMethod = this.orderData.shippingMethod;
-    this.order.anonymusOrder = !(this.user === 0);
+    if (this.user === 0) {
+      this.order.anonymusOrder = true;
+    } else {
+      this.order.anonymusOrder = false;
+    }
+
     this.orderService.updateOrder(this.order);
     this.closingOrderId = this.orderService.completeUserOrder(this.order);
     this.orderService.completeProductsPerOrder(this.closingOrderId, this.localStorageService.getData('products'));
+    console.log(this.order);
 
     if (this.user !== '0') {
       this.orderService.resetUserOrder(this.order);
