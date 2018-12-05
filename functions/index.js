@@ -25,7 +25,7 @@ exports.orderEmail = functions.firestore
           templateId: 'd-0efa1b117040446485a43bdb1727d96b',
           substitutionWrappers: ['{{', '}}'],
           substitutions: {
-            'name': orderdata.customerBillingAddress.firstname
+            name: "TEST"
           }
         };
         console.log(msgbody);
