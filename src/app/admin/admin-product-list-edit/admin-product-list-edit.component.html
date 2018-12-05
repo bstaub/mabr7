@@ -2,93 +2,100 @@
   <form (ngSubmit)="updateProduct(product)">
 
     <div *ngIf="product" class="media">
-      <img src="{{product.image || '//:0'}}" class="img-fluid" alt="Dummy Images" class="align-self-start mr-3" style="width:200px">
 
-      <div class="media-body">
-        <div>
-          <label>Name: </label> <input type="text" [(ngModel)]="product.name" name="product">
+      <div class="row">
+        <div class="col-12 col-md-4 mb-4 p-4">
+          <img src="{{product.image || '//:0'}}" alt="{{product.name}}" class="img-fluid align-self-start mr-3">
         </div>
-        <p-editor [(ngModel)]="product.description" [style]="{'height':'320px'}" name="description" class="description mt-3 mb-3 d-block"></p-editor>
-        <div>
-          <label>Preis: </label> <input type="number" [(ngModel)]="product.price" name="price">
-        </div>
-        <p>Bildname</p>
-        <p-fileUpload
-          name="myfile[]"
-          chooseLabel="Bild Upload"
-          cancelLabel="Abbrechen"
-          type="file"
-          (onSelect)="onFileSelection($event)"
-          [showUploadButton]="false"
-          accept="image/*">
-        </p-fileUpload>
+        <div class="col-12 col-md-8">
+          <div class="media-body">
+            <div>
+              <label>Name: </label> <input type="text" [(ngModel)]="product.name" name="product">
+            </div>
+            <p-editor [(ngModel)]="product.description" [style]="{'height':'320px'}" name="description" class="description mt-3 mb-3 d-block"></p-editor>
+            <div>
+              <label>Preis: </label> <input type="number" [(ngModel)]="product.price" name="price">
+            </div>
+            <p>Bildname</p>
+            <p-fileUpload
+              name="myfile[]"
+              chooseLabel="Bild Upload"
+              cancelLabel="Abbrechen"
+              type="file"
+              (onSelect)="onFileSelection($event)"
+              [showUploadButton]="false"
+              accept="image/*">
+            </p-fileUpload>
 
-        <div *ngIf="(categories$ | async) as Cat" class="mt-4">
-          <p-dropdown [options]="Cat" [(ngModel)]="selectedCategory" name="productCategory" placeholder="{{product.productCategory}}" optionLabel="name" [showClear]="true" filter="true"></p-dropdown>
-        </div>
+            <div *ngIf="(categories$ | async) as Cat" class="mt-4">
+              <p-dropdown [options]="Cat" [(ngModel)]="selectedCategory" name="productCategory" placeholder="{{product.productCategory}}" optionLabel="name" [showClear]="true" filter="true"></p-dropdown>
+            </div>
 
-        <div class="form-group mt-4">
-          <p-checkbox binary="true" value="register" label="Register Laschen anzeigen" [(ngModel)]="product.register" name="register"></p-checkbox>
-        </div>
-        <div *ngIf="product.register">
-          <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="moreInfo1Title" class="col-form-label">RegisterTitel1</label>
-              <input type="text" class="form-control" pInputText placeholder="Register Namen..." required [(ngModel)]="product.moreInfo1Title" name="moreInfo1Title" id="moreInfo1Title">
+            <div class="form-group mt-4">
+              <p-checkbox binary="true" value="register" label="Register Laschen anzeigen" [(ngModel)]="product.register" name="register"></p-checkbox>
             </div>
-            <div class="form-group col-md-4">
-              <label for="moreInfo2Title" class="col-form-label">RegisterTitel2</label>
-              <input type="text" class="form-control" pInputText placeholder="Register Namen..." required [(ngModel)]="product.moreInfo2Title" name="moreInfo2Title" id="moreInfo2Title">
+            <div *ngIf="product.register">
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="moreInfo1Title" class="col-form-label">RegisterTitel1</label>
+                  <input type="text" class="form-control" pInputText placeholder="Register Namen..." required [(ngModel)]="product.moreInfo1Title" name="moreInfo1Title" id="moreInfo1Title">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="moreInfo2Title" class="col-form-label">RegisterTitel2</label>
+                  <input type="text" class="form-control" pInputText placeholder="Register Namen..." required [(ngModel)]="product.moreInfo2Title" name="moreInfo2Title" id="moreInfo2Title">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="moreInfo3Title" class="col-form-label">RegisterTitel3</label>
+                  <input type="text" class="form-control" pInputText placeholder="Register Namen..." required [(ngModel)]="product.moreInfo3Title" name="moreInfo3Title" id="moreInfo3Title">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="moreInfo1Text" class="col-form-label">RegisterText1</label>
+                  <p-editor [(ngModel)]="product.moreInfo1Text" [style]="{'height':'150px'}" name="moreInfo1Text" id="moreInfo1Text"></p-editor>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="moreInfo2Text" class="col-form-label">RegisterText2</label>
+                  <p-editor [(ngModel)]="product.moreInfo2Text" [style]="{'height':'150px'}" name="moreInfo2Text" id="moreInfo2Text"></p-editor>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="moreInfo3Text" class="col-form-label">RegisterText3</label>
+                  <p-editor [(ngModel)]="product.moreInfo3Text" [style]="{'height':'150px'}" name="moreInfo3Text" id="moreInfo3Text"></p-editor>
+                </div>
+              </div>
             </div>
-            <div class="form-group col-md-4">
-              <label for="moreInfo3Title" class="col-form-label">RegisterTitel3</label>
-              <input type="text" class="form-control" pInputText placeholder="Register Namen..." required [(ngModel)]="product.moreInfo3Title" name="moreInfo3Title" id="moreInfo3Title">
+
+            <div>
+              <p-checkbox binary="true" value="discount" label="Aktion" [(ngModel)]="product.discount" name="discount"></p-checkbox>
             </div>
+            <div *ngIf="product.discount">
+              <label>discountFactor: </label> <input type="number" [(ngModel)]="product.discountFactor" name="discountFactor">
+            </div>
+            <div>
+              <p-checkbox binary="true" value="newProduct" label="NewProdukt" [(ngModel)]="product.newProduct" name="newProduct"></p-checkbox>
+            </div>
+            <div>
+              <p-checkbox binary="true" value="bestRated" label="bestRated" [(ngModel)]="product.bestRated" name="bestRated"></p-checkbox>
+            </div>
+            <div>
+              <label>bestRatedNumber: </label> <input type="number" [(ngModel)]="product.bestRatedNumber" name="bestRatedNumber">
+            </div>
+
+            <div class="button-group mt-3 mb-2">
+              <span class="button is-small btn-primary" *ngIf='product.active' (click)='updateActive(false)'>inaktiv</span>
+              <span class="button is-small btn-primary" *ngIf='!product.active' (click)='updateActive(true)'>aktiv</span>
+              <span class="button is-small btn-secondary" (click)='editProduct($event, product)'>Editieren</span>
+              <span class="button is-small btn-danger" (click)='deleteProduct()'>Löschen</span>
+            </div>
+
+            <div>
+              <button class="btn btn-info mt-3 mb-3" style="display: inline-block;" (click)='updateProduct(product)'>Speichern</button>
+            </div>
+
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="moreInfo1Text" class="col-form-label">RegisterText1</label>
-              <p-editor [(ngModel)]="product.moreInfo1Text" [style]="{'height':'150px'}" name="moreInfo1Text" id="moreInfo1Text"></p-editor>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="moreInfo2Text" class="col-form-label">RegisterText2</label>
-              <p-editor [(ngModel)]="product.moreInfo2Text" [style]="{'height':'150px'}" name="moreInfo2Text" id="moreInfo2Text"></p-editor>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="moreInfo3Text" class="col-form-label">RegisterText3</label>
-              <p-editor [(ngModel)]="product.moreInfo3Text" [style]="{'height':'150px'}" name="moreInfo3Text" id="moreInfo3Text"></p-editor>
-            </div>
-          </div>
         </div>
-
-        <div>
-          <p-checkbox binary="true" value="discount" label="Aktion" [(ngModel)]="product.discount" name="discount"></p-checkbox>
-        </div>
-        <div *ngIf="product.discount">
-          <label>discountFactor: </label> <input type="number" [(ngModel)]="product.discountFactor" name="discountFactor">
-        </div>
-        <div>
-          <p-checkbox binary="true" value="newProduct" label="NewProdukt" [(ngModel)]="product.newProduct" name="newProduct"></p-checkbox>
-        </div>
-        <div>
-          <p-checkbox binary="true" value="bestRated" label="bestRated" [(ngModel)]="product.bestRated" name="bestRated"></p-checkbox>
-        </div>
-        <div>
-          <label>bestRatedNumber: </label> <input type="number" [(ngModel)]="product.bestRatedNumber" name="bestRatedNumber">
-        </div>
-
-        <div class="button-group mt-3 mb-2">
-          <span class="button is-small btn-primary" *ngIf='product.active' (click)='updateActive(false)'>inaktiv</span>
-          <span class="button is-small btn-primary" *ngIf='!product.active' (click)='updateActive(true)'>aktiv</span>
-          <span class="button is-small btn-secondary" (click)='editProduct($event, product)'>Editieren</span>
-          <span class="button is-small btn-danger" (click)='deleteProduct()'>Löschen</span>
-        </div>
-
-        <div>
-          <button class="btn btn-info mt-3 mb-3" style="display: inline-block;" (click)='updateProduct(product)'>Speichern</button>
-        </div>
-
       </div>
+
 
     </div>
 
@@ -100,70 +107,76 @@
 <div *ngIf="!editState" class="no-editstate">
 
   <div *ngIf="product" class="media">
-    <img src="{{product.image || '//:0'}}" class="img-fluid" alt="Dummy Images" class="align-self-start mr-3" style="width:200px">
 
-    <div class="media-body">
-      <div>
-        <label>Name: </label> {{product.name}}
+    <div class="row">
+      <div class="col-12 col-md-4 mb-4 p-4">
+        <img src="{{product.image || '//:0'}}" alt="{{product.name}}" class="img-fluid align-self-start mr-3">
       </div>
-      <div>
-        <label>Beschreibung: </label> <p [innerHTML]="product.description"></p>
-      </div>
-      <div>
-        <label>Preis: </label> {{product.price}}
-      </div>
-      <div>
-        <label>Kategorie: </label> {{product.productCategory}}
-      </div>
-      <div class="mt-3">
-        <label>Register anzeigen: </label> {{product.register}}
-      </div>
-      <div>
-        <label>Tab1Titel: </label> {{product.moreInfo1Title}}
-      </div>
-      <div>
-        <label>Tab1Text: </label> <p [innerHTML]="product.moreInfo1Text"></p>
-      </div>
-      <div>
-        <label>Tab2Titel: </label> {{product.moreInfo2Title}}
-      </div>
-      <div>
-        <label>Tab2Text: </label> <p [innerHTML]="product.moreInfo2Text"></p>
-      </div>
-      <div>
-        <label>Tab3Titel: </label> {{product.moreInfo3Title}}
-      </div>
-      <div>
-        <label>Tab3Text: </label> <p [innerHTML]="product.moreInfo3Text"></p>
-      </div>
-      <div>
-        <label>Discount: </label> {{product.discount}}
-      </div>
-      <div>
-        <label>discountFactor: </label> {{product?.discountFactor}}
-      </div>
-      <div>
-        <label>NewProduct: </label> {{product.newProduct}}
-      </div>
-      <div>
-        <label>Bestrated: </label> {{product.bestRated}}
-      </div>
-      <p-rating [(ngModel)]="product.bestRatedNumber"></p-rating>
-      <div>
-        <label>bestRatedNumber: </label> {{product?.bestRatedNumber}}
-      </div>
-      <div>
-        <label>Status: </label> {{product.active}}
-      </div>
+      <div class="col-12 col-md-8">
+        <div class="media-body">
+          <div>
+            <label>Name: </label> {{product.name}}
+          </div>
+          <div>
+            <label>Beschreibung: </label> <p [innerHTML]="product.description"></p>
+          </div>
+          <div>
+            <label>Preis: </label> {{product.price}}
+          </div>
+          <div>
+            <label>Kategorie: </label> {{product.productCategory}}
+          </div>
+          <div class="mt-3">
+            <label>Register anzeigen: </label> {{product.register}}
+          </div>
+          <div>
+            <label>Tab1Titel: </label> {{product.moreInfo1Title}}
+          </div>
+          <div>
+            <label>Tab1Text: </label> <p [innerHTML]="product.moreInfo1Text"></p>
+          </div>
+          <div>
+            <label>Tab2Titel: </label> {{product.moreInfo2Title}}
+          </div>
+          <div>
+            <label>Tab2Text: </label> <p [innerHTML]="product.moreInfo2Text"></p>
+          </div>
+          <div>
+            <label>Tab3Titel: </label> {{product.moreInfo3Title}}
+          </div>
+          <div>
+            <label>Tab3Text: </label> <p [innerHTML]="product.moreInfo3Text"></p>
+          </div>
+          <div>
+            <label>Discount: </label> {{product.discount}}
+          </div>
+          <div>
+            <label>discountFactor: </label> {{product?.discountFactor}}
+          </div>
+          <div>
+            <label>NewProduct: </label> {{product.newProduct}}
+          </div>
+          <div>
+            <label>Bestrated: </label> {{product.bestRated}}
+          </div>
+          <p-rating [(ngModel)]="product.bestRatedNumber"></p-rating>
+          <div>
+            <label>bestRatedNumber: </label> {{product?.bestRatedNumber}}
+          </div>
+          <div>
+            <label>Status: </label> {{product.active}}
+          </div>
 
-      <span class="button is-small btn-primary" *ngIf='product.active' (click)='updateActive(false)'>inaktiv</span>
+          <span class="button is-small btn-primary" *ngIf='product.active' (click)='updateActive(false)'>inaktiv</span>
 
-      <span class="button is-small btn-primary" *ngIf='!product.active' (click)='updateActive(true)'>aktiv</span>
+          <span class="button is-small btn-primary" *ngIf='!product.active' (click)='updateActive(true)'>aktiv</span>
 
-      <span class="button is-small btn-secondary" (click)='editProduct($event, product)'>Editieren</span>
+          <span class="button is-small btn-secondary" (click)='editProduct($event, product)'>Editieren</span>
 
-      <span class="button is-small btn-danger" (click)='deleteProduct()'>Löschen</span>
+          <span class="button is-small btn-danger" (click)='deleteProduct()'>Löschen</span>
 
+        </div>
+      </div>
     </div>
 
   </div>
