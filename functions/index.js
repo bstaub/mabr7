@@ -20,12 +20,14 @@ exports.orderEmail = functions.firestore
         const orderdata = doc.data()
         const msgbody = {
           to: orderdata.customerBillingAddress.mail,
-          from: 'auto-reply@xyzshopping.com',
-          subject:  'Payment Success - xyzshopping.com',
+          bcc: 'mabrweb@gmail.com',
+          from: 'mabrweb@gmail.com',
+          subject:  'Deine Bestellung bei mabr-web',
           templateId: 'd-0efa1b117040446485a43bdb1727d96b',
           substitutionWrappers: ['{{', '}}'],
-          substitutions: {
-            name: "TEST"
+          dynamicTemplateData: {
+            name: orderdata.customerBillingAddress.firstname,
+            orderId: orderdata.shopOrderId
           }
         };
         console.log(msgbody);
