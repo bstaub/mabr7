@@ -26,6 +26,10 @@ export class CheckoutShipmentComponent implements OnInit, OnDestroy {
   order: Order;
   authSubscription: Subscription;
   orderSubscription: Subscription;
+  today = new Date();
+  postDate: Date;
+  dhlDate: Date;
+  upsDate: Date;
 
 
   constructor(private orderService: OrderService,
@@ -69,8 +73,12 @@ export class CheckoutShipmentComponent implements OnInit, OnDestroy {
   initShipmentFormGroup() {
     this.ShipmentForm = new FormGroup({
       shippingMethod: new FormControl()
-
     });
+
+    this.postDate = new Date(this.today.setDate((this.today.getDate() + 4)));
+    this.dhlDate  = new Date(this.today.setDate((this.today.getDate() + 2)));
+    this.upsDate  = new Date(this.today.setDate((this.today.getDate() + 1)));
+
   }
 
   setOrderData() {

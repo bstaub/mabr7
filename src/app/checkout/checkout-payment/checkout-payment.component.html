@@ -4,9 +4,11 @@
   <form [formGroup]="PaymentForm" (ngSubmit)="onSubmit()">
 
     <table class="table table-striped checkout">
+
+
       <tbody>
       <tr>
-        <td><input type="radio" value="invoice" name="paymentMethod" formControlName="paymentMethod"></td>
+        <td width="20%"><input type="radio" value="invoice" name="paymentMethod" formControlName="paymentMethod"></td>
         <td>Rechnung</td>
       </tr>
       <tr>

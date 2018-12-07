@@ -32,6 +32,10 @@ export class CheckoutOverviewComponent implements OnInit, OnDestroy {
   orderSubscription: Subscription;
   productsSubscription: Subscription;
   p = 1;
+  today = new Date();
+  postDate: Date;
+  dhlDate: Date;
+  upsDate: Date;
 
 
   constructor(private orderService: OrderService,
@@ -82,7 +86,6 @@ export class CheckoutOverviewComponent implements OnInit, OnDestroy {
     this.orderService.updateOrder(this.order);
     this.closingOrderId = this.orderService.completeUserOrder(this.order);
     this.orderService.completeProductsPerOrder(this.closingOrderId, this.localStorageService.getData('products'));
-    console.log(this.order);
 
     if (this.user !== '0') {
       this.orderService.resetUserOrder(this.order);
@@ -141,6 +144,10 @@ export class CheckoutOverviewComponent implements OnInit, OnDestroy {
     this.PaymentForm = new FormGroup({
       paymentMethod: new FormControl()
     });
+
+    this.postDate = new Date(this.today.setDate((this.today.getDate() + 4)));
+    this.dhlDate  = new Date(this.today.setDate((this.today.getDate() + 2)));
+    this.upsDate  = new Date(this.today.setDate((this.today.getDate() + 1)));
   }
 
   ngOnDestroy() {

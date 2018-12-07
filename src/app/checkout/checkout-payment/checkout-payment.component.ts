@@ -10,7 +10,6 @@ import { OrderFlyoutService } from '../../shared/order-flyout.service';
 import { OrderService } from '../../order/shared/order.service';
 
 
-
 @Component({
   selector: 'app-checkout-payment',
   templateUrl: './checkout-payment.component.html',
@@ -28,6 +27,7 @@ export class CheckoutPaymentComponent implements OnInit, OnDestroy {
   authSubscription: Subscription;
   nextOrderIdSubscription: Subscription;
   orderSubscription: Subscription;
+
 
 
   constructor(private orderService: OrderService,
