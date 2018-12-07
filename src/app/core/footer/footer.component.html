@@ -7,31 +7,16 @@
       <div class="footer-sitemap-section col-12 col-sm-6 col-md-3 col-lg-3">
         <h4 class="sitemap-title">KATEGORIEN</h4>
         <ul class="sitemap-items-list list-unstyled">
-          <li class="sitemap-item">
-            <a class="sitemap-link" tabindex="-1" [routerLink]="['produkte','list']" [queryParams]="{category:'Fotoapparate'}">
-             Computer
+
+
+          <li class="sitemap-item" *ngFor="let category of categories$ | async | slice:0:5">
+            <a class="sitemap-link" tabindex="-1" [routerLink]="['produkte','list']" [queryParams]="category.name">
+              {{category.name}}
             </a>
           </li>
-          <li class="sitemap-item">
-            <a class="sitemap-link" tabindex="-1" [routerLink]="['produkte','list']">
-              Fotoapparate
-            </a>
-          </li>
-          <li class="sitemap-item">
-            <a class="sitemap-link" tabindex="-1" [routerLink]="['produkte']" >
-             Gartenzubehör
-            </a>
-          </li>
-          <li class="sitemap-item">
-            <a class="sitemap-link" tabindex="-1" [routerLink]="['produkte']">
-             Kleider
-            </a>
-          </li>
-          <li class="sitemap-item">
-            <a class="sitemap-link" tabindex="-1" [routerLink]="['produkte']">
-             Schuhe
-            </a>
-          </li>
+
+
+
         </ul>
       </div>
 
