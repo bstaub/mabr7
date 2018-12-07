@@ -14,25 +14,13 @@ export class FooterComponent implements OnInit {
   categories$: Observable<ProductCategory[]>;
   url: string;
 
-  constructor( private productCategory: ProductCategoryService,
-               private settingsService: SettingsService
-               ) {
-
-    if (this.isDevMode()) {
-      this.url = 'localhost:4200';
-    } else {
-      this.url = `https://${this.settingsService.getSettings().domainName}`;
-    }
+  constructor(private productCategory: ProductCategoryService,
+  ) {
   }
 
   ngOnInit() {
-    this.categories$ = this.productCategory.getCategories();
+    // this.categories$ = this.productCategory.getCategories();
   }
 
-  isDevMode(): boolean {
-    if (isDevMode()) {
-      return true;
-    }
-  }
 
 }

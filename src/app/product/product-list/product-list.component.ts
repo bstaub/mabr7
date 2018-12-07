@@ -34,6 +34,7 @@ export class ProductListComponent implements OnInit {
     this.getProductList();
     this.categories$ = this.productCategory.getCategories();
 
+    /*
     this.queryParams = this.activeRoute.snapshot.queryParams;
     if (this.queryParams.category !== '') {
       this.products$ = this.productService.filterProductsByCategoryAndField(this.queryParams.category, 'a-z');
@@ -45,7 +46,8 @@ export class ProductListComponent implements OnInit {
         queryParamsHandling: 'merge'
       });
     }
-    /*
+    */
+
     this.activeRoute.queryParams.subscribe(queryParams => {
 
 
@@ -62,6 +64,7 @@ export class ProductListComponent implements OnInit {
 
 
     });
+
 
   }
 
