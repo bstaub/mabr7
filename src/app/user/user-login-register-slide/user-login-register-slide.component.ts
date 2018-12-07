@@ -64,7 +64,7 @@ export class UserLoginRegisterSlideComponent implements OnInit {
               this.router.navigateByUrl('');  // Default Login geht zur Homepage!
               // this.router.navigate(['/login']);
             }
-          }, 2000);
+          }, 2200);
         } else {
           this.alertifyService.error('Loginfehler: Sie müssen zuerst die Email Adresse verifizieren');
         }

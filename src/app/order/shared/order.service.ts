@@ -71,8 +71,6 @@ export class OrderService {
 
 
   getUserOrder(userId) {
-
-    // todo
     if (!userId) {
       userId = '0';
     }
