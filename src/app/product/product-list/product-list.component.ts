@@ -33,18 +33,25 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     this.getProductList();
     this.categories$ = this.productCategory.getCategories();
+    console.log('test');
 
-    this.queryParams = this.activeRoute.snapshot.queryParams;
-    if (this.queryParams.category !== '') {
-      this.products$ = this.productService.filterProductsByCategoryAndField(this.queryParams.category, 'a-z');
-      this.selectedCategory = this.queryParams.category;
-      this.router.navigate([], {
-        queryParams: {
-          category: null,
-        },
-        queryParamsHandling: 'merge'
-      });
-    }
+    this.activeRoute.queryParams.subscribe(queryParams => {
+      console.log(queryParams);
+      if (queryParams.category) {
+        console.log(queryParams);
+        this.products$ = this.productService.filterProductsByCategoryAndField(queryParams.category, 'a-z');
+        this.selectedCategory = queryParams.category;
+        this.router.navigate([], {
+          queryParams: {
+            category: null,
+          },
+          queryParamsHandling: 'merge'
+        });
+      }
+
+
+    });
+
   }
 
   getProductList() {
