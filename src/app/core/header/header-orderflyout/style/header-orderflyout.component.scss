@@ -10,7 +10,7 @@ li.submenu {
 
 @media (max-width: 767px) {
   li.submenu {
-    margin-right: 25px;
+    margin-right: 0px;
   }
 }
 
@@ -26,6 +26,7 @@ li.submenu {
 
 .submenu {
   position: relative;
+  left: 10px;
 }
 
 .submenu #shopping-cart {
