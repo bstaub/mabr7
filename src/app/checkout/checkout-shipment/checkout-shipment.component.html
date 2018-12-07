@@ -3,20 +3,32 @@
 <form [formGroup]="ShipmentForm" (ngSubmit)="onSubmit()">
 
   <table class="table table-striped checkout">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Typ</th>
+      <th>Lieferdatum</th>
+      <th>Kosten</th>
+    </tr>
+    </thead>
+
     <tbody>
     <tr>
       <td><input type="radio" value="express" name="shippingMethod" formControlName="shippingMethod"></td>
       <td>Express Priority</td>
+      <td>Lieferung am 8.12.2018</td>
       <td>CHF 10.00</td>
     </tr>
     <tr>
       <td><input type="radio" value="fedex" name="shippingMethod" formControlName="shippingMethod"></td>
       <td>FedEx</td>
+      <td>Lieferung am 8.12.2018</td>
       <td>CHF 15.00</td>
     </tr>
     <tr>
       <td><input type="radio" value="normal" name="shippingMethod" formControlName="shippingMethod"></td>
       <td> Normal</td>
+      <td>2-3 Tage</td>
       <td>CHF 5.00</td>
     </tr>
     </tbody>

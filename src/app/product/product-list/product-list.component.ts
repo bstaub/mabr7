@@ -35,49 +35,45 @@ export class ProductListComponent implements OnInit {
     this.categories$ = this.productCategory.getCategories();
 
     /*
-    this.queryParams = this.activeRoute.snapshot.queryParams;
-    if (this.queryParams.category !== '') {
-      this.products$ = this.productService.filterProductsByCategoryAndField(this.queryParams.category, 'a-z');
-      this.selectedCategory = this.queryParams.category;
-      this.router.navigate([], {
-        queryParams: {
-          category: null,
-        },
-        queryParamsHandling: 'merge'
-      });
-    }
-    */
+        this.queryParams = this.activeRoute.snapshot.queryParams;
+        if (this.queryParams.category !== '') {
+          this.products$ = this.productService.filterProductsByCategoryAndField(this.queryParams.category, 'a-z');
+          this.selectedCategory = this.queryParams.category;
+          this.router.navigate([], {
+            queryParams: {
+              category: null,
+            },
+            queryParamsHandling: 'merge'
+          });
+        }
+      */
 
-    this.activeRoute.queryParams.subscribe(queryParams => {
-
-
-      if (queryParams.category) {
-        this.products$ = this.productService.filterProductsByCategoryAndField(queryParams.category, 'a-z');
-        this.selectedCategory = queryParams.category;
-        this.router.navigate([], {
-          queryParams: {
-            category: null,
-          },
-          queryParamsHandling: 'merge'
-        });
-      }
-
-
-    });
+       this.activeRoute.queryParams.subscribe(queryParams => {
+         if (queryParams.category) {
+           this.products$ = this.productService.filterProductsByCategoryAndField(queryParams.category, 'a-z');
+           this.selectedCategory = queryParams.category;
+           this.router.navigate([], {
+             queryParams: {
+               category: null,
+             },
+             queryParamsHandling: 'merge'
+           });
+         }
+       });
 
 
-  }
+ }
 
-  getProductList() {
-    this.products$ = this.productService.getProducts();
-  }
+ getProductList() {
+   this.products$ = this.productService.getProducts();
+ }
 
-  selectedOption() {
-    this.products$ = this.productService.filterProductsByCategoryAndField(this.selectedCategory, this.selectedSort);
-  }
+ selectedOption() {
+   this.products$ = this.productService.filterProductsByCategoryAndField(this.selectedCategory, this.selectedSort);
+ }
 
-  get itemsPerPage() {
-    return this.settingsService.getSettings().itemsPerPage;
-  }
+ get itemsPerPage() {
+   return this.settingsService.getSettings().itemsPerPage;
+ }
 
 }
