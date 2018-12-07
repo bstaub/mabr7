@@ -29,8 +29,8 @@ export class SliderService {
       },
       {
         image: `assets/slider/slider2_guetzli.jpeg`,
-        title: 'Herbstmomente',
-        text: 'Gutschein für Übernachten auf dem Bauernhof',
+        title: 'Gartenzubehör und Gartenartikel',
+        text: 'Alles für den Garten',
         link: `${this.url}//produkte/list?category=Gartenzubeh%C3%B6r`,
       },
       {
