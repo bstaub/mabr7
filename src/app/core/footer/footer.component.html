@@ -10,7 +10,7 @@
 
 
           <li class="sitemap-item" *ngFor="let category of categories$ | async | slice:0:5">
-            <a class="sitemap-link" tabindex="-1" [routerLink]="['produkte','list']" [queryParams]="category.name">
+            <a class="sitemap-link" tabindex="-1" [routerLink]="['produkte','list']" [queryParams]="{category:category.name}">
               {{category.name}}
             </a>
           </li>
@@ -119,11 +119,11 @@
 
       </div>
 
-       Copyright
+
       <div class="footer-copyright text-center py-3"><span>© All rights reserved. Made with  <fa name="heart" ></fa> by Martin Polak & Bruno Staub</span>
         <a href="#"> mabrweb.com</a>
       </div>
-       Copyright
+
 
     </div>
   </div>
