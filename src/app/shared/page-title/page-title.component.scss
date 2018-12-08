@@ -84,11 +84,12 @@ $line-height-h3: 1.6;
     }
   }
   .breadcrumbs {
-    padding-top: 10px;
+    padding-top: 0px;
     text-align: center;
     > li {
         left: 3px;
         margin-right: 3px;
+        font-size: 15px;
     }
   }
 }

@@ -1,8 +1,6 @@
 // Override Bootstrap Variables
 $font-family-sans-serif: Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
-
 $navbar-nav-link-padding-x: 1.25rem;
-
 $hr-border-color: #fff;
 
 $theme-colors: (
@@ -21,6 +19,14 @@ $h3-font-size: $font-size-base * 1.75;
 $h4-font-size: $font-size-base * 1.5;
 $h5-font-size: $font-size-base * 1.25;
 $h6-font-size: $font-size-base;
+
+h1{
+  font-size: 28px;
+  font-weight: 300;
+  flex: 1;
+  margin: 0 20px 40px 0;
+}
+
 
 
 // Button Style start
@@ -81,11 +87,3 @@ pagination-controls {
   box-shadow: none;
 }
 // Button Style end
-
-
-// Global Variables
-//$c-bg-header: #72A1A7;
-//$c-bg-footer: #72A1A7;
-//$c-font-header: rgba(226, 220, 220, 0.5);
-//$c-font-header: rgba(226, 220, 220, 0.5);
-//$c-bg-login-btn: #D4AF7A;
