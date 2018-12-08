@@ -51,7 +51,7 @@ li.nav-item.lang {
 // Small devices (landscape phones, 576px and up)
 @media (max-width: 576px) {
   span.brand {
-    display: inline-block;
+    display: inline !important;
   }
 
 }
