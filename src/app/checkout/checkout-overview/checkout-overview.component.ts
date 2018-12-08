@@ -33,6 +33,8 @@ export class CheckoutOverviewComponent implements OnInit, OnDestroy {
   productsSubscription: Subscription;
   p = 1;
   today = new Date();
+  today1 = new Date();
+  today2 = new Date();
   postDate: Date;
   dhlDate: Date;
   upsDate: Date;
@@ -146,8 +148,8 @@ export class CheckoutOverviewComponent implements OnInit, OnDestroy {
     });
 
     this.postDate = new Date(this.today.setDate((this.today.getDate() + 4)));
-    this.dhlDate  = new Date(this.today.setDate((this.today.getDate() + 2)));
-    this.upsDate  = new Date(this.today.setDate((this.today.getDate() + 1)));
+    this.dhlDate  = new Date(this.today1.setDate((this.today1.getDate() + 2)));
+    this.upsDate  = new Date(this.today2.setDate((this.today2.getDate() + 1)));
   }
 
   ngOnDestroy() {
