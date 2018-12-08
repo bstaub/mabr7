@@ -16,7 +16,7 @@
         <label for="kategorie" class="col-form-label">Kategorie</label>
         <div *ngIf="(categories$ | async) as Cat">
           <p-dropdown [options]="Cat" [(ngModel)]="selectedCategory" name="selectedCategory"
-                      placeholder="Wähle eine Kategorie" optionLabel="name" [showClear]="true" filter="true" id="kategorie"></p-dropdown>
+                      placeholder="Wähle eine Kategorie" optionLabel="name" [showClear]="true" filter="true" id="kategorie" required></p-dropdown>
         </div>
       </div>
     </div>

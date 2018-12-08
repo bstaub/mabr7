@@ -9,7 +9,7 @@ $line-height-h3: 1.6;
 .page-title {
   width: 100%;
   margin-bottom: 60px;
-  padding: 36px 0;
+  padding: 15px 0;
   // margin-bottom: ceil($grid-vertical-step * 2.5); //~60px
   // padding: floor($grid-vertical-step * 1.5) 0; //~36px 0
   border-bottom: 1px solid black;
@@ -30,6 +30,12 @@ $line-height-h3: 1.6;
     line-height: $line-height-h3;
   }
   // @media (max-width: $screen-sm) { margin-bottom: ceil($grid-vertical-step * 2.2); }
+
+  @media (max-width: 575px) {
+    h1 {
+      display: none;
+    }
+  }
 }
 
 // Breadcrumbs
