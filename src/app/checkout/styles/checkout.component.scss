@@ -197,9 +197,21 @@ h3.checkout-titel {
     width: 100%;
   }
 
+  h3.checkout-titel {
+    margin-top: 0px !important;
+  }
+
 }
 
 @media screen and (max-width: 800px) {
+
+  .checkout-wrap {
+    display: none;
+  }
+
+  h3.checkout-titel {
+    margin-top: 40px;
+  }
 
   ul.checkout-bar {
     margin: auto;
