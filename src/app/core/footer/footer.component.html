@@ -9,7 +9,7 @@
         <ul class="sitemap-items-list list-unstyled">
 
 
-          <li class="sitemap-item" *ngFor="let category of categories$ | async | slice:0:5">
+          <li class="sitemap-item" *ngFor="let category of categoriesfooter$ | async | slice:0:5">
             <a class="sitemap-link" tabindex="-1" [routerLink]="['produkte','list']" [queryParams]="{category:category.name}">
               {{category.name}}
             </a>
