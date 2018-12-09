@@ -84,3 +84,8 @@ input[type=text]:focus {
     height: 0px;
   }
 }
+
+input {
+  -webkit-border-radius:0;
+  border-radius:0;
+}
