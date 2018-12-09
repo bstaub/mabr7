@@ -1,27 +1,86 @@
-# Mabr7
+# CAS FEE PROJEKT 2 : Web Shop Implementation with Angular7 + Firestore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
+- Bruno Staub (https://github.com/bstaub)
+- Martin Polak (https://github.com/MartinPolakHSR)
 
-## Development server
+Check out this project online at https://mabr7-shop.firebaseapp.com/
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Clone repository
 
-## Build
+```bash
+git clone https://github.com/bstaub/mabr7.git
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Install Angular-Cli globally
 
-## Running unit tests
+```bash
+npm install -g @angular/cli
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Install NPM packages
 
-## Running end-to-end tests
+```bash
+cd mabr7
+npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Install NPM packages for Cloud Firestore Functions
 
-## Further help
+```bash
+cd mabr7/functions
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Run development server
+
+```bash
+ng serve
+```
+
+Runs a webpack-development server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+### Checkout the shop
+
+Point your browser to localhost:4200. In any case the dev build is not working, there is an already built app available on hhttps://mabr7-shop.firebaseapp.com/ for checking out.
+??Deeplinking for the Angular router is handled via .htaccess config.
+
+### Run unit tests
+
+```bash
+ng test
+```
+
+Executes the unit tests via [Karma](https://karma-runner.github.io).
+
+### Running end-to-end tests
+
+```bash
+ng e2e
+```
+
+Executes the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+### Build app for prod
+
+```bash
+ng build --prod --build-optimizer
+```
+
+This builds the app for prod environment into a /dist folder. Uses the Angular-AOT-mode to precompile the the app. This reduces the app-footstep (compiler is around 1/3 of bundle).
+
+
+### Deploy App
+
+```bash
+npm run deploy
+```
+
+
+
+### Deploy only Firestore Functions
+
+```bash
+firebase deploy --only functions
+```
