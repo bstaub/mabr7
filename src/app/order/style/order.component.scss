@@ -86,6 +86,10 @@ button.btn {
 
 @media screen and (max-width: 768px) {
 
+  h3.checkout-titel {
+    margin-top: 40px;
+  }
+
   th.orderinput,
   td.orderinput {
     width: 100%;
@@ -129,6 +133,10 @@ button.btn {
 
   button.orderaction {
     width: 100%;
+  }
+
+  h3.checkout-titel {
+    margin-top: 0px;
   }
 
 }
