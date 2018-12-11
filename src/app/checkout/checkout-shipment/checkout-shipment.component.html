@@ -5,7 +5,7 @@
   <table class="table table-striped checkout">
     <thead>
     <tr>
-      <th width="20%"></th>
+      <th class="first"></th>
       <th colspan="2" class="text-right">voraussichtliche Lieferung</th>
       <th class="text-right">Preis CHF</th>
     </tr>
@@ -13,20 +13,20 @@
 
     <tbody>
     <tr>
-      <td><input type="radio" value="express" name="shippingMethod" formControlName="shippingMethod"></td>
-      <td>Schweizer Post</td>
+      <td class="first"><input type="radio" value="express" name="shippingMethod" formControlName="shippingMethod"></td>
+      <td class="titel">Schweizer Post</td>
       <td class="text-right">{{this.postDate | date:'dd.MM.yyyy'}}</td>
       <td class="text-right">gratis</td>
     </tr>
     <tr>
       <td><input type="radio" value="fedex" name="shippingMethod" formControlName="shippingMethod"></td>
-      <td>DHL Express</td>
+      <td class="titel">DHL Express</td>
       <td class="text-right">{{this.dhlDate | date:'dd.MM.yyyy'}}</td>
       <td class="text-right">22.00</td>
     </tr>
     <tr>
       <td><input type="radio" value="normal" name="shippingMethod" formControlName="shippingMethod"></td>
-      <td>UPS Über-Nacht-Versand</td>
+      <td class="titel">UPS Über-Nacht-Versand</td>
       <td class="text-right">{{this.upsDate | date:'dd.MM.yyyy'}}</td>
       <td class="text-right">150.00</td>
     </tr>
