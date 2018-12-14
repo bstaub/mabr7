@@ -9,7 +9,7 @@ export class SettingsService {
     allowRegistration: true,
     allowAdministration: true,
     itemsPerPage: 5,
-    domainName: 'mabr7-shop.firebaseapp.com',
+    domainName: 'mabrweb.com',
   };
   constructor() {
     if (localStorage.getItem('settings') != null) {

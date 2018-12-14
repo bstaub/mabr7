@@ -3,72 +3,44 @@
 - Bruno Staub (https://github.com/bstaub)
 - Martin Polak (https://github.com/MartinPolakHSR)
 
-Check out this project online at https://mabr7-shop.firebaseapp.com/
+
+Shop deployed to Firebase with HTTPS custom Domain:
+
+https://www.mabrweb.com
+
+https://mabr7-shop.firebaseapp.com/  (firebase hosting domain)
 
 
 ## Installation
 
-### Clone repository
+### DEV Dependencies
+
+`Node 8.12.0 LTS, NPM 6.4.1, Angular CLI@7.0.6`
+
+### Application Setup for Development
 
 ```bash
-git clone https://github.com/bstaub/mabr7.git
-```
-
-### Install Angular-Cli globally
-
-```bash
-npm install -g @angular/cli
-```
-
-### Install NPM packages
-
-```bash
-cd mabr7
+git clone https://github.com/bstaub/mabr7.git'
 npm install
+npm install -g @angular/cli@7.0.6  (for developing and deploy)
+ng serve -o
 ```
-
-### Install NPM packages for Cloud Firestore Functions
-
-```bash
-cd mabr7/functions
-npm install
-```
-
-### Run development server
-
-```bash
-ng serve
-```
-
-Runs a webpack-development server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-
-### Checkout the shop
-
-Point your browser to localhost:4200. In any case the dev build is not working, there is an already built app available on https://mabr7-shop.firebaseapp.com/ for checking out.
-
 
 ### Run unit tests
 
-```bash
-ng test
-```
+`ng test`
 
 Executes the unit tests via [Karma](https://karma-runner.github.io).
 
 
 ### Deploy App
 
-```bash
-npm run deploy
-```
+`npm run deploy`
 
 
-### Deploy only Firestore Functions
+### Deploy Clound Function with Sendgrid.com (Order Email)
 
-```bash
-firebase deploy --only functions
-```
+`firebase deploy --only functions`
 
 
 ## Feature Set
@@ -84,32 +56,38 @@ firebase deploy --only functions
 
 #### Products
 
-- Products fetched from Firestore
+- Products fetched from Firestore (ProductService)
 - Sorting: Products can be sorted by price and name
 - Filtering: Products can be filtered by category
 - sorting and filtering can be used combined
 - Products can be viewed in a grid or a list view
-- When logged in as a user with adminstrative rights, additional buttons are shown for product CRUD operations
+- When logged in as a user with adminstrative rights, additional buttons are shown for product CRUD operations and user Administration
 - Products can be searched through search input field (Full Text Search in name)
-- BS??
-
+- Products grid/list view have a pageination, items per Page are stored in centralized settingsService
+- Product Detail Page has SEO optimized URL produkte/detail/{{id}}/{{category}}/{{productname}}
+- Product Detail Add to Favorite is SEO optimized {{productname}}: {{Domain}}: {{Category}}
 
 
 #### Product CRUD
 
+- https://www.mabrweb.com/admin/home (need Admin Role to managed)
 - Add a new product
 - Add a new category
 - Edit existing product
-- Delete existing product
-- Delete existing category
+- Delete existing product with delete confirmation
+- Delete existing category with delete confirmation
 - Images handled with Firebase Storage
-- Sale products can be distinguished with a discount
-- BS??
+- Products can have specification Tabs
+- Products can be flaged with discount, new, bestrated 
+- Sale products can be distinguished with a discount factor
+- Products status active / inactive can be set
+- Categories Search 
+
 
 
 #### Cart
 
-- Products can be added from the list/grid View or product detail view
+- Products can be added from the grid/list View or product detail view
 - Cart is handled via a OrderService
 - Adding the same product multiple times, increases the amount in cart
 - Order (Cart) has a dedicated cart page and is visible as a dropdown widget as well
@@ -119,7 +97,7 @@ firebase deploy --only functions
 - Subtotal and Totals will be calculated on the fly
 - For Sale Product the original price / discount / sale price is visible
 - Cart is organized throug local storage / synchronized with firestore for registered users
-- After login last scart items are loaded into local storage
+- After login last cart items are loaded into local storage
 
 
 #### Checkout
@@ -143,18 +121,19 @@ firebase deploy --only functions
 
 #### Authentication
 
-- Checkout: As registered user / guest
 - Sign up: Create user account
 - Log in: General login or during checkout
-- Role based authentication
+- Role based authentication (isAdmin,)
+- Checkout: As registered user / guest
 - BS??
 
 
 #### Account
 
-- Create new shop user accounts
+- Create new shop user accounts / Double Logged id with 
 - Login with existing user account
-- User Profile, Email, Password, Firstname, Lastname are updateable via account page
+- Password 
+- User Profile page shows Firstname, Lastname, Email, Photo is updatedable
 - Order history is visible to logged in users
 - Role base authentication via Firebase, roles can be assigned to users like isAdmin
 
@@ -164,6 +143,10 @@ firebase deploy --only functions
 - FireBase Security Rules for Shop User / Admin
 - !!! TODO
 
-#### General
+### General
 
-- ??
+- Lazy Loading Feature is implemented for Products, Order and Checkout Component
+
+### Angular Univeral SSR
+
+- was tested, but could not implemented in this project because some TypeError in firebase.auth, alertify and localstorage. we will implement this feature when we can fix the issues.
