@@ -45,7 +45,6 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
         this.title.setTitle(`${this.productName}: ${this.settingsService.getSettings().domainName}: ${this.productCategoryName}`);
       }
     );
-    // routerLink="/produkte/detail/{{product.name | urlPrettifier}}" [queryParams]="{key: product.key}"
     this.activatedRouteSubscription = this.activatedRoute.queryParams.subscribe(
       queryParams => {
         if (queryParams['key']) {

@@ -33,7 +33,6 @@ export class ProductGridComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.getProductList();
     this.categories$ = this.productCategory.getCategories();
-    // https://stackoverflow.com/questions/39601026/angular-2-scroll-to-top-on-route-change  (not needed anymore in angular 7)
   }
 
   getProductList() {

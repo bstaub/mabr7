@@ -16,7 +16,7 @@ import { ADMIN_ROUTES } from './admin/admin-routing.module';
 import { ResetPasswordComponent } from './user/reset-password/reset-password.component';
 
 
-const routes: Routes = [
+export const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'admin', component: AdminComponent, children: ADMIN_ROUTES, canActivate: [AdminGuard]},
   {

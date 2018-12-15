@@ -30,7 +30,6 @@ export class ProductService {
   changeMessage(message) {
     this.messageSource.next(message);
   }
-
   // RxJS BehaviorSubject end
 
   constructor(public afs: AngularFirestore) {
