@@ -43,6 +43,11 @@ export const routes: Routes = [
     loadChildren: './lazyfeature/lazyfeature.module#LazyfeatureModule'
   },
   {path: 'resetpw', component: ResetPasswordComponent},
+  // MISC
+  {
+    path: 'misc',
+    loadChildren: './misc/misc.module#MiscModule'
+  },
   // There's a bug that's preventing wild card routes to be lazy loaded (see: https://github.com/angular/angular/issues/13848)
   // That's why the Error page should be eagerly loaded
   {
