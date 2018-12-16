@@ -9,7 +9,7 @@ import { AuthService } from '../../user/shared/auth.service';
 import { OrderFlyoutService } from '../../shared/order-flyout.service';
 import { ProductPerOrderLocalStorage } from '../../models/productPerOrderLocalStorage.model';
 import { SettingsService } from '../../shared/settings.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-checkout-overview',
@@ -38,6 +38,7 @@ export class CheckoutOverviewComponent implements OnInit, OnDestroy {
   postDate: Date;
   dhlDate: Date;
   upsDate: Date;
+  agb_checked: boolean;
 
 
   constructor(private orderService: OrderService,
@@ -148,8 +149,13 @@ export class CheckoutOverviewComponent implements OnInit, OnDestroy {
     });
 
     this.postDate = new Date(this.today.setDate((this.today.getDate() + 4)));
-    this.dhlDate  = new Date(this.today1.setDate((this.today1.getDate() + 2)));
-    this.upsDate  = new Date(this.today2.setDate((this.today2.getDate() + 1)));
+    this.dhlDate = new Date(this.today1.setDate((this.today1.getDate() + 2)));
+    this.upsDate = new Date(this.today2.setDate((this.today2.getDate() + 1)));
+  }
+
+  setAgb() {
+
+
   }
 
   ngOnDestroy() {

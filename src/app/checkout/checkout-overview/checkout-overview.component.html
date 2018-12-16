@@ -268,8 +268,14 @@
 
   <div class="row checkout-button">
     <div class="col-12">
+      <input [(ngModel)]="agb_checked" type="checkbox" [ngModelOptions]="{standalone: true}"> Ich habe die <a class="infolink" [routerLink]="['','misc','agb']">AGB's</a> gelesen und akzeptiere diese.
+    </div>
+  </div>
+
+  <div class="row checkout-button">
+    <div class="col-12">
       <button type="button" class="checkoutaction btn btn-primary float-left mb-2" (click)="goBack()">zurück</button>
-      <button type="button" class="checkoutaction btn btn-primary float-right" (click)="orderNow()">Bestellung
+      <button [disabled]="!agb_checked"  type="button" class="checkoutaction btn btn-primary float-right" (click)="orderNow()">Bestellung
         abschicken
       </button>
     </div>
