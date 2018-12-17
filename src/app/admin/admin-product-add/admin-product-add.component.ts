@@ -6,7 +6,7 @@ import { ProductService} from '../../product/shared/product.service';
 import { StorageService } from '../../shared/storage.service';
 import { ProductCategoryService } from '../../product/shared/product-category.service';
 import { AlertifyService } from '../../shared/alertify.service';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-admin-product-add',
