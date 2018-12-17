@@ -1,13 +1,12 @@
 <ngb-carousel *ngIf="sliderdata">
   <ng-template *ngFor="let slide of sliderdata" ngbSlide>
     <a href="{{slide.link}}">
-      <img src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" width="2560" height="500" alt="{{slide.title}}"
-           style="display: block;
-           background-image: url('assets/slider/slider1_guetzli.jpeg');
-           background-position: -1100px">
+      <div class="sliderbox" width="2560" height="500"
+           [ngStyle]="{'background-image': 'url('+ slide.image +')'}">
       <div class="carousel-caption">
         <h2>{{slide.title}}</h2>
         <p>{{slide.text}}</p>
+      </div>
       </div>
     </a>
   </ng-template>
