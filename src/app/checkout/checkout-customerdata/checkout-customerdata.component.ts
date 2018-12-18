@@ -198,7 +198,11 @@ export class CheckoutCustomerdataComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.authSubscription.unsubscribe();
     this.addressFormSubscription.unsubscribe();
-    this.orderSubscription.unsubscribe();
+
+    if (this.orderSubscription) {
+      this.orderSubscription.unsubscribe();
+    }
+
   }
 
 
