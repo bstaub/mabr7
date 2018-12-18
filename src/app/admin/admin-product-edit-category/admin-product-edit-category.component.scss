@@ -1,0 +1,35 @@
+.btn {
+  padding: 6px 12px;
+}
+
+
+@media (max-width: 767px) {
+  .col1{
+    width: 10%;
+  }
+  .col2{
+    width: 70%;
+  }
+  .col3{
+    display: none;
+  }
+  .col4{
+    idth: 10%;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .col1{
+    width: 10%;
+  }
+  .col2{
+    width: 25%;
+  }
+  .col3{
+    width: 45%;
+  }
+  .col4{
+    idth: 10%;
+  }
+}

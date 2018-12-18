@@ -4,18 +4,18 @@
     <table class="table" *ngIf="(categories$ | async) as kategorie">
       <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Beschreibung</th>
-        <th scope="col">Aktion</th>
+        <th scope="col" class="col1">#</th>
+        <th scope="col" class="col2">Name</th>
+        <th scope="col" class="col3">Beschreibung</th>
+        <th scope="col" class="col4">Aktion</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let kat of kategorie; let i = index">
-        <th scope="row">{{i}}</th>
-        <td>{{kat.name}}</td>
-        <td>{{kat.description}}</td>
-        <td><button class="btn btn-sm btn-danger" (click)="onDeletItem(kat.id)">
+        <th scope="row" class="col1">{{i}}</th>
+        <td class="col2">{{kat.name}}</td>
+        <td class="col3">{{kat.description}}</td>
+        <td class="col4"><button class="btn btn-sm btn-danger" (click)="onDeletItem(kat.id)">
           <!--<fa name="trash"></fa>--> <i class="fa fa-trash"></i>
         </button></td>
       </tr>
