@@ -35,19 +35,13 @@ describe('CheckoutCustomerdataComponent', () => {
   });
 
   function fillTheForm(firstname_b, lastname_b, address_b, zip_b, city_b, country_b, mail_b) {
-    component.CustomerAddressForm.controls['customerBillingAddress'].patchValue(
-      {
-        customerBillingAddress: {
-          'firstname_b': firstname_b,
-          'lastname_b': lastname_b,
-          'address_b': 'test',
-          'zip_b': address_b,
-          'city_b': zip_b,
-          'country_b': city_b,
-          'mail_b': country_b,
-        }
-      });
-
+    component.CustomerAddressForm.controls['customerBillingAddress'].get('firstname_b').setValue(firstname_b);
+    component.CustomerAddressForm.controls['customerBillingAddress'].get('lastname_b').setValue(lastname_b);
+    component.CustomerAddressForm.controls['customerBillingAddress'].get('address_b').setValue(address_b);
+    component.CustomerAddressForm.controls['customerBillingAddress'].get('zip_b').setValue(zip_b);
+    component.CustomerAddressForm.controls['customerBillingAddress'].get('city_b').setValue(city_b);
+    component.CustomerAddressForm.controls['customerBillingAddress'].get('country_b').setValue(country_b);
+    component.CustomerAddressForm.controls['customerBillingAddress'].get('mail_b').setValue(mail_b);
   }
 
   it('should create CheckoutCustomerdataComponent', () => {
@@ -78,10 +72,10 @@ describe('CheckoutCustomerdataComponent', () => {
   it('property formIsValid  should be true when required fields are filled in',
     fakeAsync(() => {
       fillTheForm(
-        'Hans', 'Muster', 'Musterweg 7', '6000', 'Luzern', 'Schweiz', 'max.muster@gmail.com'
+        'Hans', 'Muster', 'Musterweg 7', '6005', 'Luzern', 'Schweiz', 'max.muster@gmail.com'
       );
       fixture.detectChanges();
-      expect(component.formIsValid).toBeFalsy();
+      expect(component.formIsValid).toBeTruthy();
 
     })
   );
