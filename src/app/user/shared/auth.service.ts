@@ -52,7 +52,7 @@ export class AuthService {
     if (isDevMode()) {
       this.url = `http://localhost:4200/user-login-register-slide`;
     } else {
-      this.url = `https://${this.settingsService.getSettings().domainName}/user-login-register-slide`;
+      this.url = `https://www.${this.settingsService.getSettings().domainName}/user-login-register-slide`;
     }
     const actionCodeSettings = {
       url: this.url,
@@ -93,7 +93,7 @@ export class AuthService {
     if (isDevMode()) {
       this.url = `http://localhost:4200/user-login-register-slide?orderstep=1&login=1`;
     } else {
-      this.url = `https://${this.settingsService.getSettings().domainName}/user-login-register-slide?orderstep=1&login=1`;
+      this.url = `https://www.${this.settingsService.getSettings().domainName}/user-login-register-slide?orderstep=1&login=1`;
     }
     const actionCodeSettings = {
       url: this.url,
@@ -141,7 +141,7 @@ export class AuthService {
     if (isDevMode()) {
       this.url = `http://localhost:4200/user-login-register-slide`;
     } else {
-      this.url = `https://${this.settingsService.getSettings().domainName}/user-login-register-slide`;
+      this.url = `https://www.${this.settingsService.getSettings().domainName}/user-login-register-slide`;
     }
     const actionCodeSettings = {
       url: this.url,

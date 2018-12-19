@@ -51,7 +51,8 @@ Executes the unit tests via [Karma](https://karma-runner.github.io).
 
 - Slider images with link to corresponding category filtered product view
 - Features for «News», «Sale» and «Bestseller» Products
-- BS??
+- Footer with dynamically generated category links
+- RWD Offside Menu 
 
 
 #### Products
@@ -81,13 +82,13 @@ Executes the unit tests via [Karma](https://karma-runner.github.io).
 - Products can be flaged with discount, new, bestrated 
 - Sale products can be distinguished with a discount factor
 - Products status active / inactive can be set
-- Categories Search 
+- Categories search 
 
 
 
 #### Cart
 
-- Products can be added from the grid/list View or product detail view
+- Products can be added from the product detail view
 - Cart is handled via a OrderService
 - Adding the same product multiple times, increases the amount in cart
 - Order (Cart) has a dedicated cart page and is visible as a dropdown widget as well
@@ -96,7 +97,7 @@ Executes the unit tests via [Karma](https://karma-runner.github.io).
 - Single products can be removed from cart
 - Subtotal and Totals will be calculated on the fly
 - For Sale Product the original price / discount / sale price is visible
-- Cart is organized throug local storage / synchronized with firestore for registered users
+- Cart is organized through local storage / synchronized with firestore for registered users
 - After login last cart items are loaded into local storage
 
 
@@ -106,6 +107,7 @@ Executes the unit tests via [Karma](https://karma-runner.github.io).
 - No enter of email adress needed for registered users
 - Enter Address, Shipping Method and Payment Data with Validation
 - Show review of the order before final submit
+- abg checkbox must be checked before submitting the order (agb with link)
 - When submitting a order, OrderService creates a new unique order number
 - When submitting a order, OrderService stores the order in orders_completed
 - Anonymous Orders are possible too, in that case OrderService creates a new anonymous order
@@ -123,25 +125,24 @@ Executes the unit tests via [Karma](https://karma-runner.github.io).
 
 - Sign up: Create user account
 - Log in: General login or during checkout
-- Role based authentication (isAdmin,)
+- Role based authentication (isAdmin, authuser)
 - Checkout: As registered user / guest
-- BS??
 
 
 #### Account
 
 - Create new shop user accounts / Double Logged id with 
-- Login with existing user account
-- Password 
+- Login with existing user account and password 
 - User Profile page shows Firstname, Lastname, Email, Photo is updatedable
-- Order history is visible to logged in users
 - Role base authentication via Firebase, roles can be assigned to users like isAdmin
+- Order history is visible to logged in users (not finished yet)
 
 
 ### Security
 
+- API are currently in github to allow teacher to testing the app (this is no go for production!!)
 - FireBase Security Rules for Shop User / Admin
-- !!! TODO
+- tables are only writeable for authenticated user
 
 ### General
 

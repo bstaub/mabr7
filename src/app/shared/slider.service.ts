@@ -17,7 +17,7 @@ export class SliderService {
     if (this.isDevMode()) {
       this.url = 'http://localhost:4200';
     } else {
-      this.url = `https://${this.settingsService.getSettings().domainName}`;
+      this.url = `https://www.${this.settingsService.getSettings().domainName}`;
     }
 
     this.slider = [
