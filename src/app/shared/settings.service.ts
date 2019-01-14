@@ -10,6 +10,7 @@ export class SettingsService {
     allowAdministration: true,
     itemsPerPage: 5,
     domainName: 'mabrweb.com',
+    protocol: 'https://www.',
   };
   constructor() {
     if (localStorage.getItem('settings') != null) {

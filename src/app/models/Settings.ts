@@ -3,4 +3,5 @@ export interface Settings {
   allowAdministration?: boolean;
   itemsPerPage?: number;
   domainName?: string;
+  protocol?: string;
 }

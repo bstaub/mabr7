@@ -17,12 +17,12 @@ export class SliderService {
     if (this.isDevMode()) {
       this.url = 'http://localhost:4200';
     } else {
-      this.url = `https://www.${this.settingsService.getSettings().domainName}`;
+      this.url = `${this.settingsService.getSettings().protocol}${this.settingsService.getSettings().domainName}`;
     }
 
     this.slider = [
       {
-        image: 'assets/slider/slider1_guetzli.jpeg',
+        image: 'assets/slider/slider1_guetzli.jpeg', // https://picsum.photos/2560/500?random&t=${Math.random()
         title: 'Photoapparate',
         text: 'Schiesse die besten Photos mit unseren Digitalkameras',
         link: `${this.url}/produkte/list?category=Fotoapparate`,
@@ -45,12 +45,6 @@ export class SliderService {
         text: 'Ein passendes Geschenk zu jeder Jahreszeit',
         link: `${this.url}/produkte/list?category=Maileg%20Tierchen`,
       },
-      // {
-      //   image: `assets/slider/slide_computer.jpg`,  // https://picsum.photos/2560/500?random&t=${Math.random()}
-      //   title: 'Apple Macbook Air',
-      //   text: 'Apple Lifestyle Produkte',
-      //   link: 'https://www.apple.com/chde/macbook-air/',
-      // },
     ];
 
   }

@@ -53,14 +53,12 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
   }
 
   showCloseIcon() {
-    console.log('showCloseIcon');
     setTimeout(() => {
       this.closeIconStatus = true;
     }, 400);  // on focus delay show x
   }
 
   hideCloseIcon() {
-    console.log('hideCloseIcon');
     this.closeIconStatus = false;
     this.searchFormReactive.reset();
     setTimeout(() => {
@@ -70,7 +68,6 @@ export class HeaderSearchComponent implements OnInit, OnDestroy {
   }
 
   resetForm() {
-    console.log('resetForm');
     this.closeIconStatus = false;
     this.searchFormReactive.reset();
     setTimeout(() => {

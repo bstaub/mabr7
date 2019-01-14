@@ -54,7 +54,7 @@ describe('CheckoutCustomerdataComponent', () => {
 
   it('email field should be invalid if it doesnt match the pattern', () => {
     let errors = {};
-    console.log(component);
+    // console.log(component);
     // const email = component.CustomerAddressForm.controls['customerBillingAddress'].controls['mail_b'];
     const email = component.CustomerAddressForm.controls['customerBillingAddress'].get('mail_b');
     email.setValue('test');
