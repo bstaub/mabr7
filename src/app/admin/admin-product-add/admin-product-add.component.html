@@ -26,8 +26,8 @@
     <div class="form-group">
       <label for="bild" class="col-form-label">Bild</label>
       <p-fileUpload name="myfile[]" chooseLabel="Bild Upload" cancelLabel="Abbrechen" type="file"
-      (onSelect)="onFileSelection($event)"
-      [showUploadButton]="false" accept="image/*" id="bild">
+                    (onSelect)="onFileSelection($event)"
+                    [showUploadButton]="false" accept="image/*" id="bild">
       </p-fileUpload>
     </div>
     <div class="form-group">
@@ -37,15 +37,15 @@
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="moreInfo1Title" class="col-form-label">RegisterTitel1</label>
-          <input type="text" class="form-control" pInputText placeholder="Register Namen..." required [(ngModel)]="product.moreInfo1Title" name="moreInfo1Title" id="moreInfo1Title">
+          <input type="text" class="form-control" pInputText placeholder="Register Namen..." [(ngModel)]="product.moreInfo1Title" name="moreInfo1Title" id="moreInfo1Title">
         </div>
         <div class="form-group col-md-4">
           <label for="moreInfo2Title" class="col-form-label">RegisterTitel2</label>
-          <input type="text" class="form-control" pInputText placeholder="Register Namen..." required [(ngModel)]="product.moreInfo2Title" name="moreInfo2Title" id="moreInfo2Title">
+          <input type="text" class="form-control" pInputText placeholder="Register Namen..." [(ngModel)]="product.moreInfo2Title" name="moreInfo2Title" id="moreInfo2Title">
         </div>
         <div class="form-group col-md-4">
           <label for="moreInfo3Title" class="col-form-label">RegisterTitel3</label>
-          <input type="text" class="form-control" pInputText placeholder="Register Namen..." required [(ngModel)]="product.moreInfo3Title" name="moreInfo3Title" id="moreInfo3Title">
+          <input type="text" class="form-control" pInputText placeholder="Register Namen..." [(ngModel)]="product.moreInfo3Title" name="moreInfo3Title" id="moreInfo3Title">
         </div>
       </div>
       <div class="form-row">
@@ -67,7 +67,7 @@
       <p-checkbox binary="true" value="discount" label="Aktion" [(ngModel)]="discount" name="discount"></p-checkbox>
     </div>
     <div class="form-group" *ngIf="discount">
-      <input type="number" placeholder="1" required [(ngModel)]="product.discountFactor" name="discountFactor"> (Rabatt Default 1=kein Rabatt, Bereich: 0.00-1)
+      <input type="number" required [(ngModel)]="product.discountFactor" name="discountFactor"> (Rabatt 1=kein Rabatt, Bereich: 0.00-1)
     </div>
     <div class="form-group">
       <p-checkbox binary="true" value="newProduct" label="Neuheit" [(ngModel)]="newProduct" name="newProduct"></p-checkbox>
