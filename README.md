@@ -15,16 +15,15 @@ https://mabr7-shop.firebaseapp.com/  (firebase hosting domain)
 
 ### DEV Dependencies
 
-`Node 8.12.0 LTS, NPM 6.4.1, Angular CLI@7.0.6`
+`Node 8.15.0 LTS, NPM 6.4.1, Angular CLI@7.0.6`
 
 ### Application Setup for Development
 
 ```bash
 1.) git clone https://github.com/bstaub/mabr7.git'
 2.) npm install
-3.) npm install -g @angular/cli@7.0.6  (for developing and deploy)
-4.) Insert API Key into src/environments/environments.ts
-5.) ng serve -o
+3.) Insert API Key into src/environments/environments.ts
+4.) ng serve -o
 ```
 
 ### Run unit tests
