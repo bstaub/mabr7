@@ -20,8 +20,8 @@ exports.orderEmail = functions.firestore
         const orderdata = doc.data()
         const msgbody = {
           to: orderdata.customerBillingAddress.mail,
-          bcc: 'mabrweb@gmail.com',
-          from: 'mabrweb@gmail.com',
+          bcc: 'mabrwebshop@gmail.com',
+          from: 'mabrwebshop@gmail.com',
           subject: 'Deine Bestellung bei mabr-web',
           templateId: 'd-0efa1b117040446485a43bdb1727d96b',
           substitutionWrappers: ['{{', '}}'],
