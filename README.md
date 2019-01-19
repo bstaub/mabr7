@@ -20,10 +20,11 @@ https://mabr7-shop.firebaseapp.com/  (firebase hosting domain)
 ### Application Setup for Development
 
 ```bash
-git clone https://github.com/bstaub/mabr7.git'
-npm install
-npm install -g @angular/cli@7.0.6  (for developing and deploy)
-ng serve -o
+1.) git clone https://github.com/bstaub/mabr7.git'
+2.) npm install
+3.) npm install -g @angular/cli@7.0.6  (for developing and deploy)
+4.) Insert API Key into src/environments/environments.ts
+5.) ng serve -o
 ```
 
 ### Run unit tests
@@ -35,7 +36,7 @@ Executes the unit tests via [Karma](https://karma-runner.github.io).
 
 ### Deploy App
 
-`npm run deploy`
+`npm run deploy` (requires mabrweb@gmail.com login and custom .env file with api key)
 
 
 ### Deploy Clound Function with Sendgrid.com (Order Email)

@@ -6,7 +6,7 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyChyTr5IeqbAUc44Rl8SCOOmHCLadziNB4',
+    apiKey: '',
     authDomain: 'mabr7-shop.firebaseapp.com',
     databaseURL: 'https://mabr7-shop.firebaseio.com',
     projectId: 'mabr7-shop',
