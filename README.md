@@ -20,10 +20,11 @@ https://mabr7-shop.firebaseapp.com/  (firebase hosting domain)
 ### Application Setup for Development
 
 ```bash
-1.) git clone https://github.com/bstaub/mabr7.git'
-2.) npm install
-3.) Insert API Key into src/environments/environments.ts
-4.) ng serve -o
+1.) git clone https://github.com/bstaub/mabr7.git
+2.) cd mabr7
+3.) npm install
+4.) Insert API Key into src/environments/environments.ts
+5.) ng serve -o
 ```
 
 ### Run unit tests
@@ -35,10 +36,11 @@ Executes the unit tests via [Karma](https://karma-runner.github.io).
 
 ### Deploy App
 
-`cd functions` 
-`npm install` (for deploying functions)
-
-`npm run deploy` (requires mabrweb@gmail.com login and custom .env file with api key)
+```
+cd functions
+npm install (for deploying functions)
+npm run deploy (requires mabrweb@gmail.com login and custom .env file with api key)
+```
 
 ## Feature Set
 
