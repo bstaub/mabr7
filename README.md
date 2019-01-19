@@ -41,7 +41,6 @@ Executes the unit tests via [Karma](https://karma-runner.github.io).
 
 ### Deploy Clound Function with Sendgrid.com (Order Email)
 
-`firebase functions:config:set sendgrid.key=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`
 `firebase deploy --only functions`
 
 
