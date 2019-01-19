@@ -37,12 +37,6 @@ Executes the unit tests via [Karma](https://karma-runner.github.io).
 
 `npm run deploy` (requires mabrweb@gmail.com login and custom .env file with api key)
 
-
-### Deploy Clound Function with Sendgrid.com (Order Email)
-
-`firebase deploy --only functions`
-
-
 ## Feature Set
 
 ### Shop functionality
