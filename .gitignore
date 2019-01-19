@@ -42,3 +42,5 @@ functions/node_modules
 /.firebase
 
 src/environments/.env
+src/environments/environment.prod.ts
+src/environments/environment.ts
