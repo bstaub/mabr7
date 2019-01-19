@@ -35,6 +35,9 @@ Executes the unit tests via [Karma](https://karma-runner.github.io).
 
 ### Deploy App
 
+`cd functions` 
+`npm install` (for deploying functions)
+
 `npm run deploy` (requires mabrweb@gmail.com login and custom .env file with api key)
 
 ## Feature Set
